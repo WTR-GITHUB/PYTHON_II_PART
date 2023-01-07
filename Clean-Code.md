@@ -11,12 +11,21 @@ Why do we need it, simply as the [Zen of Python](https://peps.python.org/pep-002
 
 These all sound like synonyms and of course they are, but let's see a few examples where the naming standards .
 
-**NOTE**
+**NOTE** :
 
-Never use l, O single letter names as they might be mistakes for 1 and 0:
+Never 🛑  use l, O single letter names as they might be mistakes for 1 and 0:
 ```python
 O = 2  # This may look like you're trying to reassign 2 to zero
 ```
+
+## Naming conventions
+
+It is never too much of revisiting naming conventions as it really separates a good python programmer from great one. You might understand how language works but if you do not follow the naming conventions, nobody will understand you code to full extent.
+
+
+| Attempt | #1    | #2    |
+| :---:   | :---: | :---: |
+| Seconds | 301   | 283   |
 
 
 # Useful links:

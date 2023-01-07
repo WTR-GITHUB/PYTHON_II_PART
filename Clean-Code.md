@@ -36,8 +36,35 @@ It is never too much of revisiting naming conventions as it really separates a g
 
 ## Variable naming
 
+Sometimes it ain't that easy to come up with good variable naming and thus many jokes are written about it:
+
 ![alt text](http://url/to/img.png)
 ![IMG](https://github.com/CodeAcademy-Online/python-new-material-level2/blob/master/images/searching_meaningful_variable_name.png)
+
+Why is this important? Readability.
+
+Imagine getting to read code like this:
+
+```python
+x = input()
+y, z = x.split()
+print(z, y, sep=', ')
+```
+
+Is it easy to understand what is happening? What is the aim of the code? What is it supposed to do?
+Now compare it with:
+
+
+```python
+name = input()
+first_name, last_name = x.split()
+print(last_name, first_name, sep=', ')
+```
+
+Which Zen of Python line does this reflect the best?
+<!-- This is commented out. -->
+
+
 
 # Useful links:
 

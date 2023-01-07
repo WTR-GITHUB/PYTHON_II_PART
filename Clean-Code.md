@@ -80,10 +80,38 @@ def multiply_by_two(x):
 ```
 
 
+Imagine now reviewing the code of your colleague:
+```python
+pi = 3.14
+CustomerName = "John Doe"
+CUSTOMER_AGE = 15
+```
 
 
+if later on these variable were used in the code, what would be the expectations of the developers for these variables? How would You do it?
+Discuss by looking into naming conventions table above.
 
 
+## Documentation strings
+
+Documentation strings, or docstrings, are strings enclosed in double (""") or single (''') quotation marks that appear on the first line of any function, class, method, or module
+
+They are required for more complex public modules, functions and methods. The ones that are exposed for your library consumers to understand how to use certain pieces of code 
+ 
+```python
+def quadratic(a, b, c, x):
+    """Solve quadratic equation via the quadratic formula.
+
+    A quadratic equation has the following form:
+    ax**2 + bx + c = 0
+
+    There always two solutions to a quadratic equation: x_1 & x_2.
+    """
+    x_1 = (- b+(b**2-4*a*c)**(1/2)) / (2*a)
+    x_2 = (- b-(b**2-4*a*c)**(1/2)) / (2*a)
+
+    return x_1, x_2
+```
 
 
 # Useful links:

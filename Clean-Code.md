@@ -113,6 +113,38 @@ def quadratic(a, b, c, x):
     return x_1, x_2
 ```
 
+see this might be extremely useful when you are not entirely sure how function works.
+
+## Whitespace around Binary Operators
+Surround the following binary operators with a single space on either side:
+
+* Assignment operators (=, +=, -=, and so forth)
+* Comparisons (==, !=, >, <. >=, <=) and (is, is not, in, not in)
+* Booleans (and, not, or) 
+
+## Maximum line length
+
+PEP 8 suggests lines should be limited to 79 characters. This is because it allows you to have multiple files open next to one another, while also avoiding line wrapping.
+
+Python will assume line continuation if code is contained within parentheses, brackets, or braces:
+
+```python
+def function(arg_one, arg_two,
+             arg_three, arg_four):
+    return arg_one
+```
+
+If it is impossible to use implied continuation, then you can use backslashes to break lines instead:
+
+```python
+from mypkg import example1, \
+    example2, example3
+```
+
+
+## Blank lines
+
+How you lay out your code has a huge role in how readable it is. In this section, you’ll learn how to add vertical whitespace to improve the readability of your code. 
 
 # Useful links:
 

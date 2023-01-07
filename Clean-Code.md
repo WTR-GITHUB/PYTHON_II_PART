@@ -25,13 +25,13 @@ It is never too much of revisiting naming conventions as it really separates a g
 
 | Attempt | #1    | #2    |
 | :---:   | :---: | :---: |
-| Function| 301   | 283   |
-| Variable| 301   | 283   |
-| Class| 301   | 283   |
-| Method| 301   | 283   |
-| Constant| 301   | 283   |
-| Module | 301   | 283   |
-| Package| 301   | 283   |
+| Function| Use a lowercase word or words. Separate words by underscores to improve readability.| function, my_function|
+| Variable| Use a lowercase single letter, word, or words. Separate words with underscores to improve readability.| 283   |
+| Class| Start each word with a capital letter. Do not separate words with underscores. This style is called camel case or pascal case.   | Model, MyClass|
+| Method| Use a lowercase word or words. Separate words with underscores to improve readability. | class_method, method  |
+| Constant| Use an uppercase single letter, word, or words. Separate words with underscores to improve readability.  | CONSTANT, MY_CONSTANT, MY_LONG_CONSTANT |
+| Module | Use a short, lowercase word or words. Separate words with underscores to improve readability.  | module.py, my_module.py|
+| Package| Use a short, lowercase word or words. Do not separate words with underscores.  | package, mypackage  |
 
 
 # Useful links:

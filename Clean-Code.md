@@ -34,6 +34,9 @@ It is never too much of revisiting naming conventions as it really separates a g
 | Package| Use a short, lowercase word or words. Do not separate words with underscores.  | package, mypackage  |
 
 
+## Variable naming
+
+
 # Useful links:
 
 [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)

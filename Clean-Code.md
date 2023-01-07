@@ -306,9 +306,42 @@ def calculate_variance(number_list):
     return mean_squares - mean**2
 ```
 
+# Linters
+
+Linters are programs that analyze code and flag errors. They provide suggestions on how to fix the error. Linters are particularly useful when installed as extensions to your text editor, as they flag errors and stylistic problems while you write. In this section, you’ll see an outline of how the linters work, with links to the text editor extensions at the end.
+
+Most popular python linters:
+
+* flake8 
+* autopep8 
+* mypy
+* pylint
+
+Linters do not have any direct connections on how the code is being executed: linters might be complaining but code will run just fine. Nevertheless this is not the reason to ignore linter errors. In general linters will help you to keep you code clean and maintanable.
+
+# Autoformatters
+
+Autoformatters are programs that refactor your code to conform with PEP 8 automatically. Once such program is black, which autoformats code following most of the rules in PEP 8. One big difference is that it limits line length to 88 characters, rather than 79. However, you can overwrite this by adding a command line flag, as you’ll see in an example below.
+
+```sh
+pip install black
+```
+
+run black on a single file:
+
+```sh
+python -m black <filename>
+```
+
+This should automatically format the code to the best pracice.
+
+PRO TIP: 
+You may also use [this](https://marcobelo.medium.com/setting-up-python-black-on-visual-studio-code-5318eba4cd00#:~:text=Go%20to%20settings%20in%20your,%E2%80%9D%20and%20select%20%E2%80%9Cblack%E2%80%9D.) This will automatically format file upon saving it. 
 
 # Useful links:
 
 [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)
 
 [Style Guide for Python Code](https://peps.python.org/pep-0008/#introduction)
+
+[more on linters](https://dsstream.com/improve-your-python-code-quality/#:~:text=Linters%20are%20programs%20that%20advise,Preventing%20bugs%20in%20a%20project.)

@@ -24,7 +24,7 @@ It is never too much of revisiting naming conventions as it really separates a g
 
 
 | Attempt | #1    | #2    |
-| :---:   | :---: | :---: |
+| :---   | :--- | :--- |
 | Function| Use a lowercase word or words. Separate words by underscores to improve readability.| function, my_function|
 | Variable| Use a lowercase single letter, word, or words. Separate words with underscores to improve readability.| 283   |
 | Class| Start each word with a capital letter. Do not separate words with underscores. This style is called camel case or pascal case.   | Model, MyClass|

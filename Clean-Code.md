@@ -148,6 +148,79 @@ In the above example, the and operator has lowest priority. It may therefore be 
 if x>5 and x%2==0:
     print('x is larger than 5 and divisible by 2!')
 ```
+## When to Avoid adding whitespace
+In some cases, adding whitespace can make code harder to read. Too much whitespace can make code overly sparse and difficult to follow. PEP 8 outlines very clear examples where whitespace is inappropriate.
+
+The most important place to avoid adding whitespace is at the end of a line. This is known as trailing whitespace. It is invisible and can produce errors that are difficult to trace.
+
+* Immediately inside parentheses, brackets, or braces:
+
+```python
+# Recommended
+my_list = [1, 2, 3]
+
+# Not recommended
+my_list = [ 1, 2, 3, ]
+```
+* Before a comma, semicolon, or colon:
+
+```python
+x = 5
+y = 6
+
+# Recommended
+print(x, y)
+
+# Not recommended
+print(x , y)
+```
+
+* Before the open parenthesis that starts the argument list of a function call:
+
+```python
+def double(x):
+    return x * 2
+
+# Recommended
+double(3)
+
+# Not recommended
+double (3)
+```
+* Before the open bracket that starts an index or slice:
+```python
+# Recommended
+list[3]
+
+# Not recommended
+list [3]
+```
+* Between a trailing comma and a closing parenthesis:
+
+# Recommended
+tuple = (1,)
+
+# Not recommended
+tuple = (1, )
+
+
+* To align assignment operators:
+
+```python
+# Recommended
+var1 = 5
+var2 = 6
+some_long_var = 7
+
+# Not recommended
+var1          = 5
+var2          = 6
+some_long_var = 7
+```
+
+
+
+
 
 ## Maximum line length
 

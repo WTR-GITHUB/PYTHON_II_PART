@@ -219,6 +219,20 @@ var2          = 6
 some_long_var = 7
 ```
 
+**PRO TIP** ✔️ 
+
+Don’t compare Boolean values to True or False using the equivalence operator.
+
+```python
+# Not recommended
+my_bool = 6 > 5
+if my_bool == True:
+    return '6 is bigger than 5'
+
+# Recommended
+if my_bool:
+    return '6 is bigger than 5'
+```
 
 
 

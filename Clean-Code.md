@@ -146,6 +146,52 @@ from mypkg import example1, \
 
 How you lay out your code has a huge role in how readable it is. In this section, you’ll learn how to add vertical whitespace to improve the readability of your code. 
 
+
+**Surround top-level functions and classes with two blank lines**
+```python
+class MyFirstClass:
+    pass
+
+
+class MySecondClass:
+    pass
+
+
+def top_level_function():
+    return None
+```
+
+**Surround method definitions inside classes with a single blank line**
+
+```python
+class MyClass:
+    def first_method(self):
+        return None
+
+    def second_method(self):
+        return None
+```
+
+**Use blank lines sparingly inside functions to show clear steps** Sometimes, a complicated function has to complete several steps before the return statement. To help the reader understand the logic inside the function, it can be helpful to leave a blank line between each step.
+
+In the example below, there is a function to calculate the variance of a list. This is two-step problem, so I have indicated each step by leaving a blank line between them. There is also a blank line before the return statement. This helps the reader clearly see what’s returned:
+
+```python
+def calculate_variance(number_list):
+    sum_list = 0
+    for number in number_list:
+        sum_list = sum_list + number
+    mean = sum_list / len(number_list)
+
+    sum_squares = 0
+    for number in number_list:
+        sum_squares = sum_squares + number**2
+    mean_squares = sum_squares / len(number_list)
+
+    return mean_squares - mean**2
+```
+
+
 # Useful links:
 
 [How to Write Beautiful Python Code With PEP 8](https://realpython.com/python-pep8/)

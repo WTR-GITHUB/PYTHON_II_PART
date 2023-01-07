@@ -197,12 +197,13 @@ list [3]
 ```
 * Between a trailing comma and a closing parenthesis:
 
+```python
 # Recommended
 tuple = (1,)
 
 # Not recommended
 tuple = (1, )
-
+```
 
 * To align assignment operators:
 

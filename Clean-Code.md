@@ -62,9 +62,27 @@ print(last_name, first_name, sep=', ')
 ```
 
 Which Zen of Python line does this reflect the best?
+Discuss.
+
+The same rules apply to everything, functions, classes etc.
+**Do not** 🛑  go around abbreviating names like an example below, because this just brings chaos and misinterpretation of what was actually meant:
+
+```python
+def db(x):
+  return x * 2
+```
+
+after some time it might not be obvious what _db_ does, it was when you were writing the function and using it, but after a week or two, you see usage of _db_ in your code and it is not that obvious anymore. Instead you can do something like:
+
+```python
+def multiply_by_two(x):
+    return x * 2
+```
 
 
-<font color="red">This text is red!</font>
+
+
+
 
 
 

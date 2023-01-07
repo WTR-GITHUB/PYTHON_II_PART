@@ -36,6 +36,8 @@ It is never too much of revisiting naming conventions as it really separates a g
 
 ## Variable naming
 
+![alt text](http://url/to/img.png)
+![IMG](https://github.com/CodeAcademy-Online/python-new-material-level2/blob/master/images/searching_meaningful_variable_name.png)
 
 # Useful links:
 

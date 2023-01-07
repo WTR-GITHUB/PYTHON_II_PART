@@ -122,6 +122,33 @@ Surround the following binary operators with a single space on either side:
 * Comparisons (==, !=, >, <. >=, <=) and (is, is not, in, not in)
 * Booleans (and, not, or) 
 
+```python
+# Recommended
+y = x**2 + 5
+z = (x+y) * (x-y)
+
+# Not Recommended
+y = x ** 2 + 5
+z = (x + y) * (x - y)
+```
+
+
+
+```python
+# Not recommended
+if x > 5 and x % 2 == 0:
+    print('x is larger than 5 and divisible by 2!')
+```
+
+In the above example, the and operator has lowest priority. It may therefore be clearer to express the if statement as below:
+
+
+```python
+# Recommended
+if x>5 and x%2==0:
+    print('x is larger than 5 and divisible by 2!')
+```
+
 ## Maximum line length
 
 PEP 8 suggests lines should be limited to 79 characters. This is because it allows you to have multiple files open next to one another, while also avoiding line wrapping.

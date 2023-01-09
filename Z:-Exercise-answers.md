@@ -1,8 +1,6 @@
 ## OOP Advanced : Inheritance
 ### Task Nr.1
 ```python
-from typing import Type
-
 class Shape:
     def __init__(self, name: str, sides: int) -> None:
         self.name = name

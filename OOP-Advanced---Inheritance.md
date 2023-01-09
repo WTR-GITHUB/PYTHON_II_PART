@@ -99,6 +99,36 @@ print(D.__mro__)
 
 ```
 
+## Multilevel inheritance
+
+In Python, a class can inherit from a class that itself inherits from another class, a concept known as `multilevel inheritance`. This allows a class to _inherit attributes and methods from multiple levels of the inheritance hierarchy_.
+
+Here's an example of how to use multilevel inheritance in Python:
+
+```python
+from typing import Type
+
+class A:
+    def foo(self) -> None:
+        print("A.foo")
+
+class B(A):
+    def bar(self) -> None:
+        print("B.bar")
+
+class C(B):
+    def baz(self) -> None:
+        print("C.baz")
+
+c = C()
+c.foo()  # prints "A.foo"
+c.bar()  # prints "B.bar"
+c.baz()  # prints "C.baz"
+```
+In the example above, the `C` class inherits from the `B` class, which in turn inherits from the `A` class. This creates a `multilevel inheritance` hierarchy where the `C class` **has access to all of the attributes and methods of both the B class and the A class**.
+
+When we create an instance of `C` and call the `foo` method, it uses the implementation of the `foo` method that is defined in the `A` class. Similarly, when we call the `bar` method, it uses the implementation of the `bar` method that is defined in the `B` class. And when we call the `baz` method, it uses the implementation of the `baz` method that is defined in the `C` class
+
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 * Create a `Calculator` class with main functionality: add, divide, multiply, subtract , etc.. Initiate class and show up some calculations.

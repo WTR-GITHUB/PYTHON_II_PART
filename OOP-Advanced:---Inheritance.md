@@ -200,11 +200,19 @@ In this example, the `Car` class inherits from the `Vehicle` class and **overrid
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#task-nr3) 
 
+* Task Nr.4: 
+  Lets say we have classes: A, B and C:
+    - Modify the program to add a method say_hello to class A that prints "Hello from class A".
+    - Modify the program to add a method say_hello to class B that prints "Hello from class B".
+    - Modify the program to add a method say_hello to class C that prints "Hello from class C".
+    - Create an object of class C and call the say_hello method on it. What is the output?
+    - Modify the program so that class B's say_hello method calls the say_hello method of class A using the super() function.
+    - Create an object of class C and call the say_hello method on it again. What is the output now?
 
 
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 * [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [Datacamp](https://www.datacamp.com/tutorial/python-oop-tutorial)
+* [PyNative](https://pynative.com/python-inheritance/)
 ***

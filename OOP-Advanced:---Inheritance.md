@@ -5,7 +5,6 @@ In Python, a class **can inherit from multiple superclasses**, a concept known a
 Here's an example of how to use multiple inheritance in Python:
 
 ```python
-from typing import Type
 
 class Animal:
     def __init__(self, name: str) -> None:
@@ -58,7 +57,6 @@ The MRO is the order in which a class's attributes and methods are inherited fro
 Here's an example of how the MRO works in Python:
 
 ```python
-from typing import Type
 
 class A:
     def foo(self) -> None:
@@ -106,7 +104,6 @@ In Python, a class can inherit from a class that itself inherits from another cl
 Here's an example of how to use multilevel inheritance in Python:
 
 ```python
-from typing import Type
 
 class A:
     def foo(self) -> None:
@@ -136,7 +133,6 @@ In Python, it is possible for a `subclass` to **override** the attributes and me
 Here's an example of how to use method overriding:
 
 ```python
-from typing import Type
 
 class Vehicle:
     def __init__(self, make: str, model: str) -> None:

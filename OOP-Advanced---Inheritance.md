@@ -48,3 +48,5 @@ In the example above, the `DogCat` class inherits from both the `Dog` and `Cat` 
 When we call the `make_sound` method on a `DogCat` instance, it uses the implementation of the method that is defined in the `Dog` class, since the `Dog` class is listed before the `Cat` class in the inheritance list.
 
 Multiple inheritance can be a powerful tool, but it can also make your code more complex and harder to understand, so you should use it with caution.
+
+### MRO - Method Resolution Order

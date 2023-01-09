@@ -50,3 +50,51 @@ When we call the `make_sound` method on a `DogCat` instance, it uses the impleme
 Multiple inheritance can be a powerful tool, but it can also make your code more complex and harder to understand, so you should use it with caution.
 
 ### MRO - Method Resolution Order
+
+In Python, when a class inherits from multiple superclasses, it can be ambiguous which version of an attribute or method to use. To resolve this ambiguity, Python uses a mechanism called the **method resolution order (MRO)**.
+
+The MRO is the order in which a class's attributes and methods are inherited from its `superclasses`. It determines which implementation of an attribute or method will be used when an instance of the class calls it.
+
+Here's an example of how the MRO works in Python:
+
+```python
+from typing import Type
+
+class A:
+    def foo(self) -> None:
+        print("A.foo")
+
+class B(A):
+    def foo(self) -> None:
+        print("B.foo")
+
+class C(A):
+    def foo(self) -> None:
+        print("C.foo")
+
+class D(B, C):
+    pass
+
+d = D()
+d.foo()  # prints "B.foo"
+
+```
+
+In the example above, the `D` class inherits from both the `B` and `C` classes. The `foo` method is defined in both the `B` and `C` classes, so it is ambiguous which one to use.
+
+To determine the `MRO` for the `D` class, Python follows these steps:
+
+1. It starts with the `D` class and adds it to the MRO list.
+2. It looks at the first superclass of `D`, which is `B`. It adds `B` to the MRO list, and then repeats this process with `B's` superclass, `A`.
+3. It looks at the second superclass of `D`, which is `C`. It adds `C` to the MRO list, and then repeats this process with `C's` superclass, `A`.
+4. It removes any duplicate classes from the MRO list. In this case, it removes the second instance of `A`, since it has already been added to the list.
+
+The resulting MRO for the `D` class is `[D, B, A, C]`. This means that when we call the foo method on an instance of `D`, it will use the implementation of the foo method that is defined in the `B` class.
+
+You can use the `__mro__` attribute of a class to see its MRO:
+
+```python
+print(D.__mro__)  
+# prints (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.A'>, <class '__main__.C'>)
+
+```

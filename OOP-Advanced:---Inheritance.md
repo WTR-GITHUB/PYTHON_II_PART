@@ -183,6 +183,24 @@ In this example, the `Car` class inherits from the `Vehicle` class and **overrid
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#oop-advanced--inheritance) 
 
+* Task Nr.2:
+ 
+  Create a Bus, Taxi, Train child classes that inherits from the Vehicle class.
+  Implement at least five methods in a superclass what would describe those vehicles.
+  The default fare charge of any vehicle is seating capacity * 100 . If Vehicle is Bus 
+  instance, we need to add an extra 10% on full fare as a maintenance charge.
+
+* Task Nr.3:
+
+  Define the Animal, Mammal, and Primate classes.
+  Animal should have a name attribute and a make_noise() method.
+  Mammal should have a warm_blooded attribute and a give_birth() method.
+  Primate should have an opposable_thumbs attribute and a swing() method.
+  Test the classes by creating a Chimpanzee and making it do various things :) 🐒 
+
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#task-nr3) 
+
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

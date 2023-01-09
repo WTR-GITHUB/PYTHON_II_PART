@@ -181,7 +181,7 @@ In this example, the `Car` class inherits from the `Vehicle` class and **overrid
   * An __init__ method that initializes the side_length attribute and calls the __init__ method of the Rectangle class to initialize the name, sides, 
   width, and height attributes.
 
-  Answer: 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#oop-advanced--inheritance) 
 
 
 ## 🌐  Extra reading (or watching 📺 ):

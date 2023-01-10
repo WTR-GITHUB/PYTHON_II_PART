@@ -123,8 +123,10 @@ class Person:
     
     def get_name(self) -> str:
         return self.name
+
     def get_age(self) -> int:
         return self.age
+
     def __str__(self) -> str:
         return f"{self.name} is {self.age} years old."
     
@@ -136,8 +138,10 @@ class Student(Person):
 
     def get_student_id(self) -> int:
         return self.student_id
+
     def get_major(self) -> str:
         return self.major
+
     def __str__(self) -> str:
         return f"{super().__str__()} is a student of {self.major} major. Student id: {self.student_id}."
 
@@ -149,8 +153,10 @@ class GraduateStudent(Student):
 
     def get_program(self) -> str:
         return self.program
+
     def get_advisor(self) -> str:
         return self.advisor
+
     def __str__(self) -> str:
         return f"{super().__str__()} program: {self.program} and advisor: {self.advisor}."
 

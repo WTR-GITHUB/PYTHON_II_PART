@@ -65,3 +65,29 @@ chimpanzee.give_birth()
 chimpanzee.swing()
 
 ```
+
+## OOP Advanced: method chaining & super function
+
+### Task Nr. 1
+
+```python
+class Person:
+    def __init__(self, name: str, age: int) -> None:
+        self.name = name
+        self.age = age
+
+    def set_name(self, name: str) -> 'Person':
+        self.name = name
+        return self
+
+    def set_age(self, age: int) -> 'Person':
+        self.age = age
+        return self
+
+p = Person("John", 25)
+p.set_name("Jhon Doe").set_age(30)
+
+print(p.name) # output: Jhon Doe
+print(p.age) # output: 30
+
+```

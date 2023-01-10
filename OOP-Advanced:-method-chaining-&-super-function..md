@@ -26,6 +26,44 @@ print(my_string.value) # output: "HELLO!"
 In this example, we have a `MyString` class with two methods: `add_exclamation` and `make_upper`. Both of these methods return `self`, which allows us to chain the calls together. The `add_exclamation` method modifies the value of the `MyString` object by adding an exclamation point to it, and the `make_upper` method modifies the value by converting it to upper case.
 
 We create an instance of `MyString` with the value `hello`, and then call `add_exclamation` and `make_upper` on it in one statement. This results in the value of the `MyString` object being modified to `HELLO!`.
+Another example:
+
+```python
+class Person:
+    def __init__(self, name: str, age: int) -> None:
+        self.name = name
+        self.age = age
+        self.address = None
+    
+    def set_name(self, name: str) -> 'Person':
+        self.name = name
+        return self
+
+    def set_age(self, age: int) -> 'Person':
+        self.age = age
+        return self
+    
+    def set_address(self, address: str) -> 'Person':
+        self.address = address
+        return self
+    
+    def __str__(self) -> str:
+        return f'{self.name}, {self.age}, {self.address}'
+
+p = Person("John", 25)
+p.set_address("123 Main St").set_age(26)
+
+print(p) # output: "John, 26, 123 Main St"
+
+```
+In this example, we have a `Person` class that has three methods: `set_name`, `set_age`, and `set_address`. Each of these methods sets a different attribute of the `Person` object and return the **instance itself**. In the last lines of code, we can see how to chain the method calls by using the `return` statement.
+
+We create an instance of `Person` with the name `John` and the age `25`, then we chain two method calls `set_address` and `set_age` in a single statement, which set the address attribute to `123 Main St` and the age attribute to `26`, respectively.
+
+Notice the `__str__` (upcoming lecture - magic methods) method that allows us to print the person object in a readable format, it's optional but it makes it easy to see the state of the class.
+
+This example demonstrate how we can use_ method chaining_ to set multiple attributes of an object in a single, concise statement, making the code more readable and easy to understand.
+
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

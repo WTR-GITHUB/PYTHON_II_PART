@@ -131,28 +131,13 @@ The `super()` function is particularly useful when working with_ multiple inheri
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 
-* Task Nr.1:  
+* Task Nr.1:
+  
+  Create a class `Person` that has two methods: `set_name` and `set_age`, which set the name and age attributes of the class, respectively.
+  Modify these methods to return `self`, so that the calls can be chained together.
+  
 
-  Define a Shape class with the following attributes and methods:
-
-  * A name attribute, which is a string that represents the name of the shape.
-  * A sides attribute, which is an integer that represents the number of sides of the shape.
-  * An area method, which returns the area of the shape.
-
-  Then, define a Rectangle class that inherits from the Shape class and has the following attributes and methods:
-
-  * A width attribute, which is a float that represents the width of the rectangle.
-  * A height attribute, which is a float that represents the height of the rectangle.
-  * An __init__ method that initializes the name, sides, width, and height attributes.
-  * An area method that overrides the area method of the Shape class and returns the area of the rectangle.
-
-  Finally, define a Square class that inherits from the Rectangle class and has the following attributes and methods:
-
-  * A side_length attribute, which is a float that represents the length of the sides of the square.
-  * An __init__ method that initializes the side_length attribute and calls the __init__ method of the Rectangle class to initialize the name, sides, 
-  width, and height attributes.
-
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#oop-advanced--inheritance) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
 
 * Task Nr.2:
  

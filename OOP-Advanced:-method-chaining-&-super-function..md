@@ -131,7 +131,7 @@ The `super()` function is particularly useful when working with_ multiple inheri
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 
-* Task Nr.1:
+* **Task Nr.1**:
   
   Create a class `Person` that has two methods: `set_name` and `set_age`, which set the name and age attributes of the class, respectively.
   Modify these methods to return `self`, so that the calls can be chained together.
@@ -139,7 +139,7 @@ The `super()` function is particularly useful when working with_ multiple inheri
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
 
-* Task Nr.2:
+* **Task Nr.2**:
 
   Create a class Currency that has the following properties:
 
@@ -158,7 +158,7 @@ The `super()` function is particularly useful when working with_ multiple inheri
 
      Each method should return the instance of the class to allow method chaining.
 
-* Task Nr.3:
+* **Task Nr.3**:
 
   - Create a class Animal with a method speak that prints "Animal can't speak"
 
@@ -169,7 +169,7 @@ The `super()` function is particularly useful when working with_ multiple inheri
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3) 
 
-* Task Nr.4: 
+* **Task Nr.4**: 
 
   Create a class Person that has the following properties:
 

@@ -144,8 +144,8 @@ The `super()` function is particularly useful when working with_ multiple inheri
   Create a class Currency that has the following properties:
 
     - code: A 3-letter currency code (e.g. "USD", "EUR", "GBP")
-    - amount: The amount of currency
-    - exchange_rate: The exchange rate to convert the currency to another one.
+    - amount
+    - exchange_rate
 
   Create the following methods:
 
@@ -160,13 +160,14 @@ The `super()` function is particularly useful when working with_ multiple inheri
 
 * Task Nr.3:
 
-  - Define the Animal, Mammal, and Primate classes.
-  - Animal should have a name attribute and a make_noise() method.
-  - Mammal should have a warm_blooded attribute and a give_birth() method.
-  - Primate should have an opposable_thumbs attribute and a swing() method.
-  - Test the classes by creating a Chimpanzee and making it do various things :) 🐒 
+  - Create a class Animal with a method speak that prints "Animal can't speak"
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers#task-nr3) 
+  - Create a class Dogs that inherits from Animals and overrides the speak method to print "Woof woof"
+
+  - Create a class Cats that inherits from Animals and overrides the speak method. But in this new method call the speak method from the Animals class 
+    using the super() function, after that print "Meow meow"
+
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3) 
 
 * Task Nr.4: 
 

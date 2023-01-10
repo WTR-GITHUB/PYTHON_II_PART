@@ -140,11 +140,23 @@ The `super()` function is particularly useful when working with_ multiple inheri
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
 
 * Task Nr.2:
- 
-  - Create a Bus, Taxi, Train child classes that inherits from the Vehicle class.
-  - Implement at least five methods in a superclass what would describe those vehicles.
-  - The default fare charge of any vehicle is seating capacity * 100 . If Vehicle is Bus 
-  - instance, we need to add an extra 10% on full fare as a maintenance charge.
+
+  Create a class Currency that has the following properties:
+
+    - code: A 3-letter currency code (e.g. "USD", "EUR", "GBP")
+    - amount: The amount of currency
+    - exchange_rate: The exchange rate to convert the currency to another one.
+
+  Create the following methods:
+
+    - set_code: A method that accepts a 3-letter currency code and sets the code attribute of the object
+    - set_amount: A method that accepts a float number and sets the amount attribute of the object
+    - set_exchange_rate: A method that accepts a float number and sets the exchange_rate attribute of the object
+    - convert: A method that accepts a 3-letter currency code and a float number representing the new exchange rate, and calculates the new amount of 
+      currency based on the exchange rate.
+    - __str__: A method that returns a string representation of the Currency object in the following format "code: amount"
+
+     Each method should return the instance of the class to allow method chaining.
 
 * Task Nr.3:
 

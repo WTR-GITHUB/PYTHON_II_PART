@@ -91,3 +91,24 @@ print(p.name) # output: Jhon Doe
 print(p.age) # output: 30
 
 ```
+### Task Nr. 3:
+
+```python
+class Animals:
+    def speak(self) -> None:
+        print("Animals can't speak")
+    
+class Dogs(Animals):
+    def speak(self) -> None:
+        print("Woof woof")
+
+class Cats(Animals):
+    def speak(self) -> None:
+        super().speak()
+        print("Meow meow")
+        
+dog = Dogs()
+dog.speak() # Output: "Woof woof"
+cat = Cats()
+cat.speak() # Output: "Animals can't speak" and "Meow meow"
+```

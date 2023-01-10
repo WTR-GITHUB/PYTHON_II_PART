@@ -64,6 +64,69 @@ Notice the `__str__` (upcoming lecture - magic methods) method that allows us to
 
 This example demonstrate how we can use_ method chaining_ to set multiple attributes of an object in a single, concise statement, making the code more readable and easy to understand.
 
+## super() function
+
+In Python, the `super()` function is used **to call a method from a parent class**. This is particularly useful in cases where you are creating a subclass and want to override a method of the parent class, but still want to use the functionality of the original method in some way.
+
+Here is an example of using the super() function to call a method from a parent class:
+
+```python
+class Parent:
+    def greet(self) -> None:
+        print("Hello from Parent class")
+
+class Child(Parent):
+    def greet(self) -> None:
+        super().greet()
+        print("Hello from Child class")
+
+c = Child()
+c.greet()
+# output: 
+# "Hello from Parent class"
+# "Hello from Child class"
+```
+
+In this example, we have a `Parent` class with a `greet` method that simply prints "Hello from Parent class". The `Child` class inherits from the `Parent` class, and also has its own implementation of the `greet` method.
+
+The `Child` class's greet method uses the `super()` function to call the `greet` method of its parent class, `Parent`. It then prints "Hello from Child class" after that.
+
+So, the `super()` function here is used to call the `greet` method of the parent class, allowing the child class to inherit the functionality of the parent class's method, and also add its own functionality.
+
+Here's another example:
+
+```python
+class A:
+    def __init__(self, value: int) -> None:
+        self.value = value
+        
+    def increment(self) -> None:
+        self.value += 1
+
+class B(A):
+    def __init__(self, value: int, step: int) -> None:
+        super().__init__(value)
+        self.step = step
+        
+    def increment(self) -> None:
+        super().increment()
+        self.value += self.step
+
+b = B(5, 3)
+b.increment()
+print(b.value) # output: 8
+
+```
+In this example, we have two classes: `A` and `B`. `A` has an `__init__` method, which accepts a value parameter and assigns it to the value attribute. It also has a increment method which increases the value attribute by one.
+
+`B` is a subclass of `A`, it inherits `A's` functionality and also has its own functionality. `B` has an additional step attribute, that it takes as a parameter in its `init` method, it also has its own implementation of increment method that calls the increment method of the superclass using `super().increment()` and increases the value attribute by step.
+
+When we create an instance of `B` and call the increment method, it first calls the parent's increment method which increases the value attribute by one and then increments it by step.
+
+It's important to note that when the `super()` method is called, it returns a temporary object of the superclass, which allows you to call its methods.
+
+The `super()` function is particularly useful when working with_ multiple inheritance_, and helps to avoid naming conflicts between methods in different parent classes.
+
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

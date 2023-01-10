@@ -171,18 +171,51 @@ The `super()` function is particularly useful when working with_ multiple inheri
 
 * Task Nr.4: 
 
-  Lets say we have classes: A, B and C:
-    - Modify the program to add a method say_hello to class A that prints "Hello from class A".
-    - Modify the program to add a method say_hello to class B that prints "Hello from class B".
-    - Modify the program to add a method say_hello to class C that prints "Hello from class C".
-    - Create an object of class C and call the say_hello method on it. What is the output?
-    - Modify the program so that class B's say_hello method calls the say_hello method of class A using the super() function.
-    - Create an object of class C and call the say_hello method on it again. What is the output now?
+  Create a class Person that has the following properties:
 
+   - name: A string representing the person's name
+   - age: An integer representing the person's age
+
+  Create the following methods:
+
+   - get_name: A method that returns the person's name
+   - get_age: A method that returns the person's age
+   - __str__: A method that returns a string representation of the Person object in the following format: "name is age years old."
+
+  Create a class Student that inherits from Person and adds the following properties:
+
+   - student_id: An integer representing the student's id
+   - major: A string representing the student's major
+
+  Create the following methods:
+
+   - get_student_id: A method that returns the student's id
+   - get_major: A method that returns the student's major
+   - __str__: A method that returns a string representation of the Student object in the following format: "name is a age years old student of major 
+     major. Student id: student_id"
+
+  Create a class GraduateStudent that inherits from Student and adds the following properties:
+
+   - program: A string representing the graduate student's program
+   - advisor: A string representing the graduate student's advisor
+
+  Create the following methods:
+
+   - get_program: A method that returns the graduate student's program
+   - get_advisor: A method that returns the graduate student's advisor
+   - __str__: A method that returns a string representation of the GraduateStudent object in the following format: "name is a age years old graduate 
+     student of major major. Student id: student_id. program: program and advisor: advisor."
+   - __init__: This method should take in the same parameters as Person's init, but also take in additional parameters student_id, major, program, 
+     advisor and call the super's class init method with Person's parameters and set the additional parameters.
+
+   Show examples with working code. 
+   
+ [Hint](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4) 
 
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 * [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [PyNative](https://pynative.com/python-inheritance/)
+* [QuanticDev - method chaining](https://quanticdev.com/articles/method-chaining/)
+* [RealPhyton - super() function](https://quanticdev.com/articles/method-chaining/)
 ***

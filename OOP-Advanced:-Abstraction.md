@@ -1,17 +1,18 @@
 ## Abstract classes and methods
 
-In object-oriented programming, abstraction is a principle that helps to separate the implementation details of a class from its interface, or the way that other classes interact with it. This allows for greater flexibility and reusability of code, as the implementation of a class can be changed without affecting other parts of the system.
+In object-oriented programming, **abstraction** is a principle that helps to separate the implementation details of a class from its **interface** (look bellow ⏬ ), or the way that other classes interact with it. _This allows for greater flexibility and reusability of code_, as the implementation of a class can be changed without affecting other parts of the system.
 
-In Python, abstraction is achieved through the use of abstract classes and abstract methods. An abstract class is a class that is defined but not meant to be instantiated. Instead, it serves as a template for other classes to inherit from. Abstract classes can define abstract methods, which are methods that are defined in the abstract class but have no implementation. Subclasses of the abstract class are required to provide an implementation for these methods.
+**In Python, abstraction is achieved through the use of abstract classes and abstract methods**. An `abstract class` is a class that is defined but **not meant to be instantiated**. Instead, it serves as a **template** for other classes to **inherit from**. _Abstract classes can define abstract methods, which are methods that are defined in the abstract class but have no implementation_. Subclasses of the abstract class are **required to provide** an implementation for these methods.
 
 Here is an example of an abstract class in Python:
 
 ```python
 from abc import ABC, abstractmethod
+from typing import Union
 
 class Shape(ABC):
     @abstractmethod
-    def area(self) -> None:
+    def area(self) -> int:
         pass
 
 class Rectangle(Shape):
@@ -30,11 +31,11 @@ class Circle(Shape):
         return 3.14 * self.radius ** 2
 
 ```
-In the above example, Shape is an abstract class that defines an abstract method area(). The Rectangle and Circle classes are subclasses of Shape and provide implementations for the area() method.
+In the above example, `Shape` is an `abstract class` that defines an abstract method `area()`. The `Rectangle` and `Circle` classes are subclasses of `Shape` and provide implementations for the `area()` method.
 
-It's important to notice that ABC and abstractmethod are part of python built-in library abc, This library provided python with abstract base class(ABC) and decorator abstractmethod which needs to be imported and used, when implementing abstract classes.
+It's important to notice that `ABC` and `abstractmethod` are part of python built-in library `abc`, This library provided python with `abstract base class(ABC)` and decorator (check another lesson, TBA) `abstractmethod` which needs to be imported and used, when implementing `abstract` classes.
 
-It's also important to mention that it's not allowed to create instance of an abstract class, If you try to create an instance of an abstract class, Python will raise a TypeError exception.
+It's also important to mention **that it's not allowed to create instance of an abstract class**, If you try to create an instance of an abstract class, Python **will raise** a `TypeError` exception.
 
 In addition to the above example, one more example is:
 
@@ -54,7 +55,7 @@ class Bike(Vehicle):
     def no_of_wheels(self) -> int:
         return 2
 ```
-In this example, Vehicle is an abstract class that defines an abstract method no_of_wheels(), and Car,Bike are concrete subclasses, which provides an implementation for no_of_wheels method.
+In this example, `Vehicle` is an abstract class that defines an abstract method `no_of_wheels()`, and `Car`, `Bike` are concrete subclasses, which provides an implementation for `no_of_wheels` method.
 
 One more example about payment systems (more complex: abstraction, inheritance):
 
@@ -98,19 +99,19 @@ class PayPalPayment(Payment):
         return f"Payment of {amount} processed with PayPal account {self.email}. Transaction ID: {transaction_id}"
 
 ```
-In this example, there's an abstract class Payment, which defines two abstract methods get_transactions() and process_payment(). The get_transactions() method is used to get the list of transactions made through this payment method, and the process_payment() method is used to process a payment for a certain amount.
+In this example, there's an abstract class `Payment`, which defines two abstract methods `get_transactions()` and `process_payment()`.
 
-CreditCardPayment and PayPalPayment are subclasses of Payment, which provide concrete implementations of the two abstract methods defined in the parent class.
+`CreditCardPayment` and `PayPalPayment` are subclasses of `Payment`, which provide concrete implementations of the two abstract methods defined in the parent class.
 
-Each of the subclasses has their own way of processing payments and generating transaction ID. The CreditCardPayment class processes payments made through credit card and generates transaction ID by using a unique combination of card number and amount. Similarly, the PayPalPayment class processes payments made through PayPal and generates transaction ID by using a unique combination of PayPal account email and amount.
+Each of the subclasses has their own way of processing payments and generating transaction ID.
 
-Each class also has an instance variable transactions which contains a list of transactions that have been made through this payment method. The get_transactions() method of each class returns the list of transactions made through this payment method.
+Each class also has an instance variable transactions which contains a list of transactions that have been made through this payment method. The `get_transactions()` method of each class returns the list of transactions made through this payment method.
 
-This example demonstrates the use of abstraction to separate the implementation details of the different payment methods from their common interface, defined by the Payment class. The Payment class provides a template for the subclasses to follow, and the subclasses provide concrete implementations of the abstract methods.
+This example demonstrates _the use of abstraction to separate the implementation details of the different payment methods from their common interface_, defined by the `Payment` class. _The Payment class provides a template for the subclasses to follow, and the subclasses provide concrete implementations of the abstract methods._
 
-It's best practice to keep all the abstract methods in a separate abstract class, this way you can ensure that the common properties and methods for a group of similar classes, will be written and managed in a single place.
+**It's best practice to keep all the abstract methods in a separate abstract class**, this way you can ensure that the common properties and methods for a group of similar classes, will be written and managed in a single place.
 
-In a nutshell, the abstraction principle in python allows for the separation of implementation details from the interface, and abstract classes and methods provide a way to define this separation by providing a template for subclasses to follow, this way subclasses are forced to implement certain methods which are defined in the abstract class.
+In a nutshell - _the abstraction principle in python allows for the separation of implementation details from the interface, and abstract classes and methods provide a way to define this separation by providing a template for subclasses to follow, this way subclasses are forced to implement certain methods which are defined in the abstract class_.
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

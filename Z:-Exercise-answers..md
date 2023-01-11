@@ -161,3 +161,40 @@ class GraduateStudent(Student):
         return f"{super().__str__()} program: {self.program} and advisor: {self.advisor}."
 
 ```
+
+## OOP Advanced: Abstraction
+
+### Task Nr. 1:
+
+```python3
+from abc import ABC, abstractmethod
+
+class Animals(ABC):
+    def __init__(self, name: str):
+        self.name = name
+
+    @abstractmethod
+    def speak(self)-> str:
+        pass
+
+    def get_name(self)-> str:
+        return self.name
+
+class Dog(Animals):
+    def speak(self)-> str:
+        return f"Dog says Woof!"
+
+class Cat(Animals):
+    def speak(self)-> str:
+        return f"Cat says Meow!"
+
+dog = Dog("Bob")
+cat = Cat("Tom")
+
+print(dog.speak())
+print(dog.get_name())
+print(cat.speak())
+print(cat.get_name())
+
+```
+

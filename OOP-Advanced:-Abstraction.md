@@ -113,6 +113,79 @@ This example demonstrates _the use of abstraction to separate the implementation
 
 In a nutshell - _the abstraction principle in python allows for the separation of implementation details from the interface, and abstract classes and methods provide a way to define this separation by providing a template for subclasses to follow, this way subclasses are forced to implement certain methods which are defined in the abstract class_.
 
+## Abstract class vs interface
+As we already know, an abstract class is a class that contains one or more abstract methods, which are methods** that have a definition but no implementation**. A concrete subclass of an abstract class is required to provide an implementation for all of its abstract methods, before it can be instantiated. An abstract class can also define concrete methods, which have both a definition and an implementation.
+
+An **interface**, on the other hand, **is a collection of abstract methods that a class can implement**. In Python, there is no built-in concept of an interface, but one can be implemented using an abstract _base class (ABC)_. An abstract base class is a class that contains only abstract methods, and it is not meant to be instantiated. Instead, other classes are expected to inherit from it and provide implementations for its abstract methods.
+
+Here's an example of an abstract class:
+
+```python3
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self) -> float:
+        pass
+    
+    def perimeter(self) -> float:
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, width: float, height: float):
+        self.width = width
+        self.height = height
+    
+    def area(self) -> float:
+        return self.width * self.height
+    
+    def perimeter(self) -> float:
+        return 2 * (self.width + self.height)
+
+rect = Rectangle(3, 4)
+print(rect.area()) # 12
+print(rect.perimeter()) # 14
+ 
+```
+
+and interface: 
+
+```python3
+from abc import ABC, abstractmethod
+
+class IAnimal(ABC):
+
+    @abstractmethod
+    def move(self) -> str:
+        pass
+
+    @abstractmethod
+    def eat(self) -> str:
+        pass
+
+class Dog(IAnimals):
+    def move(self) -> str:
+        return 'Dog can walk and run'
+
+    def eat(self) -> str:
+        return 'Dog eat meat'
+
+class Fish(IAnimals):
+    def move(self) -> str:
+        return 'Fish swim'
+
+    def eat(self) -> str:
+        return 'Fish eat small insects or plants'
+
+dog = Dog()
+print(dog.move())
+print(dog.eat())
+
+fish = Fish()
+print(fish.move())
+print(fish.eat())
+
+```
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 
@@ -130,81 +203,32 @@ In a nutshell - _the abstraction principle in python allows for the separation o
 
 * **Task Nr.2**:
 
-  Create a class Currency that has the following properties:
+  Create an abstract class `Money` which takes `currency` and `value` as input and initializes it. A class must have these methods:
+   - `get_value` method which returns the value of the money.
+   - `get_currency` method which returns the currency of the money.
+   - `convert_to_currency` abstract method, which takes target currency and conversion rate as input and converts the value of the money to the target 
+      currency.
 
-    - code: A 3-letter currency code (e.g. "USD", "EUR", "GBP")
-    - amount
-    - exchange_rate
+   Now create two subclasses of `Money`: `Cash` and `Card`. The `Cash` class should take the denomination of the cash as input in the constructor, and 
+   should implement the `convert_to_currency` method. The `Card` class should take the credit limit of the card as input in the constructor, and should 
+   implement the `convert_to_currency` method using the conversion rate to convert the value of the card to the target currency.
 
-  Create the following methods:
-
-    - set_code: A method that accepts a 3-letter currency code and sets the code attribute of the object
-    - set_amount: A method that accepts a float number and sets the amount attribute of the object
-    - set_exchange_rate: A method that accepts a float number and sets the exchange_rate attribute of the object
-    - convert: A method that accepts a 3-letter currency code and a float number representing the new exchange rate, and calculates the new amount of 
-      currency based on the exchange rate.
-    - __str__: A method that returns a string representation of the Currency object in the following format "code: amount"
-
-     Each method should return the instance of the class to allow method chaining.
+   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2) 
 
 * **Task Nr.3**:
 
-  - Create a class Animal with a method speak that prints "Animal can't speak"
-
-  - Create a class Dogs that inherits from Animals and overrides the speak method to print "Woof woof"
-
-  - Create a class Cats that inherits from Animals and overrides the speak method. But in this new method call the speak method from the Animals class 
-    using the super() function, after that print "Meow meow"
-
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3) 
+  As per previous examples please create an example of your own. The abstract class should contain five (3 abstract and 2 normal ) methods. Create 2 
+  subclasses that would inherit abstract class. 
 
 * **Task Nr.4**: 
-
-  Create a class Person that has the following properties:
-
-   - name: A string representing the person's name
-   - age: An integer representing the person's age
-
-  Create the following methods:
-
-   - get_name: A method that returns the person's name
-   - get_age: A method that returns the person's age
-   - __str__: A method that returns a string representation of the Person object in the following format: "name is age years old."
-
-  Create a class Student that inherits from Person and adds the following properties:
-
-   - student_id: An integer representing the student's id
-   - major: A string representing the student's major
-
-  Create the following methods:
-
-   - get_student_id: A method that returns the student's id
-   - get_major: A method that returns the student's major
-   - __str__: A method that returns a string representation of the Student object in the following format: "name is a age years old student of major 
-     major. Student id: student_id"
-
-  Create a class GraduateStudent that inherits from Student and adds the following properties:
-
-   - program: A string representing the graduate student's program
-   - advisor: A string representing the graduate student's advisor
-
-  Create the following methods:
-
-   - get_program: A method that returns the graduate student's program
-   - get_advisor: A method that returns the graduate student's advisor
-   - __str__: A method that returns a string representation of the GraduateStudent object in the following format: "name is a age years old graduate 
-     student of major major. Student id: student_id. program: program and advisor: advisor."
-   - __init__: This method should take in the same parameters as Person's init, but also take in additional parameters student_id, major, program, 
-     advisor and call the super's class init method with Person's parameters and set the additional parameters.
-
-   Show examples with working code. 
-   
- [Hint](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4) 
-
+  Create a Calculator program : it should contain abstract class with methods (abstract and not), base class, `geometry`, `arithmetic` calculator 
+  classes. 
+  Every subclass should have at least 5 methods to make some meaningful calculus operations. 
+  
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 * [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [QuanticDev - method chaining](https://quanticdev.com/articles/method-chaining/)
-* [RealPhyton - super() function](https://quanticdev.com/articles/method-chaining/)
+* [Official Documentation - Abstract Base Classes](https://docs.python.org/3/library/abc.html)
+* [PythonTutorial](https://www.pythontutorial.net/python-oop/python-abstract-class/)
 ***

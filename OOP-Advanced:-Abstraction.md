@@ -118,11 +118,15 @@ In a nutshell - _the abstraction principle in python allows for the separation o
 
 * **Task Nr.1**:
   
-  Create a class `Person` that has two methods: `set_name` and `set_age`, which set the name and age attributes of the class, respectively.
-  Modify these methods to return `self`, so that the calls can be chained together.
+  Create an abstract class Animal with which takes name of animal as an input and initialize it. 
+  The create `speak` abstract method, to be overridden by subclasses.
+  And `get_name` method which returns name of the animal.
+
+  Now create two subclasses of Animals: `Dog` and `Cat` which overrides the `speak` method, and provide the implementation which returns a string "Dog 
+  says Woof!" and "Cat says Meow!" respectively.
   
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-1) 
 
 * **Task Nr.2**:
 

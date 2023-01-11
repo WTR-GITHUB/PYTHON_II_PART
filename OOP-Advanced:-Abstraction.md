@@ -56,6 +56,58 @@ class Bike(Vehicle):
 ```
 In this example, Vehicle is an abstract class that defines an abstract method no_of_wheels(), and Car,Bike are concrete subclasses, which provides an implementation for no_of_wheels method.
 
+One more example about payment systems (more complex: abstraction, inheritance):
+
+```python
+from abc import ABC, abstractmethod
+from typing import List
+
+class Payment(ABC):
+    @abstractmethod
+    def get_transactions(self) -> List[str]:
+        pass
+
+    @abstractmethod
+    def process_payment(self, amount: float) -> str:
+        pass
+
+class CreditCardPayment(Payment):
+    def __init__(self, card_number: str):
+        self.card_number = card_number
+        self.transactions = []
+
+    def get_transactions(self) -> List[str]:
+        return self.transactions
+
+    def process_payment(self, amount: float) -> str:
+        transaction_id = "CC" + str(hash(str(amount) + self.card_number))
+        self.transactions.append(transaction_id)
+        return f"Payment of {amount} processed with card number {self.card_number}. Transaction ID: {transaction_id}"
+
+class PayPalPayment(Payment):
+    def __init__(self, email: str):
+        self.email = email
+        self.transactions = []
+
+    def get_transactions(self) -> List[str]:
+        return self.transactions
+
+    def process_payment(self, amount: float) -> str:
+        transaction_id = "PP" + str(hash(str(amount) + self.email))
+        self.transactions.append(transaction_id)
+        return f"Payment of {amount} processed with PayPal account {self.email}. Transaction ID: {transaction_id}"
+
+```
+In this example, there's an abstract class Payment, which defines two abstract methods get_transactions() and process_payment(). The get_transactions() method is used to get the list of transactions made through this payment method, and the process_payment() method is used to process a payment for a certain amount.
+
+CreditCardPayment and PayPalPayment are subclasses of Payment, which provide concrete implementations of the two abstract methods defined in the parent class.
+
+Each of the subclasses has their own way of processing payments and generating transaction ID. The CreditCardPayment class processes payments made through credit card and generates transaction ID by using a unique combination of card number and amount. Similarly, the PayPalPayment class processes payments made through PayPal and generates transaction ID by using a unique combination of PayPal account email and amount.
+
+Each class also has an instance variable transactions which contains a list of transactions that have been made through this payment method. The get_transactions() method of each class returns the list of transactions made through this payment method.
+
+This example demonstrates the use of abstraction to separate the implementation details of the different payment methods from their common interface, defined by the Payment class. The Payment class provides a template for the subclasses to follow, and the subclasses provide concrete implementations of the abstract methods.
+
 It's best practice to keep all the abstract methods in a separate abstract class, this way you can ensure that the common properties and methods for a group of similar classes, will be written and managed in a single place.
 
 In a nutshell, the abstraction principle in python allows for the separation of implementation details from the interface, and abstract classes and methods provide a way to define this separation by providing a template for subclasses to follow, this way subclasses are forced to implement certain methods which are defined in the abstract class.

@@ -148,9 +148,49 @@ print(len(ml)) # 5
 
 ```
 
-### `__len__` :
-
 It's worth to mention that the `__len__` method **should always return a non-negative integer**, if it returns a negative or non-integer value, a `TypeError` will be raised.
+
+
+### `__bool__` :
+
+The `__bool__` is used to define the behavior of the built-in `bool()` function and the _boolean value_ of a custom object. **It should return True if the object is considered "truthy" and False if it is "falsy".**
+
+Here is an example of how to use the `__bool__` method to define the `boolea`n value of a custom object called `MyNumber`:
+
+```python
+class MyNumber:
+    def __init__(self, num: int):
+        self.num = num
+
+    def __bool__(self):
+        return bool(self.num)
+
+mn = MyNumber(5)
+print(bool(mn)) # True
+mn2 = MyNumber(0)
+print(bool(mn2)) # False
+
+```
+It's worth to mention that if the `__bool__` method is not defined, Python will use the `__len__` method to determine the `boolean value` of the object. If `__len__` **returns 0**, the object is considered to be `False`, otherwise, it is considered to be `True`.
+
+```python
+class MyNumber:
+    def __init__(self, num: int):
+        self.num = num
+
+    def __bool__(self):
+        return bool(self.num)
+    
+    def __len__(self) -> int:
+        return 1
+
+mn = MyNumber(5)
+print(bool(mn)) # True
+mn2 = MyNumber(0)
+print(bool(mn2)) # False
+print(len(mn)) # 1
+
+```
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

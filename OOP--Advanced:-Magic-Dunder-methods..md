@@ -192,6 +192,37 @@ print(len(mn)) # 1
 
 ```
 
+### `__getitem__` :
+
+The `__getitem__` is used to define the behavior of the square bracket notation `[]` for a custom object. It is called when the `square brackets []` are used to **access an element of the object and should return the element at the specified index or key**.
+
+Here is an example of how to use the `__getitem__` method to define the element access for a custom object called `MyDict`:
+
+```python
+class MyDict:
+    def __init__(self, data: dict):
+        self.data = data
+
+    def __getitem__(self, key: str):
+        return self.data[key]
+
+md = MyDict({'a':1, 'b':2})
+print(md['a']) # 1
+
+```
+It's worth to mention that if the `__getitem__` method raises a `KeyError` when the **key does not exist in the object**, it's good practice to implement the `__missing__` method for the class that inherits from the built-in `dict` class. This method is called by the `dict` class **when a key is not found in the dictionary and should return the default value for the key**.
+
+```python3
+class MyDict(dict):
+    def __missing__(self, key: str):
+        return 'default'
+    
+md = MyDict({'a':1, 'b':2})
+print(md['a']) # 1
+print(md['c']) # default
+
+```
+
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 

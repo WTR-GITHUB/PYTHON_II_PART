@@ -228,89 +228,50 @@ print(md['c']) # default
 
 * **Task Nr.1**:
   
-  Create a class `Person` that has two methods: `set_name` and `set_age`, which set the name and age attributes of the class, respectively.
-  Modify these methods to return `self`, so that the calls can be chained together.
+  Create a class called `Product` that takes a `name` and `price` as parameters and has `__str__` and `__repr__` methods defined.
+
+  - The `__str__` method should return a string in the format "Product: name, Price: price"
+  - The `__repr__` method should return a string in the format "Product('name', price)"
   
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-2) 
 
 * **Task Nr.2**:
 
-  Create a class Currency that has the following properties:
+  Create a class called `MyQueue` that has `__bool__`, `__repr__` and `__len__` methods defined.
 
-    - code: A 3-letter currency code (e.g. "USD", "EUR", "GBP")
-    - amount
-    - exchange_rate
+  - The `__bool__` method should return `True` if the queue has any items and `False` if it is empty.
+  - The `__repr__` method should return a string in the format `MyQueue(items)` where items is the list of items in the queue.
+  - The `__len__` method should return the number of items in the queue.
 
-  Create the following methods:
-
-    - set_code: A method that accepts a 3-letter currency code and sets the code attribute of the object
-    - set_amount: A method that accepts a float number and sets the amount attribute of the object
-    - set_exchange_rate: A method that accepts a float number and sets the exchange_rate attribute of the object
-    - convert: A method that accepts a 3-letter currency code and a float number representing the new exchange rate, and calculates the new amount of 
-      currency based on the exchange rate.
-    - __str__: A method that returns a string representation of the Currency object in the following format "code: amount"
-
-     Each method should return the instance of the class to allow method chaining.
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-1)
 
 * **Task Nr.3**:
 
-  - Create a class Animal with a method speak that prints "Animal can't speak"
+  Create a class called `Book` that takes `title`, `author`, and `ISBN` as parameters. The class should have `__bool__`, `__repr__`, `__len__`, 
+  `__str__`, `__eq__`, `__add__`, and `__getitem__` methods defined.
 
-  - Create a class Dogs that inherits from Animals and overrides the speak method to print "Woof woof"
-
-  - Create a class Cats that inherits from Animals and overrides the speak method. But in this new method call the speak method from the Animals class 
-    using the super() function, after that print "Meow meow"
+  - The `__bool__` method should return True if the book has a title, False otherwise.
+  - The `__repr__` method should return a string in the format "Book(title, author, ISBN)" where title, author and ISBN are the respective attributes of 
+    the class
+  - The `__len__` method should return the number of pages of the book
+  - The `__str__` method should return a string in the format "title by author (ISBN)"
+  - The `__eq__` method should compare two books and return True if both ISBN are the same and False otherwise.
+  - The `__add__` method should add two books and return a new book object that contains the contents of both books concatenated and the title of the new 
+    book should be the title of the first book
+  - The `__getitem__` method should return the title of the book if the index passed is 0, and the author of the book if the index passed is 1.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3) 
 
 * **Task Nr.4**: 
 
-  Create a class Person that has the following properties:
-
-   - name: A string representing the person's name
-   - age: An integer representing the person's age
-
-  Create the following methods:
-
-   - get_name: A method that returns the person's name
-   - get_age: A method that returns the person's age
-   - __str__: A method that returns a string representation of the Person object in the following format: "name is age years old."
-
-  Create a class Student that inherits from Person and adds the following properties:
-
-   - student_id: An integer representing the student's id
-   - major: A string representing the student's major
-
-  Create the following methods:
-
-   - get_student_id: A method that returns the student's id
-   - get_major: A method that returns the student's major
-   - __str__: A method that returns a string representation of the Student object in the following format: "name is a age years old student of major 
-     major. Student id: student_id"
-
-  Create a class GraduateStudent that inherits from Student and adds the following properties:
-
-   - program: A string representing the graduate student's program
-   - advisor: A string representing the graduate student's advisor
-
-  Create the following methods:
-
-   - get_program: A method that returns the graduate student's program
-   - get_advisor: A method that returns the graduate student's advisor
-   - __str__: A method that returns a string representation of the GraduateStudent object in the following format: "name is a age years old graduate 
-     student of major major. Student id: student_id. program: program and advisor: advisor."
-   - __init__: This method should take in the same parameters as Person's init, but also take in additional parameters student_id, major, program, 
-     advisor and call the super's class init method with Person's parameters and set the additional parameters.
-
-   Show examples with working code. 
-   
- [Hint](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4) 
+  Create three different task with real world scenario what would include all magic methods we covered today and plus 3 others from the provided [list](https://docs.python.org/3/reference/datamodel.html). 
 
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 * [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [QuanticDev - method chaining](https://quanticdev.com/articles/method-chaining/)
-* [RealPhyton - super() function](https://quanticdev.com/articles/method-chaining/)
+* [Corey Schafer: Magic methods](https://www.youtube.com/watch?v=3ohzBxoFHAY)
+* [DataCamp](https://www.datacamp.com/tutorial/introducing-python-magic-methods)
+
 ***

@@ -1,6 +1,6 @@
 ## Magic Methods
 
-In Python, _"magic methods"_ or _"dunder methods"_ are special methods that have **double underscores** at the beginning and end of their names (e.g. `__init__`, `__add__`). These methods are used to define the behavior of certain operations on objects of a class. For example, the `__add__` method is called when the `+` operator is used on objects of a class, and the `__init__` method is called when a new object of a class is created. By defining these methods in a class, you can customize the behavior of built-in operations for instances of that class.
+In Python, _"magic methods"_ or _"dunder methods"_ are special methods that have **double underscores** at the beginning and end of their names (e.g. `__init__`, `__add__`). These methods are used to define the behavior of certain operations on objects of a class. For example, the `__add__` method is called when the `+` operator is used on objects of a class, and the `__init__` method is called when a new object of a class is created. By defining these methods in a class, you can customize the behavior of built-in operations for instances of that class. We will cover only some of them, the full list can be found [here](https://docs.python.org/3/reference/datamodel.html) 
 
 ### `__init__` :
 As you already know, `__init__` method is a special method in Python classes that is called when a new instance of the class is created. It is used to set up the initial state of the object. The `__init__` method takes the first argument as self, which refers to the instance of the object being created. The self argument is automatically passed by Python when a new instance is created, so you don't need to include it in the method call.
@@ -81,6 +81,8 @@ print(p1 == p3) # False
 
 ```
 It's important to note that when comparing custom objects, it is also a good practice to implement the `__ne__` method that **return the opposite** of `__eq__` method. It is called when the `!=` operator is used, this helps to maintain consistency in the behavior of the comparison operators.
+
+### `__eq__` :
 
 
 ## Exercises: 

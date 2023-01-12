@@ -82,7 +82,53 @@ print(p1 == p3) # False
 ```
 It's important to note that when comparing custom objects, it is also a good practice to implement the `__ne__` method that **return the opposite** of `__eq__` method. It is called when the `!=` operator is used, this helps to maintain consistency in the behavior of the comparison operators.
 
-### `__eq__` :
+### `__add__` :
+
+The `__add__` is used to define the behavior of the addition operator `+` for a custom object. It is called when the `+` operator is used to **add two objects of the same class** and should return a new object that **represents the result of the addition**.
+
+Here is an example of how to use the `__add__` method to define the addition for a custom object called `Vector`:
+
+```python
+class Vector:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other: 'Vector') -> 'Vector':
+        if isinstance(other, Vector):
+            return Vector(self.x + other.x, self.y + other.y)
+        raise TypeError("unsupported operand type(s) for +: 'Vector' and '{}'".format(type(other).__name__))
+
+v1 = Vector(1, 2)
+v2 = Vector(3, 4)
+v3 = v1 + v2
+print(v3.x, v3.y) # 4 6
+
+```
+It's important to note that when adding custom objects, it is also a good practice to implement the `__radd__` method that allow the commutativity of the addition operation. This method is called when an object of a **different class** is the left operand, and the right operand is an instance of the class that implements the `__add__` method:
+
+```python3
+class Vector:
+    def __init__(self, x: float, y: float):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other: 'Vector') -> 'Vector':
+        if isinstance(other, Vector):
+            return Vector(self.x + other.x, self.y + other.y)
+        raise TypeError("unsupported operand type(s) for +: 'Vector' and '{}'".format(type(other).__name__))
+    
+    def __radd__(self, other: 'Vector') -> 'Vector':
+        return self.__add__(other)
+
+v1 = Vector(1, 2)
+v2 = Vector(3, 4)
+v3 = v1 + v2
+print(v3.x, v3.y) # 4 6
+v4 = 2 + v1
+print(v4.x, v4.y) # 3 4
+
+```
 
 
 ## Exercises: 

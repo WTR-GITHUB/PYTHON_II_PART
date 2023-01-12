@@ -3,6 +3,84 @@
 In Python, _"magic methods"_ or _"dunder methods"_ are special methods that have **double underscores** at the beginning and end of their names (e.g. `__init__`, `__add__`). These methods are used to define the behavior of certain operations on objects of a class. For example, the `__add__` method is called when the `+` operator is used on objects of a class, and the `__init__` method is called when a new object of a class is created. By defining these methods in a class, you can customize the behavior of built-in operations for instances of that class.
 
 ### `__init__` :
+As you already know, `__init__` method is a special method in Python classes that is called when a new instance of the class is created. It is used to set up the initial state of the object. The `__init__` method takes the first argument as self, which refers to the instance of the object being created. The self argument is automatically passed by Python when a new instance is created, so you don't need to include it in the method call.
+
+Here is an example of a class `Person` that has an `__init__` method:
+
+```python
+class Person:
+    def __init__(self, name:str, age:int):
+        self.name = name
+        self.age = age
+```
+
+### `__str__` : 
+
+The `__str__` dunder method is used to define the _string representation_ of an object. It is called when the built-in `str()` or `print()` functions are used on an object, and returns a string that describes the object. Here is an example of how to use the `__str__` method to define the string representation of a custom object called `Person`:
+
+```python3
+class Person:
+    def __init__(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"Person(name={self.name}, age={self.age})"
+
+p = Person("John", 30)
+print(p) # Person(name=John, age=30)
+
+```
+
+### `__repr__` : 
+The `__repr__` is used to define the _"official"_ or unambiguous _string representation_ of an object. It is called by the built-in `repr()` function and is also used by the interactive interpreter to display the object when **it is not assigned to a variable**. It should return a string that, if passed to the `eval()` function, would create an object that is equal to the original.
+
+Here is an example of how to use the `__repr__` method to define the string representation of a custom object called `Person`:
+
+```python3
+class Person:
+    def __init__(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+    def __repr__(self):
+        return f"Person('{self.name}', {self.age})"
+
+p = Person("John", 30)
+print(p) # Person('John', 30)
+print(repr(p)) # Person('John', 30)
+
+```
+
+It's good practice to also implement the `__str__` method in classes, this method is used to return a user-friendly string representation of the object, such as when the `print()` function is called.
+
+
+### `__eq__` : 
+
+The `__eq__`  is used to define the behavior of the equality operator `==` for a custom object. It is called when the `==` operator is **used to compare two objects of the same class** and should return `True` if the objects are equal, or `False` if they are not.
+
+Here is an example of how to use the `__eq__` method with the same `Person` class:
+
+```python3
+class Person:
+    def __init__(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+    def __eq__(self, other: 'Person') -> bool:
+        if isinstance(other, Person):
+            return self.name == other.name and self.age == other.age
+        return False
+
+p1 = Person("John", 30)
+p2 = Person("John", 30)
+p3 = Person("Jane", 25)
+
+print(p1 == p2) # True
+print(p1 == p3) # False
+
+```
+It's important to note that when comparing custom objects, it is also a good practice to implement the `__ne__` method that **return the opposite** of `__eq__` method. It is called when the `!=` operator is used, this helps to maintain consistency in the behavior of the comparison operators.
 
 
 ## Exercises: 

@@ -264,3 +264,26 @@ print(repr(p1)) # Product('Apple', 0.5)
 ```
 
 ### Task Nr. 2:
+
+```python
+class MyQueue:
+    def __init__(self):
+        self.items = []
+
+    def __bool__(self):
+        return bool(self.items)
+
+    def __repr__(self):
+        return f"MyQueue({self.items})"
+
+    def __len__(self):
+        return len(self.items)
+
+q = MyQueue()
+q.items.append(1)
+q.items.append(2)
+print(bool(q))  # True
+print(repr(q)) # MyQueue([1, 2])
+print(len(q)) # 2
+
+```

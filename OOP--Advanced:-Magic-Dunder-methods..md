@@ -129,7 +129,28 @@ v4 = 2 + v1
 print(v4.x, v4.y) # 3 4
 
 ```
+### `__len__` :
 
+The `__len__` is used to define the behavior of the built-in `len()` function for a custom object. It **should return an integer** that represents the number of elements in the object.
+
+Here is an example of how to use the `__len__` method to define the length of a custom object called `MyList`:
+
+```python
+class MyList:
+    def __init__(self, items: list):
+        self.items = items
+
+    def __len__(self) -> int:
+        return len(self.items)
+
+ml = MyList([1, 2, 3, 4, 5])
+print(len(ml)) # 5
+
+```
+
+### `__len__` :
+
+It's worth to mention that the `__len__` method **should always return a non-negative integer**, if it returns a negative or non-integer value, a `TypeError` will be raised.
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

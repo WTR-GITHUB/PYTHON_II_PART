@@ -287,3 +287,45 @@ print(repr(q)) # MyQueue([1, 2])
 print(len(q)) # 2
 
 ```
+
+### Task Nr. 3:
+
+```python
+class Book:
+    def __init__(self, title:str, author:str, ISBN:str, pages: int):
+        self.title = title
+        self.author = author
+        self.ISBN = ISBN
+        self.pages = pages
+
+    def __bool__(self):
+        return bool(self.title)
+
+    def __repr__(self):
+        return f"Book({self.title}, {self.author}, {self.ISBN})"
+
+    def __len__(self):
+        return self.pages
+
+    def __str__(self):
+        return f"{self.title} by {self.author} ({self.ISBN})"
+
+    def __eq__(self, other):
+        if isinstance(other, Book):
+            return (self.ISBN) == (other.ISBN)
+        raise TypeError("unsupported operand type(s) for ==: 'Book' and '{}'".format(type(other).__name__))
+
+    def __add__(self, other):
+        if isinstance(other, Book):
+            pages = self.pages + other.pages
+            return Book(self.title, self.author+" and "+other.author, self.ISBN, pages)
+
+    def __getitem__(self, index):
+        if index == 0:
+            return self.title
+        elif index == 1:
+            return self.author
+        else:
+            raise IndexError("Invalid index")
+
+```

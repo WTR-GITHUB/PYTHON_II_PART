@@ -55,7 +55,6 @@ assert ('linux' in sys.platform), "This code runs on Linux only."
 ## `try` and `except` block: Handling Exceptions
 
 
-## Custom Exceptions
 
 The try and except block in Python is used to catch and handle exceptions. Python executes code following the try statement as a “normal” part of the program. The code that follows the except statement is the program’s response to any exceptions in the preceding try clause.
 
@@ -81,53 +80,51 @@ except:
     pass
 ```
 
-What is more if we simply to `except:` it means that we are placing all of the Exceptions into one bucket. But we can specify the error that we are excepting:
+
+## Custom Exceptions
+
+Right now we should know that Exception is also python object, once raised terminates the program flow. And for now we have seen Exceptions that are built into Python programming language. But we can also raise them ourselves if something our program is not being used the way we designed it. As seen before python has built in Object called exception, it is a class that in order to instantiate it we need a message. So we can simply try inheriting all the attributes of the class and create our own message if we want a custom Exception class. Let's see this in action.  
+
+So how do we do this? Let's say we are creating a gambling website and we expect our users to be at least 21 years of age, we could do something similar to the program we have seen at the starting of the lecture, but before let's create a custom Exception class:
 
 ```python
-try:
-    linux_interaction()
-except AssertionError as error:
-    print(error)
-    print('The linux_interaction() function was not executed')
-except Exception as e:
-    print(e)
+class AgeTooLow(Exception):
+
+    def __init__(self):
+        self.message = "User should be atleast 21 years old!"
+        super().__init__(self.message)
 ```  
 
-
-What is more, let's assume that we are trying to open some file in our program. But what happens if the file is not present when the program runs?
+Then we can just simply amend the program above to fit our needs.
 
 ```python
-try:
-    with open('file.log') as file:
-        read_data = file.read()
-except:
-    print('Could not open file.log')
-```  
+users_age = int(input("enter your age: "))
 
-Could it be something else causing trouble and we will simply not see it here? It would be the best to specify the error here as well.
-```python
-try:
-    with open('file.log') as file:
-        read_data = file.read()
-except FileNotFoundError as fnf_error:
-    print(fnf_error)
-```  
-In this case, if file.log does not exist, the output will be the following: `[Errno 2] No such file or directory: 'file.log'`
-
-If we combine the whole thing we can get something like this:
-```python
-try:
-    linux_interaction()
-    with open('file.log') as file:
-        read_data = file.read()
-except FileNotFoundError as fnf_error:
-    print(fnf_error)
-except AssertionError as error:
-    print(error)
-    print('Linux linux_interaction() function was not executed')
+if users_age < 21:
+   raise AgeTooLow
 ```
 
-Because simply you will never know when the error occurred. What caused it etc.
+Isn't this neat? We not have crafted our own Exception in Python!  
 
-Right now we should know that Exception is also python object, once raised terminates the program flow. And for now we have seen Exceptions that are built into Python programming language. But we can also raise them ourselves if something our program is not being used the way we designed it.
+## passing an argument to the Exception 
+
+So how do we make sure that the message is a little bit more relevant and shows what exactly has been passed?
+
+
+```python
+class AgeTooLow(Exception):
+
+    def __init__(self, age):
+        self.message = f"User should be atleast 21 years old! current user is {age} year('s) old"
+        super().__init__(self.message)
+```  
+
+And then use it the way we have designed it:
+
+```python
+users_age = int(input("enter your age: "))
+
+if users_age < 21:
+   raise AgeTooLow(users_age )
+```
 

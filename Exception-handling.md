@@ -81,6 +81,32 @@ except:
 ```
 
 
+**PRO TIP** the opposite of the code smell before it is usually super nice to except actual Exceptions and handle them accordingly, check the example below:  
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+try:
+    print(numbers[100])  # <- Out of range index
+except IndexError:
+    print("The requested index is out of range")
+except KeyError:
+    print("Could not retrieve that value.")
+```  
+
+Also it is important to raise the right errors in the right places, the same as with logging/ printing or anything else. We do not want to mislead other developers, clients, anyone involved into trying to solve issues that do not exists. For Example if we are expecting an integers from user and user gives us string -  we should raise ValueError:
+
+```python
+while True:
+    try:
+        x = int(input("Please enter a number: "))
+        break
+    except ValueError:
+        print("Oops!  That was no valid number.  Try again...")
+```
+
+
+
 ## Custom Exceptions
 
 Right now we should know that Exception is also python object, once raised terminates the program flow. And for now we have seen Exceptions that are built into Python programming language. But we can also raise them ourselves if something our program is not being used the way we designed it. As seen before python has built in Object called exception, it is a class that in order to instantiate it we need a message. So we can simply try inheriting all the attributes of the class and create our own message if we want a custom Exception class. Let's see this in action.  
@@ -126,5 +152,16 @@ users_age = int(input("enter your age: "))
 
 if users_age < 21:
    raise AgeTooLow(users_age )
-```
+```  
+
+try running the program yourselves, does it work? Try playing around with messages, variables etc.
+
+
+
+
+# Exercises 🧠 
+1. What if we also wanted to raise an error if the user is too old for our gambling website? Try implementing it yourselves
+
+
+
 

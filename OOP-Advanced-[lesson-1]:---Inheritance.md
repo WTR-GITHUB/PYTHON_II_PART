@@ -50,9 +50,9 @@ Multiple inheritance can be a powerful tool, but it can also make your code more
 
 ### MRO - Method Resolution Order
 
-In Python, when a class inherits from multiple superclasses, it can be ambiguous which version of an attribute or method to use. To resolve this ambiguity, Python uses a mechanism called the **method resolution order (MRO)**.
+In Python, when a class inherits from multiple super classes, it can be ambiguous which version of an attribute or method to use. To resolve this ambiguity, Python uses a mechanism called the **method resolution order (MRO)**.
 
-The MRO is the order in which a class's attributes and methods are inherited from its `superclasses`. It determines which implementation of an attribute or method will be used when an instance of the class calls it.
+The MRO is the order in which a class's attributes and methods are inherited from its `super classes`. It determines which implementation of an attribute or method will be used when an instance of the class calls it.
 
 Here's an example of how the MRO works in Python:
 

@@ -83,5 +83,22 @@ format=%(levelname)s - %(message)s
 datefmt=%Y-%m-%d %H:%M:%S
 ```
 
+in order to use this configuration we can execute the code:
 
+```python
+import logging
+import logging.config
+
+logging.config.fileConfig('logging.conf')
+
+# create logger
+logger = logging.getLogger('simpleExample')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
+```
 

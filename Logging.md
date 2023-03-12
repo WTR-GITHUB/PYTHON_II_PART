@@ -162,4 +162,9 @@ formatter=fileFormatter
 args=('logfile.log',)
 ```
 
-The handler_fileHandler section defines the configuration for the fileHandler handler. The class attribute specifies the type of handler to use. In this case, a FileHandler is used to send log messages to a file. The level attribute sets the minimum level of severity for log messages to be handled by this handler. In this case, messages with a severity of DEBUG or higher will
+The handler_fileHandler section defines the configuration for the fileHandler handler. The class attribute specifies the type of handler to use. In this case, a FileHandler is used to send log messages to a file. The level attribute sets the minimum level of severity for log messages to be handled by this handler. In this case, messages with a severity of DEBUG or higher will.
+
+Task for everyone in the class: try changing the arguments in the config file, experiment with different handlers.
+
+
+

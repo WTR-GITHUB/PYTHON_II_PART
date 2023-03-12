@@ -75,7 +75,7 @@ formatter=fileFormatter
 args=('logfile.log',)
 
 [formatter_fileFormatter]
-format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+format=%(asctime)s - %(name)s - %(module)s - %(levelname)s - %(message)s
 datefmt=%Y-%m-%d %H:%M:%S
 
 [formatter_consoleFormatter]
@@ -102,3 +102,64 @@ logger.error('error message')
 logger.critical('critical message')
 ```
 
+You can see that from the code perspective this is way more elegant, as now if you want to reuse this logging logic you only have to instantiate the logger telling where the configuration file is. You can see that the config file approach has a few advantages over the Python code approach, mainly separation of configuration and code and the ability of noncoders to easily modify the logging properties.
+
+Let's now go through the entire configuration file.
+
+### loggers
+
+```ini
+[loggers]
+keys=root,sLogger
+
+[handlers]
+keys=consoleHandler,fileHandler
+
+[formatters]
+keys=fileFormatter,consoleFormatter
+```
+The loggers section defines the names of the loggers that will be used in this configuration. The keys attribute lists the names of the loggers. In this case, there are two loggers named root and sLogger.
+
+The handlers section defines the names of the handlers that will be used in this configuration. The keys attribute lists the names of the handlers. In this case, there are two handlers named consoleHandler and fileHandler.
+
+The formatters section defines the names of the formatters that will be used in this configuration. The keys attribute lists the names of the formatters. In this case, there are two formatters named fileFormatter and consoleFormatter.
+
+```ini
+[logger_root]
+level=DEBUG
+handlers=consoleHandler
+```
+
+The logger_root section defines the configuration for the root logger. The level attribute sets the minimum level of severity for log messages to be logged by this logger. In this case, messages with a severity of DEBUG or higher will be logged. The handlers attribute lists the handlers that will be used by this logger. In this case, only the consoleHandler handler will be used.
+
+```ini
+[logger_sLogger]
+level=DEBUG
+handlers=consoleHandler,fileHandler
+qualname=sLogger
+propagate=0
+```
+
+The logger_sLogger section defines the configuration for the sLogger logger. The level attribute sets the minimum level of severity for log messages to be logged by this logger. In this case, messages with a severity of DEBUG or higher will be logged. The handlers attribute lists the handlers that will be used by this logger. In this case, both the consoleHandler and fileHandler handlers will be used. The qualname attribute sets the fully qualified name of this logger. The propagate attribute determines whether this logger will propagate its messages to its parent logger. In this case, propagation is turned off.
+
+
+```ini
+[handler_consoleHandler]
+class=StreamHandler
+level=WARNING
+formatter=consoleFormatter
+args=(sys.stdout,)
+```
+
+
+The handler_consoleHandler section defines the configuration for the consoleHandler handler. The class attribute specifies the type of handler to use. In this case, a StreamHandler is used to send log messages to the console. The level attribute sets the minimum level of severity for log messages to be handled by this handler. In this case, messages with a severity of WARNING or higher will be handled. The formatter attribute specifies the formatter to use for log messages. In this case, the consoleFormatter formatter will be used. The args attribute specifies any additional arguments that the handler needs. In this case, the sys.stdout argument tells the handler to send log messages to standard output.
+
+```ini
+[handler_fileHandler]
+class=FileHandler
+level=DEBUG
+formatter=fileFormatter
+args=('logfile.log',)
+```
+
+The handler_fileHandler section defines the configuration for the fileHandler handler. The class attribute specifies the type of handler to use. In this case, a FileHandler is used to send log messages to a file. The level attribute sets the minimum level of severity for log messages to be handled by this handler. In this case, messages with a severity of DEBUG or higher will

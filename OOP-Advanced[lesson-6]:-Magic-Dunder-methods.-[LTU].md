@@ -189,4 +189,90 @@ print(len(mn)) # 1
 
 ```
 
+### `__getitem__` :
+
+Funkcija `__getitem__` naudojama apibrėžti, kaip elgtis su pasirinktinio objekto kvadratinių skliaustų užrašu `[]`. Jis iškviečiamas, kai `kvadratiniai skliaustai []` naudojami **prieigai prie objekto elemento ir turėtų grąžinti elementą nurodytu indeksu arba raktu**.
+
+Toliau pateikiamas pavyzdys, kaip naudoti `__getitem__` metodą, kad apibrėžtumėte pasirinktinio objekto, pavadinto `MyDict`, prieigą prie elemento:
+
+```python
+class MyDict:
+    def __init__(self, data: dict):
+        self.data = data
+
+    def __getitem__(self, key: str):
+        return self.data[key]
+
+md = MyDict({'a':1, 'b':2})
+print(md['a']) # 1
+
+```
+
+Verta paminėti, kad jei `__getitem__` metodas sukelia `KeyError` klaidą, kai **raktas objekte neegzistuoja**, verta įgyvendinti `__missing__` metodą klasėje, kuri paveldi iš integruotos `dict` klasės. Šį metodą `dict` klasė iškviečia, **kai žodyne nerandamas raktas, ir turėtų grąžinti numatytąją rakto reikšmę**.
+
+```python3
+class MyDict(dict):
+    def __missing__(self, key: str):
+        return 'default'
+    
+md = MyDict({'a':1, 'b':2})
+print(md['a']) # 1
+print(md['c']) # default
+
+```
+
+## Pratimai: 
+🧠 : Pakartokite [OOP 2 dalis](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
+
+* **Užduotis Nr.1**:
+  
+  Sukurkite klasę `Product`, kuri kaip parametrus priima `pavadinimą` ir `kainą` bei turi apibrėžtus `__str__` ir `__repr__` metodus.
+
+  - Metodas `__str__` turėtų grąžinti eilutę formatu "Product: name, Price: price".
+  - Metodas `__repr__` turėtų grąžinti eilutę formatu "Product('name', price)".
+  
+
+  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-2) 
+
+* **Užduotis Nr.2**:
+
+  Sukurkite klasę pavadinimu `MyQueue`, kurioje apibrėžti `__bool__`, `__repr__` ir `__len__` metodai.
+
+  - Metodas `__bool__` turėtų grąžinti `True`, jei eilėje yra elementų, ir `False`, jei ji yra tuščia.
+  - Metodas `__repr__` turėtų grąžinti eilutę formatu `MyQueue(items)`, kur items yra eilės elementų sąrašas.
+  - Metodas `__len__` turėtų grąžinti eilėje esančių elementų skaičių.
+
+  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-1)
+
+* **Užduotis Nr.3**:
+
+  Sukurti klasę `Knyga`, kuri kaip parametrus priima `pavadinimą`, `autorių` ir `ISBN`. Klasė turėtų turėti `__bool__`, `__repr__`, `__len__`, 
+  `__str__`, `__eq__`, `__add__` ir `__getitem__` metodus.
+
+  - Metodas `__bool__` turėtų grąžinti True, jei knyga turi pavadinimą, priešingu atveju - False.
+  - Metodas `__repr__` turėtų grąžinti eilutę formatu "Book(title, author, ISBN)", kur title, author ir ISBN yra atitinkami atributai 
+    klasės atributai
+  - Metodas `__len__` turėtų grąžinti knygos puslapių skaičių
+  - Metodas `__str__` turėtų grąžinti eilutę formatu "title by author (ISBN)".
+  - Metodas `__eq__` turėtų palyginti dvi knygas ir grąžinti True, jei abiejų ISBN sutampa, ir False priešingu atveju.
+  - Metodas `__add__` turėtų pridėti dvi knygas ir grąžinti naują knygos objektą, kuriame būtų sujungtas abiejų knygų turinys ir naujos knygos pavadinimas. 
+    knygos pavadinimas turėtų būti pirmosios knygos pavadinimas
+  - Metodas `__getitem__` turėtų grąžinti knygos pavadinimą, jei perduotas indeksas yra 0, ir knygos autorių, jei perduotas indeksas yra 1.
+
+  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3) 
+
+* **Užduotis Nr.4**: 
+
+  Sukurkite tris skirtingas užduotis su realaus pasaulio scenarijumi, kurios apimtų visus šiandien nagrinėtus magiškus metodus ir dar 3 kitus iš pateikto [sąrašo](https://docs.python.org/3/reference/datamodel.html). 
+
+## 🌐 Papildomas skaitymas (arba žiūrėjimas 📺 ):
+
+* [Pilnas OOP kursas - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
+* [Corey Schafer: Python OOP Tutorial (keli vaizdo įrašai)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
+* [Corey Schafer: Magiški metodai](https://www.youtube.com/watch?v=3ohzBxoFHAY)
+* [DataCamp](https://www.datacamp.com/tutorial/introducing-python-magic-methods)
+
+***
+
+
 

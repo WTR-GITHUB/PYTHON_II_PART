@@ -44,6 +44,32 @@ By using the public methods provided by the `Person` class, we can **interact wi
 
 The benefits of information hiding are reducing system complexity and increasing robustness. Why? Because encapsulation limits the interdependencies of different software components.
 
+## Polymorphism
+`Polymorphism` is the principle that one kind of thing can take a variety of forms. In the context of programming, this means that a single entity in a programming language can behave in multiple ways depending on the context. It’s similar to how a word like `express` can act as a verb in one sentence, a noun in another sentence, and an adjective in a third sentence. The sequence of letters on the page doesn’t change, but the meaning they add to the sentence is fundamentally different in each case. Likewise, in polymorphic programming languages, a single entity can act differently in different contexts.
+
+### Operator Polymorphism
+Operator polymorphism, or operator overloading, means that one symbol can be used to perform multiple operations. One of the simplest examples of this is the addition operator `+`. Python’s addition operator works differently in relation to different `data types`. For example, if the `+` operates on two integers, the result is additive, returning the sum of the two integers: 
+
+```python
+int_one = 10
+int_two = 15
+print(int_one + int_two)
+# returns 25
+```
+
+In the example above, the `+` operator adds `10` and `15`, such that the output is `25`.
+
+However, if the addition operator is used on two strings, **it concatenates** the strings. Here’s an example of how the + operator acts on string data types: 
+
+```python
+str_one = "10"
+str_two = "15"
+print(str_one + str_two)
+# returns '1015'
+```
+
+In this case, the output is `1015` because the `+` operator concatenates the strings `10` and `15`. This is one example of how a single operator can perform distinct operations in **different contexts**.
+
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 

@@ -70,6 +70,24 @@ print(str_one + str_two)
 
 In this case, the output is `1015` because the `+` operator concatenates the strings `10` and `15`. This is one example of how a single operator can perform distinct operations in **different contexts**.
 
+### Function Polymorphism
+
+Certain functions in Python are polymorphic as well, meaning that they can act on multiple data types and structures to yield different kinds of information.
+
+Python’s built-in `len()` function, for instance, can be used to return the length of an object. However, it will measure the length of the object differently depending on the object’s data type and structure. For instance, if the object is a string, the `len()` function will return the number of characters in the string. If the object is a list, it will return the number of entries in the list.
+
+Here’s an example of how the `len()` function acts on strings and lists:
+
+```python
+str_one = "animal"
+print(len(str_one))
+# returns 6
+list_one = ["giraffe","lion","bear","dog"]
+print(len(list_one))
+# returns 4
+```
+The outputs are `6` and `4`, respectively, because the `len()` function counts the number of characters in a string and the number of entries in a list. The function operates differently depending on the nature of the data it’s acting on.
+
 ### Class and Method Polymorphism, Method Overriding.
 
 Python’s polymorphic nature makes it easier to repurpose classes and methods. Remember that a class is like a blueprint, and an object is a concrete instantiation of that blueprint. So, a method that is part of a class will reoccur in the objects that instantiate that class. Likewise, if you generate a new class from a preexisting class, the new class will inherit the methods of the preexisting class. The new class in this scenario is called a “child class,” while the preexisting class is called the “parent class.”

@@ -70,6 +70,37 @@ print(str_one + str_two)
 
 In this case, the output is `1015` because the `+` operator concatenates the strings `10` and `15`. This is one example of how a single operator can perform distinct operations in **different contexts**.
 
+## Class and Method Polymorphism, Method Overriding.
+
+In Python, it is possible for a `subclass` to **override** the attributes and methods of its superclass. This means that the subclass can define its own implementation of an attribute or method that already exists in the superclass.
+
+Here's an example of how to use method overriding:
+
+```python
+
+class Vehicle:
+    def __init__(self, make: str, model: str) -> None:
+        self.make = make
+        self.model = model
+
+    def start(self) -> None:
+        print(f"Starting {self.make} {self.model}")
+
+class Car(Vehicle):
+    def __init__(self, make: str, model: str, year: int) -> None:
+        super().__init__(make, model)
+        self.year = year
+
+    def start(self) -> None:
+        print(f"Inserting key in {self.year} {self.make} {self.model}")
+        super().start()
+
+car = Car("Honda", "Accord", 2020)
+car.start()  # prints "Inserting key in 2020 Honda Accord", "Starting Honda Accord"
+
+```
+In this example, the `Car` class inherits from the `Vehicle` class and **overrides** the `start` method. When we create an instance of `Car` and call the `start` method, it uses the implementation of the `start` method that is defined in the `Car` class, which prints a message about inserting the key in the car. It then calls the `start` method of the `Vehicle` class using the `super().start()` syntax, which prints a message about starting the vehicle.
+
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))
 

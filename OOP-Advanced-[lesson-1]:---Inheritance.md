@@ -124,38 +124,7 @@ c.baz()  # prints "C.baz"
 ```
 In the example above, the `C` class inherits from the `B` class, which in turn inherits from the `A` class. This creates a `multilevel inheritance` hierarchy where the `C class` **has access to all of the attributes and methods of both the B class and the A class**.
 
-When we create an instance of `C` and call the `foo` method, it uses the implementation of the `foo` method that is defined in the `A` class. Similarly, when we call the `bar` method, it uses the implementation of the `bar` method that is defined in the `B` class. And when we call the `baz` method, it uses the implementation of the `baz` method that is defined in the `C` class
-
-## Method Overriding
-
-In Python, it is possible for a `subclass` to **override** the attributes and methods of its superclass. This means that the subclass can define its own implementation of an attribute or method that already exists in the superclass.
-
-Here's an example of how to use method overriding:
-
-```python
-
-class Vehicle:
-    def __init__(self, make: str, model: str) -> None:
-        self.make = make
-        self.model = model
-
-    def start(self) -> None:
-        print(f"Starting {self.make} {self.model}")
-
-class Car(Vehicle):
-    def __init__(self, make: str, model: str, year: int) -> None:
-        super().__init__(make, model)
-        self.year = year
-
-    def start(self) -> None:
-        print(f"Inserting key in {self.year} {self.make} {self.model}")
-        super().start()
-
-car = Car("Honda", "Accord", 2020)
-car.start()  # prints "Inserting key in 2020 Honda Accord", "Starting Honda Accord"
-
-```
-In this example, the `Car` class inherits from the `Vehicle` class and **overrides** the `start` method. When we create an instance of `Car` and call the `start` method, it uses the implementation of the `start` method that is defined in the `Car` class, which prints a message about inserting the key in the car. It then calls the `start` method of the `Vehicle` class using the `super().start()` syntax, which prints a message about starting the vehicle.
+When we create an instance of `C` and call the `foo` method, it uses the implementation of the `foo` method that is defined in the `A` class. Similarly, when we call the `bar` method, it uses the implementation of the `bar` method that is defined in the `B` class. And when we call the `baz` method, it uses the implementation of the `baz` method that is defined in the `C` class.
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

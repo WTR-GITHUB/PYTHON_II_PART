@@ -70,7 +70,9 @@ print(str_one + str_two)
 
 In this case, the output is `1015` because the `+` operator concatenates the strings `10` and `15`. This is one example of how a single operator can perform distinct operations in **different contexts**.
 
-## Class and Method Polymorphism, Method Overriding.
+### Class and Method Polymorphism, Method Overriding.
+
+Python’s polymorphic nature makes it easier to repurpose classes and methods. Remember that a class is like a blueprint, and an object is a concrete instantiation of that blueprint. So, a method that is part of a class will reoccur in the objects that instantiate that class. Likewise, if you generate a new class from a preexisting class, the new class will inherit the methods of the preexisting class. The new class in this scenario is called a “child class,” while the preexisting class is called the “parent class.”
 
 In Python, it is possible for a `subclass` to **override** the attributes and methods of its superclass. This means that the subclass can define its own implementation of an attribute or method that already exists in the superclass.
 

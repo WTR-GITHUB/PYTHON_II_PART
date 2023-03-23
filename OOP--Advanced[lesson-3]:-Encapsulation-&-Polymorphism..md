@@ -131,7 +131,7 @@ In this example, the `Car` class inherits from the `Vehicle` class and **overrid
    - Base class should give a functionality to know info about spacecraft (age, cost, year built, weight etc.. ).
    - Through the main class you should be able to calculate the mission cost which includes: fuel cost (FUEL_COST x BURN_RATE (kg/mile) * 
      BURN_RATE_VARIABLE (2500 / orbit_height(in miles))) , average personals expenditures ( ppl x base_salary ).
-   - Prepare the final report in the file document and on screen with a method `get_full_report` with all data. 
+   - Prepare the final report in the file document and on screen with a method `get_full_report` with all gathered and calculated data. 
 
 
 * Task Nr.2:

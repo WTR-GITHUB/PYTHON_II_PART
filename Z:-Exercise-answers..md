@@ -345,3 +345,20 @@ print(TimeUtils.time_to_seconds("01:30:00")) # Output: 5400
 print(TimeUtils.time_to_seconds("12:30:00")) # Output: 45000
 
 ```
+
+### Task Nr. 4:
+
+```python
+class Employee:
+    def __init__(self, name: str, salary: float) -> None:
+        self.name = name
+        self.salary = salary
+    
+    @staticmethod
+    def calculate_payroll(employees: List["Employee"]) -> float:
+        return sum(employee.salary for employee in employees)
+
+employees = [Employee("Alice", 5000.0), Employee("Bob", 6000.0), Employee("Charlie", 7000.0)]
+print(Employee.calculate_payroll(employees)) # Output: 18000.0
+```
+

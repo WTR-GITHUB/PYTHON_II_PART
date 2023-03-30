@@ -22,6 +22,10 @@ class Car:
 
 In this example, we define a `Car` class with an **instance method** `update_odometer()` and `drive()`.  The `update_odometer()` method takes an argument mileage and updates the value of the `odometer_reading` attribute of the car. The `drive()` method takes an argument `miles` and `calls` the `update_odometer()` method to increment the `odometer_reading` attribute by the specified number of miles.
 
+Additionally, in object-oriented programming (OOP), a class is a blueprint for creating objects that contain data and methods. When you create an instance of a class, you create an object that has its own state and behavior. An instance method is a function that is associated with an instance of a class and can access and modify the instance's state.
+
+Instance methods in Python are defined within a class and take self as the first argument. self refers to the instance of the class on which the method is called. This allows instance methods to access and modify the instance's attributes.
+
 To call an instance method on an object, you need to first create an instance of the class and then call the method on that instance:
 
 ```python

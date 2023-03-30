@@ -116,7 +116,7 @@ To sum up, for static method:
 * Task Nr.3:
 
   Create a class called `TimeUtils` that has a static method called `time_to_seconds` that takes a time string in the format `hh:mm:ss` and returns the 
-  total number of seconds represented by that time. Use functional programing paradigm.
+  total number of seconds represented by that time. Use **functional programing paradigm**.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-2) 
 

@@ -107,6 +107,5 @@ To sum up, for static method:
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
 * [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [QuanticDev - method chaining](https://quanticdev.com/articles/method-chaining/)
-* [RealPhyton - super() function](https://quanticdev.com/articles/method-chaining/)
+* [RealPhyton](https://realpython.com/instance-class-and-static-methods-demystified/)
 ***

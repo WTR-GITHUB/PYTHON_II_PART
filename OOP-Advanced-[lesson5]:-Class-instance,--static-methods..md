@@ -122,14 +122,10 @@ To sum up, for static method:
 
 * Task Nr.4: 
 
-  Lets say we have classes: A, B and C:
-    - Modify the program to add a method say_hello to class A that prints "Hello from class A".
-    - Modify the program to add a method say_hello to class B that prints "Hello from class B".
-    - Modify the program to add a method say_hello to class C that prints "Hello from class C".
-    - Create an object of class C and call the say_hello method on it. What is the output?
-    - Modify the program so that class B's say_hello method calls the say_hello method of class A using the super() function.
-    - Create an object of class C and call the say_hello method on it again. What is the output now?
+  Create a class called `Employee` with a static method called `calculate_payroll` that takes a list of `Employee` instances and returns the total amount 
+  to be paid to all employees. Each `Employee` instance has two attributes: `name` and `salary`.
 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-1) 
 
 
 ## 🌐  Extra reading (or watching 📺 ):

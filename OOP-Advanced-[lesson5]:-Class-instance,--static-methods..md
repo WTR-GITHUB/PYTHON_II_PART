@@ -102,6 +102,35 @@ To sum up, for static method:
 
 ## Exercises: 
 
+* Task Nr.1:  
+
+  Create a class which takes temperature measurements in Kelvins and add static methods to transform those to Celsius and Fahrenheit units. Use 
+  OOP abstraction. 
+
+
+* Task Nr.2:
+ 
+  Create a class that would take at least five `imperial system` measurements and would transform with the help of static methods to `metric` system 
+  units.
+
+* Task Nr.3:
+
+  Create a class called `TimeUtils` that has a static method called `time_to_seconds` that takes a time string in the format `hh:mm:ss` and returns the 
+  total number of seconds represented by that time. Use functional programing paradigm.
+
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-2) 
+
+* Task Nr.4: 
+
+  Lets say we have classes: A, B and C:
+    - Modify the program to add a method say_hello to class A that prints "Hello from class A".
+    - Modify the program to add a method say_hello to class B that prints "Hello from class B".
+    - Modify the program to add a method say_hello to class C that prints "Hello from class C".
+    - Create an object of class C and call the say_hello method on it. What is the output?
+    - Modify the program so that class B's say_hello method calls the say_hello method of class A using the super() function.
+    - Create an object of class C and call the say_hello method on it again. What is the output now?
+
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

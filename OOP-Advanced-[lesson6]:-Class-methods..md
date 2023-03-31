@@ -85,7 +85,7 @@ print(point.x)  # 3
 print(point.y)  # 4
 
 ```
-In this example, the `rom_tuple()` class method acts as an **alternative constructor** that creates a new `Point` instance from a tuple of `(x, y)` values. It returns a new instance of the Point class.
+In this example, the `from_tuple()` class method acts as an **alternative constructor** that creates a new `Point` instance from a tuple of `(x, y)` values. It returns a new instance of the Point class.
 
 - **Managing class-level state** – `classmethods` can be used to manage class-level state. This means that you can define a method that modifies or accesses a variable that is shared by all instances of the class:
 

@@ -145,12 +145,14 @@ print(Student.get_lowest_grade().name)  # Alice
 * Task Nr.1:  
 
   Create a class method to return the **factorial** of a given number.
+
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
 
 
 * Task Nr.2:
  
   Create a class method to return the **reversed string** of a given string.
+
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 
 * Task Nr.3:

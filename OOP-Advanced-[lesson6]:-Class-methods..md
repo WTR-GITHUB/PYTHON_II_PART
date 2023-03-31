@@ -15,6 +15,29 @@ class MyClass:
 ```
 The `classmethod()` function is applied as a decorator to a method of a class. The first argument of a class method **is always the class itself**, represented by the parameter `cls`. This allows the method to access and modify class-level data.
 
+Here's an example of a class method that calculates the area of a rectangle:
+
+```python3
+class Rectangle:
+    def __init__(self, width: float, height: float) -> None:
+        self.width = width
+        self.height = height
+    
+    def area(self) -> float:
+        return self.width * self.height
+    
+    @classmethod
+    def from_square(cls, side_length: float) -> 'Rectangle':
+        return cls(side_length, side_length * 2)
+
+rectangle1: Rectangle = Rectangle(3.0, 4.0)
+rectangle2: Rectangle = Rectangle.from_square(2.0)
+
+print(rectangle1.area())  # 12.0
+print(rectangle2.area())  # 4.0
+
+```
+
 ###  Why use `classmethod()`?
 
 The main benefit of using `classmethod()` is that it allows you to define methods that operate on the class itself, rather than on an instance of the class. This can be useful in a variety of situations, such as:

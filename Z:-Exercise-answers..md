@@ -362,3 +362,153 @@ employees = [Employee("Alice", 5000.0), Employee("Bob", 6000.0), Employee("Charl
 print(Employee.calculate_payroll(employees)) # Output: 18000.0
 ```
 
+## OOP Advanced [lesson6]: Class methods.
+
+### Task Nr. 1:
+
+```python
+class MathOperations:
+    @classmethod
+    def factorial(cls, n: int) -> int:
+        if n == 0:
+            return 1
+        else:
+            return n * cls.factorial(n-1)
+
+print(MathOperations.factorial(5)) # Output: 120
+
+```
+
+### Task Nr. 2:
+
+```python
+class StringUtils:
+    @classmethod
+    def reverse(cls, s: str) -> str:
+        return s[::-1]
+
+print(StringUtils.reverse('Hello, world!')) # Output: '!dlrow ,olleH'
+```
+
+### Task Nr. 3:
+
+```python
+class MathOperations:
+    @classmethod
+    def is_prime(cls, n: int) -> bool:
+        if n <= 1:
+            return False
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
+
+    @classmethod
+    def primes(cls, n: int) -> List[int]:
+        primes_list = []
+        for i in range(2, n+1):
+            if cls.is_prime(i):
+                primes_list.append(i)
+        return primes_list
+
+print(MathOperations.primes(20)) # Output: [2, 3, 5, 7, 11, 13, 17, 19]
+
+```
+
+### Task Nr. 4:
+
+```python
+from typing import List
+
+
+class Book:
+    def __init__(self, title: str, author: str, isbn: str, num_copies: int) -> None:
+        self.title = title
+        self.author = author
+        self.isbn = isbn
+        self.num_copies = num_copies
+
+
+class User:
+    def __init__(self, name: str, email: str) -> None:
+        self.name = name
+        self.email = email
+        self.books_borrowed: List[Book] = []
+
+
+class LibrarySystem:
+    books: List[Book] = []
+    users: List[User] = []
+
+    @classmethod
+    def add_book(cls, book: Book) -> None:
+        cls.books.append(book)
+
+    @classmethod
+    def register_user(cls, user: User) -> None:
+        cls.users.append(user)
+
+    @classmethod
+    def borrow_book(cls, user: User, isbn: str) -> None:
+        for book in cls.books:
+            if book.isbn == isbn:
+                if book.num_copies > 0:
+                    book.num_copies -= 1
+                    user.books_borrowed.append(book)
+                    print(f"{user.name} has borrowed {book.title}.")
+                    return
+                else:
+                    print("Sorry, no copies of this book are available.")
+                    return
+        print("Sorry, the book with the given ISBN is not available in the library system.")
+
+    @classmethod
+    def return_book(cls, user: User, isbn: str) -> None:
+        for book in user.books_borrowed:
+            if book.isbn == isbn:
+                book.num_copies += 1
+                user.books_borrowed.remove(book)
+                print(f"{user.name} has returned {book.title}.")
+                return
+        print("Sorry, the user has not borrowed the book with the given ISBN.")
+
+    @classmethod
+    def list_books(cls) -> List[Book]:
+        return cls.books
+
+    @classmethod
+    def list_users(cls) -> List[User]:
+        return cls.users
+
+
+book1 = Book("The Hobbit", "J.R.R. Tolkien", "1234", 5)
+book2 = Book("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "5678", 3)
+LibrarySystem.add_book(book1)
+LibrarySystem.add_book(book2)
+
+user1 = User("John Doe", "johndoe@example.com")
+user2 = User("Jane Doe", "janedoe@example.com")
+LibrarySystem.register_user(user1)
+LibrarySystem.register_user(user2)
+
+LibrarySystem.borrow_book(user1, "1234")
+LibrarySystem.borrow_book(user2, "5678")
+LibrarySystem.borrow_book(user1, "5678")
+LibrarySystem.borrow_book(user1, "9012")
+
+LibrarySystem.return_book(user1, "1234")
+LibrarySystem.return_book(user1, "5678")
+LibrarySystem.return_book(user2, "5678")
+
+books = LibrarySystem.list_books()
+for book in books:
+    print(f"{book.title} by {book.author}, ISBN: {book.isbn}, Copies available: {book.num_copies}")
+
+users = LibrarySystem.list_users()
+for user in users:
+    print(f"{user.name} ({user.email}) has borrowed:")
+    for book in user.books_borrowed:
+        print(f"- {book.title} by {book.author}, ISBN: {book.isbn}")
+
+```
+

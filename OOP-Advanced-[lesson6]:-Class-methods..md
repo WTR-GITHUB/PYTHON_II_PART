@@ -144,33 +144,33 @@ print(Student.get_lowest_grade().name)  # Alice
 
 * Task Nr.1:  
 
-  Create a class which takes temperature measurements in `Kelvins` and add static methods to transform those to `Celsius` and `Fahrenheit` units. Use 
-  OOP abstraction. 
+  Create a class method to return the **factorial** of a given number.
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
 
 
 * Task Nr.2:
  
-  Create a class that would take at least five `imperial system` measurements and would transform with the help of static methods to `metric` system 
-  units.
+  Create a class method to return the **reversed string** of a given string.
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 
 * Task Nr.3:
 
-  Create a class called `TimeUtils` that has a static method called `time_to_seconds` that takes a time string in the format `hh:mm:ss` and returns the 
-  total number of seconds represented by that time. Use **functional programing paradigm**.
+  Create a class method to return t**he list of prime numbers** up to a given number.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-2) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
 
 * Task Nr.4: 
 
-  Create a class called `Employee` with a static method called `calculate_payroll` that takes a list of `Employee` instances and returns the total amount 
-  to be paid to all employees. Each `Employee` instance has two attributes: `name` and `salary`.
+  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register to 
+  the library system, borrow books, and return books. The library system should keep track of the books borrowed by users, and the number of available 
+  copies of each book.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-1) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
 
 
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
-* [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
+* [Corey Schafer: Python class and static methods](https://www.youtube.com/watch?v=rq8cL2XMM5M&t)
 * [RealPhyton](https://realpython.com/instance-class-and-static-methods-demystified/)
 ***

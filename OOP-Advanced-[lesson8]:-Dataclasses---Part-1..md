@@ -79,6 +79,10 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
 
 * Task Nr.2:
+  You need to create a program to manage a list of books in a library. Each book has a `title`, an `author`, a `publication year`, and an `ISBN`. You 
+  need to define a `Book` class using the `dataclass` module that contains attributes for these properties. You also need to implement a `Library` class 
+  that manages a list of books. The `Library` class should allow you to `add` and `remove` books from the library, search for books by `title` or 
+  `author`, and display the list of books currently in the library.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 

@@ -68,13 +68,14 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
 ## Exercises: 
 
-* Task Nr.1: 
+* Task Nr.1:
+ 
   You have been asked to create a simple inventory management system for a small retail store. You need to define a `Product` class using the dataclass 
   module that represents a product in the store. Each `Product` should have a unique `ID`, a `name`, a `description`, a `price`, and a `quantity in 
   stock`. You also need to implement a method `calculate_total_cost` that calculates the total cost of a given number of items of the product, taking 
   into account any discounts that may apply.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-4) 
 
 
 * Task Nr.2:

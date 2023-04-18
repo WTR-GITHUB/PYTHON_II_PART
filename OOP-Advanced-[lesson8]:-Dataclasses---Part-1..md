@@ -68,30 +68,24 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
 ## Exercises: 
 
-* Task Nr.1:  
-
-  Create a class method to return the **factorial** of a given number.
+* Task Nr.1: 
+  You have been asked to create a simple inventory management system for a small retail store. You need to define a `Product` class using the dataclass 
+  module that represents a product in the store. Each `Product` should have a unique `ID`, a `name`, a `description`, a `price`, and a `quantity in 
+  stock`. You also need to implement a method `calculate_total_cost` that calculates the total cost of a given number of items of the product, taking 
+  into account any discounts that may apply.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
 
 
 * Task Nr.2:
- 
-  Create a class method to return the **reversed string** of a given string.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 
 * Task Nr.3:
 
-  Create a class method to return t**he list of prime numbers** up to a given number.
-
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
 
 * Task Nr.4: 
-
-  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register to 
-  the library system, borrow books, and return books. The library system should keep track of the books borrowed by users, and the number of available 
-  copies of each book.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
 

@@ -26,7 +26,7 @@ print(person.name) # Output: John Doe
 
 Here's another example that demonstrates how to use the `dataclass` module to create a class representing a 2D point:
 
-```
+```python
 from dataclasses import dataclass
 
 @dataclass

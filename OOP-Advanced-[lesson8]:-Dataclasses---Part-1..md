@@ -84,7 +84,7 @@ There are many reasons we have an increase in programmer efficiency and code qua
   that manages a list of books. The `Library` class should allow you to `add` and `remove` books from the library, search for books by `title` or 
   `author`, and display the list of books currently in the library.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-3) 
 
 * Task Nr.3:
 

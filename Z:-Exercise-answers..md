@@ -512,3 +512,38 @@ for user in users:
 
 ```
 
+## OOP Advanced [lesson8]: Dataclasses Part 1.
+
+### Task Nr. 1:
+
+```python
+from dataclasses import dataclass
+from typing import Optional
+
+@dataclass
+class Product:
+    id: int
+    name: str
+    description: Optional[str] = None
+    price: float = 0.0
+    quantity: int = 0
+
+    def calculate_total_cost(self, num_items: int) -> float:
+        if num_items <= 0:
+            return 0.0
+        elif num_items > self.quantity:
+            return self.quantity * self.price
+        else:
+            return num_items * self.price
+
+```
+
+```python
+# Create a Product instance
+p = Product(1, "Apple", "A tasty fruit", 1.0, 10)
+
+# Calculate the total cost of 5 Apples
+total_cost = p.calculate_total_cost(5)
+print(total_cost) # Output: 5.0
+
+```

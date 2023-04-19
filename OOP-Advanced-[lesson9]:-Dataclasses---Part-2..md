@@ -46,6 +46,35 @@ print(p2)  # Person(name='Jane', age=18, gender='female')
 ```
 In this example, we define a `get_default_age()` function that returns the default `age` value of `18`. We use the `field()` function to specify the `default value` for the `age` **field**, passing in the `get_default_age()` function as the `default_factory` argument. When we create a new instance of the `Person` class, the `age` field will be initialized with the value returned by the `get_default_age()` function.
 
+### Immutability
+
+In Python, `dataclasses` are mutable **by default**, meaning that their attributes can be modified after the object is created. However, there may be cases where we want to create _immutable dataclasses_, which cannot be modified after they are created. Immutable dataclasses **can be useful in scenarios where we want to ensure that the state of an object cannot change**, such as when creating hashable objects or when working with concurrency. 
+
+To create an immutable dataclass in Python, we can use the `frozen` parameter of the dataclass decorator. Here is an example:
+
+```python
+from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Person:
+    name: str
+    age: int
+
+```
+In the above code, we define a `Person` dataclass with two fields: `name` and `age`. We set the `frozen` parameter of the dataclass decorator to `True`, which makes the `dataclass immutable`. Once a `Person` object is created,** its attributes cannot be modified**.
+
+Here is an example of creating an immutable `Person` object:
+
+```python
+p = Person(name='John', age=30)
+print(p)  # Person(name='John', age=30)
+
+p.age = 40  # raises an AttributeError: can't set attribute
+
+```
+In the above code, we create a new `Person` object with a name of `John` and an age of `30`. When we try to modify the age attribute of the object, we get an `AttributeError` because the object is **immutable**.
+
+It's worth noting that creating immutable dataclasses using the frozen parameter** has some limitations**. For example, if the dataclass contains mutable objects (such as lists or dictionaries), those objects can still be modified. In these cases, it's up to the developer to ensure that the dataclass is truly immutable.
 
 ## Exercises: 
 

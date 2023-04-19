@@ -76,6 +76,40 @@ In the above code, we create a new `Person` object with a name of `John` and an 
 
 It's worth noting that creating immutable dataclasses using the frozen parameter** has some limitations**. For example, if the dataclass contains mutable objects (such as lists or dictionaries), those objects can still be modified. In these cases, it's up to the developer to ensure that the dataclass is truly immutable.
 
+### Inheritance
+
+In Python, dataclasses can be used as base classes for other dataclasses, allowing us to inherit attributes and functionality. Dataclass inheritance works similarly to regular class inheritance in Python, with some additional considerations for dataclass fields.
+
+Here is an example of using dataclass inheritance:
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Person:
+    name: str
+    age: int
+
+@dataclass
+class Employee(Person):
+    id: str
+    department: str
+
+```
+In the above code, we define a Person dataclass with two fields: name and age. We then define an Employee dataclass that inherits from Person and adds two additional fields: id and department. When we create an instance of the Employee class, it will have all four fields (name, age, id, and department).
+
+Here is an example of creating an instance of the Employee class:
+
+```python
+e = Employee(name='John', age=30, id='1234', department='Sales')
+print(e)  # Employee(name='John', age=30, id='1234', department='Sales')
+
+```
+In the above code, we create a new Employee object with a name of 'John', an age of 30, an id of '1234', and a department of 'Sales'.
+
+It's worth noting that when inheriting from a dataclass, any fields defined in the parent class will be inherited by the child class. However, if the child class redefines a field with the same name as a field in the parent class, the child class's definition will take precedence. Additionally, fields with the same name in both the parent and child classes must have the same type and default value.
+
+
 ## Exercises: 
 
 * Task Nr.1:

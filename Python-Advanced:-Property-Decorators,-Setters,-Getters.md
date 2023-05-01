@@ -26,6 +26,34 @@ print(r.area)  # output: 12.0
 ```
 In this example, we define a class `Rectangle` with two attributes, `width` and `height`. We then use the `@property` decorator to define a getter method called area, which calculates the area of the rectangle by multiplying the `width` and `height` attributes. We can then use `r.area` to retrieve the area of the rectangle, without having to call a separate method.
 
+### How to Use the Property Decorator?
+
+Let’s implement the `Student` class like this:
+
+```python3
+class Student:
+    def __init__(self):
+        self._score: int = 0
+
+    @property
+    def score(self) -> int:
+        return self._score
+
+    @score.setter
+    def score(self, s: int) -> None:
+        if 0 <= s <= 100:
+            self._score = s
+        else:
+            raise ValueError('The score must be between 0 ~ 100!')
+
+    @score.deleter
+    def score(self) -> None:
+        del self._score
+
+Tom = Student()
+Tom.score = 999
+# ValueError: The score must be between 0 ~ 100!
+```
 ## Exercises: 
 
 * Task Nr.1:  

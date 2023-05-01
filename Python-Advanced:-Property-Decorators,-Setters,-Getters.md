@@ -54,6 +54,55 @@ Tom = Student()
 Tom.score = 999
 # ValueError: The score must be between 0 ~ 100!
 ```
+
+As the above code shown, after using the `@property` decorator, we can both `set` the value directly and ensure the validity of it. The **property decorator** is a very useful and widely used mechanism in Python classes. It helps us call the `getter`, `setter` and `deleter` methods directly by the attribute.
+
+A common template for using the property decorator is:
+
+```python3
+class C(object):
+
+    @property
+    def x(self):
+        return self._x
+
+    @x.setter
+    def x(self, value):
+        self._x = value
+
+    @x.deleter
+    def x(self):
+        del self._x
+```
+
+Note: **The names of getter, setter and deleter methods should be the same. The best choice is to use the attribute’s name.**
+
+### Define a Read-only Attribute
+
+As we known, there are three methods (getter, setter and deleter) we can define by the property decorator. If one of the three methods is not defined, **we cannot use this method**. Therefore, we can skillfully use the property decorator _to define a read-only attribute_. For example:
+
+```python3
+class Student:
+    def __init__(self):
+        self._score = 0
+
+    @property
+    def score(self):
+        return self._score
+
+    @score.deleter
+    def score(self):
+        del self._score
+
+
+
+Tom= Student()
+Tom.score = 99
+# AttributeError: can't set attribute
+```
+
+As the above example shown, we don’t define the `setter` method of `score` , so `score` **can’t be set.** In other words, it’s a `read-only` attribute. **This is an important usage scenario of the property decorator**.
+
 ## Exercises: 
 
 * Task Nr.1:  

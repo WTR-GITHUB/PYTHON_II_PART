@@ -616,3 +616,61 @@ The Great Gatsby by F. Scott Fitzgerald, published in 1925, ISBN: 9780141392461
 Pride and Prejudice by Jane Austen, published in 1813, ISBN: 9780486284736
 
 ```
+
+
+## OOP Advanced [lesson10]: Property decorators, setters.
+
+### Task Nr. 1:
+
+```python3
+class Temperature:
+    def __init__(self, celsius: float):
+        self._celsius = celsius
+
+    @property
+    def celsius(self) -> float:
+        return self._celsius
+
+    @celsius.setter
+    def celsius(self, value: float) -> None:
+        self._celsius = value
+
+    @property
+    def fahrenheit(self) -> float:
+        return (self.celsius * 1.8) + 32
+
+```
+
+### Task Nr. 2:
+
+```python3
+import re
+
+class User:
+    def __init__(self, password: str):
+        self._password = password
+
+    @property
+    def password(self) -> str:
+        return self._password
+
+    @password.setter
+    def password(self, value: str) -> None:
+        if not self.is_password_strong(value):
+            raise ValueError("Password is not strong enough")
+        self._password = value
+
+    @staticmethod
+    def is_password_strong(password: str) -> bool:
+        if len(password) < 8:
+            return False
+        if not re.search(r"[a-z]", password):
+            return False
+        if not re.search(r"[A-Z]", password):
+            return False
+        if not re.search(r"\d", password):
+            return False
+        return True
+
+```
+

@@ -106,12 +106,22 @@ As the above example shown, we don’t define the `setter` method of `score` , s
 ## Exercises: 
 
 * Task Nr.1:  
+  Write a `Temperature class` that has a `celsius` property and a `fahrenheit` property. The `celsius` property stores the temperature in `Celsius`, and 
+  the fahrenheit property stores the temperature in `Fahrenheit`. The `fahrenheit` property should be a computed property that converts the `Celsius` 
+  temperature to `Fahrenheit`.
+
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-5) 
 
 
-* Cafeteria project :
+* Task Nr.2 :
+  Write a `User` class that has a `password` property. The `password` property should be a computed property that checks whether the password is strong 
+  enough. A `password` is considered strong if it has at least 8 characters, contains at least one uppercase letter, one lowercase letter, and one 
+  number.
+
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-4) 
  
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full OOP course - Youtube](https://www.youtube.com/watch?v=Ej_02ICOIgs)
-* [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
+* [Real Python](https://realpython.com/python-property/)
 ***

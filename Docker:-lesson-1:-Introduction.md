@@ -6,7 +6,15 @@
 
 ### Linux 
 
-For linux users , please go there: https://docs.docker.com/engine/install/ubuntu/
+For Linux users, please go there: https://docs.docker.com/engine/install/ubuntu/
+
+### Windows
+
+For Windows users , please go there: https://docs.docker.com/desktop/install/windows-install/
+
+### macOS
+
+For macOS users , please go there: https://docs.docker.com/desktop/install/mac-install/
 
 
 ## Exercises: 

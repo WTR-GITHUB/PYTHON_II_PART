@@ -16,6 +16,16 @@ For Windows users , please go there: https://docs.docker.com/desktop/install/win
 
 For macOS users , please go there: https://docs.docker.com/desktop/install/mac-install/
 
+## Images
+
+**Docker images** are a key concept in Docker, a popular platform for building, packaging, and deploying software applications. In simple terms, a Docker image is a lightweight, standalone, and executable package that contains all the necessary files, dependencies, and configurations required to run an application.
+
+An image is created by specifying a series of instructions in a Dockerfile, which is a text file that contains the commands to build the image. These instructions typically include things like installing packages, copying files, and setting environment variables. Once the Dockerfile is built, the resulting image can be stored in a Docker registry or repository, such as Docker Hub or a private registry.
+
+Images are designed to be portable and can be run on any host that supports Docker. When an image is executed, it creates a container, which is a lightweight, isolated runtime environment that runs the application. Multiple containers can be created from the same image, each with its own isolated runtime environment, allowing applications to be easily scaled and managed.
+
+Overall, Docker images provide a simple and efficient way to package, distribute, and run applications, making it easier to develop, deploy, and manage software in a variety of environments.
+
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

@@ -77,6 +77,49 @@ or
 docker rmi <image_id>
 ```
 
+##Containers
+
+As already mentioned, a `container` is a lightweight, standalone, and executable package that includes everything needed to run an application, such as code, runtime, libraries, and system tools. Containers allow you to run your applications in an isolated environment that has all the necessary dependencies and configurations, without affecting the host system.
+
+### Working with containers
+
+Run a Docker container:
+
+```
+docker run <image_name>
+
+```
+
+List all running containers:
+
+```
+docker ps
+```
+
+Stop a running container:
+
+```
+docker stop <container_id>
+```
+
+Remove a stopped container:
+
+```
+docker rm <container_id>
+```
+
+View logs from a container:
+
+'''
+docker logs <container_id>
+'''
+
+Start a stopped container:
+
+```
+docker start <container_id>
+```
+
 ``````
 
 ## Exercises: 

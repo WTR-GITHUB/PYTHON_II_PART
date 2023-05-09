@@ -65,9 +65,19 @@ To list all images you have already downloaded:
 ```
 docker image list
 ```
+To delete the image from the list: 
+
+```
+docker image rm <image_id>
+```
+or 
 
 
+```
+docker rmi <image_id>
+```
 
+``````
 
 ## Exercises: 
 

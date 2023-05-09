@@ -26,6 +26,21 @@ Images are designed to be portable and can be run on any host that supports Dock
 
 Overall, Docker images provide a simple and efficient way to package, distribute, and run applications, making it easier to develop, deploy, and manage software in a variety of environments.
 
+### Working with images
+
+Open up a terminal or command prompt and type in the following command to download a Docker image:
+
+```
+docker pull <image_name>
+
+```
+
+Replace <image_name> with the name of the image you want to download. For example, if you want to download the official `nginx` image, you would type:
+
+```
+docker pull nginx
+
+```
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

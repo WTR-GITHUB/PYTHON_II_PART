@@ -38,9 +38,29 @@ docker pull <image_name>
 Replace <image_name> with the name of the image you want to download. For example, if you want to download the official `nginx` image, you would type:
 
 ```
-docker pull nginx
+docker pull python
 
 ```
+
+Once the image is downloaded, you can start a container from it by typing:
+
+```
+docker run <image_name>
+
+```
+
+```
+docker run ngix
+
+```
+You can also specify additional options when starting a container. For example, to start a container and **map a local port to the container's port 80** (so you can access the web server from your browser as for example), you would type:
+
+```
+docker run -p 8080:80 nginx
+
+```
+
+
 
 ## Exercises: 
 🧠 : Repeat the [OOP Part 2](https://github.com/CodeAcademy-Online/python-new-material/wiki/Lesson-19:-OOP-(-Part-2))

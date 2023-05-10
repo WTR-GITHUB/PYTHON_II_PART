@@ -120,8 +120,6 @@ Start a stopped container:
 docker start <container_id>
 ```
 
-``````
-
 ## Exercises: 
 
 * **Task Nr.1**:

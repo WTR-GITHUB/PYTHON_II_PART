@@ -110,9 +110,9 @@ docker rm <container_id>
 
 View logs from a container:
 
-'''
+```
 docker logs <container_id>
-'''
+```
 
 Start a stopped container:
 

@@ -123,17 +123,10 @@ docker start <container_id>
 ## Exercises: 
 
 * **Task Nr.1**:
- 
-
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1) 
+ Go and find the latest mongo db image and install/ run it.
 
 * **Task Nr.2**:
-
-
-* **Task Nr.3**:
-
-
-* **Task Nr.4**: 
+ Install several other images, and try to use all the commands from the examples.
 
 
  [Hint](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4) 
@@ -141,7 +134,5 @@ docker start <container_id>
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)
-* [Corey Schafer: Python OOP Tutorial (multiple videos)](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-* [QuanticDev - method chaining](https://quanticdev.com/articles/method-chaining/)
-* [RealPhyton - super() function](https://quanticdev.com/articles/method-chaining/)
+* [Official documentation](https://docs.docker.com/)
 ***

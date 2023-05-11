@@ -61,19 +61,25 @@ In this example, the blog post is represented as a single document with various 
 The document structure is flexible, allowing additional fields to be added as needed. Each document is self-contained, meaning all the relevant data for a specific entity (in this case, a blog post) is stored within that document.
 
 
-## Exercises: 
+## Database structure
 
-* **Task Nr.1**:
- Go and find the latest mongo db image and install/ run it.
+MongoDB is a popular NoSQL (non-relational) database system designed to store and manage large volumes of data in a flexible and scalable manner. It differs from traditional relational databases by using a document-oriented data model, where data is stored in flexible, JSON-like documents.
 
-* **Task Nr.2**:
- Install several other images, and try to use all the commands from the examples.
+In MongoDB, the basic unit of data is a document, which is a set of key-value pairs. Documents are stored in collections, which are similar to tables in relational databases. However, unlike tables, collections in MongoDB do not enforce a fixed schema, allowing for dynamic and evolving data structures within the same collection.
 
+The document structure in MongoDB is hierarchical, with nested fields and arrays. This allows for representing complex data structures in a natural way. Each document is uniquely identified by an "_id" field, which can be automatically generated or assigned by the application.
 
- [Hint](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4) 
+MongoDB supports a rich query language that allows for retrieving, updating, and deleting documents based on various criteria. The queries can use both simple equality checks and powerful operators to match documents based on specific fields or values.
+
+In addition to the basic CRUD (Create, Read, Update, Delete) operations, MongoDB provides advanced features like indexes for efficient data retrieval, aggregation pipelines for complex data processing, and geospatial queries for location-based data.
+
+MongoDB also offers built-in support for horizontal scaling through sharding, allowing you to distribute data across multiple servers or clusters for improved performance and scalability.
+
+Overall, MongoDB's flexible document structure, scalability, and powerful querying capabilities make it a popular choice for building modern applications that deal with large and diverse data sets.
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 
-* [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)
-* [Official documentation](https://docs.docker.com/)
+* [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)
+* [Official documentation](https://www.mongodb.com/docs/)
 ***

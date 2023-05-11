@@ -132,6 +132,109 @@ In the above code:
 - We use the list_collections function to retrieve all the collection names in the connected database and print them.
 
 
+## CRUD operations
+
+CRUD operations stand for **Create**, **Read**, **Update**, and **Delete**. These operations represent the basic actions performed on data in a database. Here's an explanation of each operation and an example of how to perform them using PyMongo, incorporating type annotations and good coding practices:
+
+### Create(Insert) Operation:
+The create operation is used to add new data to a collection in the database:
+
+```python
+from pymongo import MongoClient
+from pymongo.database import Database
+from pymongo.collection import Collection
+from typing import Dict
+
+def connect_to_mongodb(host: str, port: int, db_name: str) -> Database:
+    client = MongoClient(host, port)
+    database = client[db_name]
+    return database
+
+def insert_document(collection: Collection, document: Dict) -> str:
+    result = collection.insert_one(document)
+    return str(result.inserted_id)
+
+# Example usage
+if __name__ == "__main__":
+    # Connection details
+    mongodb_host = 'localhost'
+    mongodb_port = 27017
+    database_name = 'mydatabase'
+    collection_name = 'mycollection'
+
+    # Connect to MongoDB
+    db = connect_to_mongodb(mongodb_host, mongodb_port, database_name)
+
+    # Retrieve a specific collection
+    collection = db[collection_name]
+
+    # Create (Insert) Operation
+    document = {
+        "name": "John Doe",
+        "age": 30,
+        "email": "johndoe@example.com"
+    }
+    inserted_id = insert_document(collection, document)
+    print(f"Inserted document with ID: {inserted_id}")
+
+```
+In the above code:
+
+ - The `insert_document` function takes a collection and a document (represented as a dictionary) as parameters. It inserts the document into the 
+   collection using `insert_one()` and returns the ID of the inserted document.
+ - The example usage section establishes a connection to the MongoDB server and retrieves the desired collection.
+ - A sample document is created, containing fields such as name, age, and email.
+ - The `insert_document` function is called to perform the create operation by inserting the document into the collection.
+ - The ID of the inserted document is printed.
+
+### Read (Query) Operation:
+The read operation is used to retrieve data from a collection in the database:
+
+```python
+from pymongo import MongoClient
+from pymongo.database import Database
+from pymongo.collection import Collection
+from typing import Dict
+
+def connect_to_mongodb(host: str, port: int, db_name: str) -> Database:
+    client = MongoClient(host, port)
+    database = client[db_name]
+    return database
+
+def find_documents(collection: Collection, query: Dict) -> List[Dict]:
+    documents = collection.find(query)
+    return list(documents)
+
+# Example usage
+if __name__ == "__main__":
+    # Connection details
+    mongodb_host = 'localhost'
+    mongodb_port = 27017
+    database_name = 'mydatabase'
+    collection_name = 'mycollection'
+
+    # Connect to MongoDB
+    db = connect_to_mongodb(mongodb_host, mongodb_port, database_name)
+
+    # Retrieve a specific collection
+    collection = db[collection_name]
+
+    # Read (Query) Operation
+    query = {"name": "John Doe"}
+    results = find_documents(collection, query)
+    print("Matching documents:")
+    for result in results:
+        print(result)
+
+```
+In the above code:
+
+- The `find_documents` function takes a collection and a query (represented as a dictionary) as parameters. It performs a query using find() and returns 
+  the matching documents as a list of dictionaries.
+- The example usage section establishes a connection to the MongoDB server and retrieves the desired collection.
+- A query dictionary is created to find documents
+
+
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)

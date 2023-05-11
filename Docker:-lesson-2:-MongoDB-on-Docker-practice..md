@@ -31,6 +31,14 @@ Alternatively, if you pulled the image specifying a version tag, run the Docker 
 docker run -d --name test-mongo mongo:4.0.4
 ```
 
+## Manage database within a container: 
+
+Use the following command to open the MongoDB shell:
+
+```
+docker exec -it <CONTAINER_NAME> bash
+```
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

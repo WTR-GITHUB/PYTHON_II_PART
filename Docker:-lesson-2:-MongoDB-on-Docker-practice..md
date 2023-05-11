@@ -45,6 +45,24 @@ Enter mongo shell by typing:
 mongosh
 ```
 
+### Commands 
+
+```
+show dbs
+```
+
+The `show dbs` command will display all your existing databases. Here, you have the admin, config, and local databases, which are empty initially. For details on the different functions that are available from the shell, type `help`. This will provide a list of some of the database methods available, including commands to display the database’s collections and information:
+
+```
+help
+```
+To check your container logs, you can use the docker logs command followed by the name of your container:
+
+```
+docker logs test-mongo --follow
+```
+
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

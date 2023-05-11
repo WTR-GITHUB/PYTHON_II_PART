@@ -39,6 +39,12 @@ Use the following command to open the MongoDB shell:
 docker exec -it <CONTAINER_NAME> bash
 ```
 
+Enter mongo shell by typing: 
+
+```
+mongosh
+```
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

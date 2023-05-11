@@ -283,7 +283,7 @@ In the above code:
 - An update dictionary is created to set the age field to 35 for matching documents.
 - The update_document function is called to perform the update operation, and the count of modified documents is printed.
 
-## Delete Operation:
+### Delete Operation:
 The delete operation is used to remove data from a collection:
 
 ```python

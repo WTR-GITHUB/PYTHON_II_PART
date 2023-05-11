@@ -1,6 +1,8 @@
 ## Introduction
 
-`Docker` is a popular containerisation platform that allows developers to **easily create, deploy, and run** applications in isolated containers. It uses operating system-level virtualisation to create lightweight and portable containers that can run on any system that supports `Docker`. Each container includes all the necessary dependencies and libraries required to run the application, making it easy to build and deploy applications across different environments. Docker also provides a centralised registry called Docker Hub, where developers can share and distribute their container images with the wider community. With Docker, developers can streamline the application development process, increase productivity, and reduce infrastructure costs.
+`MongoDB` can be run in a Docker container. There is an [official image](https://hub.docker.com/_/mongo) available on `Docker Hub` containing the MongoDB community edition, used in development environments. For production, you may custom-build a container with MongoDB’s enterprise version.
+
+If you want to use your `MongoDB` database across several machines, using Docker containers for hosting MongoDB is a great approach – you can easily create new isolated instances. Furthermore, during development, it is easier to start a Docker instance than manually configure a server.
 
 ## Installation 
 

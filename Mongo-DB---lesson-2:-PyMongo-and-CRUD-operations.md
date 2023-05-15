@@ -354,8 +354,6 @@ In the above code:
    - Use appropriate functions and modular code structure for better code organization.
    - Include a README file with clear instructions on how to set up and run the application.
 
-  [Guidelines](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-5) 
-
  
 
 ## 🌐  Extra reading (or watching 📺 ):

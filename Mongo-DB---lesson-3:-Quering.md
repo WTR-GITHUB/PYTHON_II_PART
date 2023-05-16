@@ -25,7 +25,11 @@ your_shop_collection.find_one( {}, {"num_orders" : 0, "meal_id" : 0})
 
 ### Filter with a condition
 
-Now, in this section, we will provide a condition **in the first braces and fields to discard in the second**. Consequently, it will return the `first document` with `center_id` equal to `55` and `meal_id` equal to `1885` and will also discard the fields `_id` and `week`.
+Now, in this section, we will provide a condition **in the first braces and fields to discard in the second**. Consequently, it will return the `first document` with `center_id` equal to `55` and `meal_id` equal to `1885` and will also discard the fields `_id` and `week`:
+
+```python
+your_shop_collection.find_one( {"center_id" : 55, "meal_id" : 1885}, {"_id" : 0, "week" : 0} )
+```
 
 
 ## Exercises: 

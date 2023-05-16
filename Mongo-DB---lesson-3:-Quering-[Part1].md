@@ -123,19 +123,4 @@ By encapsulating the filtering logic in functions, you can reuse the code for di
 
 * [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)
 * [Official documentation](https://www.mongodb.com/docs/)
-***[$eq](https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_eq) 	It will match the values that are equal to a specified value.
-[$gt](https://docs.mongodb.com/manual/reference/operator/query/gt/#op._S_gt) 	It will match the values that are greater than a specified value.
-[$gte](https://docs.mongodb.com/manual/reference/operator/query/gte/#op._S_gte) 	It will match all the values that are greater than or equal to a specified value.
-[$in](https://docs.mongodb.com/manual/reference/operator/query/in/#op._S_in) 	It will match any of the values specified in an array.
-[$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/#op._S_lt) 	It will match all the values that are less than a specified value.
-[$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/#op._S_lte) 	It will match all the values that are less than or equal to a specified value.
-[$ne](https://docs.mongodb.com/manual/reference/operator/query/ne/#op._S_ne) 	It will match all the values that are not equal to a specified value.
-[$nin](https://docs.mongodb.com/manual/reference/operator/query/nin/#op._S_nin) 	It will match none of the values specified in an array.NAME 	DESCRIPTION
-[$eq](https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_eq) 	It will match the values that are equal to a specified value.
-[$gt](https://docs.mongodb.com/manual/reference/operator/query/gt/#op._S_gt) 	It will match the values that are greater than a specified value.
-[$gte](https://docs.mongodb.com/manual/reference/operator/query/gte/#op._S_gte) 	It will match all the values that are greater than or equal to a specified value.
-[$in](https://docs.mongodb.com/manual/reference/operator/query/in/#op._S_in) 	It will match any of the values specified in an array.
-[$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/#op._S_lt) 	It will match all the values that are less than a specified value.
-[$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/#op._S_lte) 	It will match all the values that are less than or equal to a specified value.
-[$ne](https://docs.mongodb.com/manual/reference/operator/query/ne/#op._S_ne) 	It will match all the values that are not equal to a specified value.
-[$nin](https://docs.mongodb.com/manual/reference/operator/query/nin/#op._S_nin) 	It will match none of the values specified in an array.
+***

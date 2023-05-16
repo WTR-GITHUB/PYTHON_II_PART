@@ -812,7 +812,7 @@ def main() -> None:
 
 ## Mongo DB - lesson 3: Quering [Part1]
 
-### Task Nr. 1: 
+### Task Nr. 2: 
 
 ```python
 from typing import List

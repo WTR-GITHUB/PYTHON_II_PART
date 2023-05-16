@@ -7,6 +7,16 @@ The following is the syntax of the find and find_one:
 your_collection.find( {<< query >>} , { << fields>>} )
 ```
 
+## Filter
+
+### Filter based on fields
+
+For instance, you have hundreds of fields and you want to see only a few of them. You can do that by just putting all the required field names with the value `1`. For example:
+
+```python
+your_collection.find_one( {}, { "week": 1, "checkout_price" : 1})
+```
+
 
 
 

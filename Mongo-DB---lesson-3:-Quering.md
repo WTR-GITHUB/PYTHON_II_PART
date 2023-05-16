@@ -14,10 +14,18 @@ your_collection.find( {<< query >>} , { << fields>>} )
 For instance, you have hundreds of fields and you want to see only a few of them. You can do that by just putting all the required field names with the value `1`. For example:
 
 ```python
-your_collection.find_one( {}, { "week": 1, "checkout_price" : 1})
+your_shop_collection.find_one( {}, { "week": 1, "checkout_price" : 1})
 ```
 
+On the other hand, if you want to discard a few fields only from the complete document, you can put the field names equal to `0`. **Therefore, only those fields will be excluded**. Please note that you cannot use a combination of 1s and 0s to get the fields. Either all should be one, or all should be zero.
 
+```python
+your_shop_collection.find_one( {}, {"num_orders" : 0, "meal_id" : 0})
+```
+
+### Filter with a condition
+
+Now, in this section, we will provide a condition **in the first braces and fields to discard in the second**. Consequently, it will return the `first document` with `center_id` equal to `55` and `meal_id` equal to `1885` and will also discard the fields `_id` and `week`.
 
 
 ## Exercises: 

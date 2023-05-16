@@ -92,6 +92,49 @@ In the above code:
 
 By encapsulating the filtering logic in functions, you can reuse the code for different fields and values as needed. Additionally, converting the query results to a list provides a concrete data structure for further processing.
 
+### $gt and $lt
+Here are code examples for filtering `MongoDB` using `PyMongo` with the `$gt` (greater than) and `$lt` (less than) operators:
+
+```python
+from typing import List
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client["your_database_name"]
+collection = db["your_collection_name"]
+
+# Filtering using $gt operator
+def filter_by_greater_than(field_name: str, value: int) -> List[dict]:
+    query = {field_name: {"$gt": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "age" field is greater than 25
+filtered_greater_than = filter_by_greater_than("age", 25)
+print(filtered_greater_than)
+
+
+# Filtering using $lt operator
+def filter_by_less_than(field_name: str, value: int) -> List[dict]:
+    query = {field_name: {"$lt": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "rating" field is less than 4.5
+filtered_less_than = filter_by_less_than("rating", 4.5)
+print(filtered_less_than)
+
+```
+
+In the above code:
+
+- The `filter_by_greater_than` function takes a field name and a value (expected to be an integer) as parameters. It creates a query using the `$gt` 
+  operator, executes the query using `collection.find()`, and returns a list of matching documents.
+- The `filter_by_less_than` function is similar but uses the `$lt` operator instead.
+- The resulting documents are converted to a list using `list(result)` to make it easier to work with the results.
+- The function calls demonstrate filtering by the `age` field greater than `25` and the `rating` field less than `4.5`, respectively.
+
+
 
 ## Exercises: 
 

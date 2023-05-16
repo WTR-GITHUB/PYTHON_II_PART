@@ -33,7 +33,6 @@ your_shop_collection.find_one( {"center_id" : 55, "meal_id" : 1885}, {"_id" : 0,
 <!--StartFragment-->
 
 $eq | It will match the values that are equal to a specified value.
--- | --
 $gt | It will match the values that are greater than a specified value.
 $gte | It will match all the values that are greater than or equal to a specified value.
 $in | It will match any of the values specified in an array.

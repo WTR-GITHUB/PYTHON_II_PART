@@ -47,6 +47,52 @@ $nin | It will match none of the values specified in an array.
 </body>
 </html>
 
+
+### $eq and $ne
+
+Here are code examples for filtering `MongoDB` using `PyMongo` with the `$eq` (equals) and `$ne` (not equals) operators:
+
+```python
+from typing import List
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client["your_database_name"]
+collection = db["your_collection_name"]
+
+# Filtering using $eq operator
+def filter_by_equals(field_name: str, value: str) -> List[dict]:
+    query = {field_name: {"$eq": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "age" field is equal to 25
+filtered_equals = filter_by_equals("age", "25")
+print(filtered_equals)
+
+
+# Filtering using $ne operator
+def filter_by_not_equals(field_name: str, value: str) -> List[dict]:
+    query = {field_name: {"$ne": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "name" field is not equal to "John"
+filtered_not_equals = filter_by_not_equals("name", "John")
+print(filtered_not_equals)
+
+```
+In the above code:
+
+- The `filter_by_equals` function takes a field name and a value as parameters, creates a query using the `$eq` operator, executes the query using 
+  `collection.find()`, and returns a list of matching documents.
+- The `filter_by_not_equals` function is similar but uses the $ne operator instead.
+- The resulting documents are converted to a list using `list(result)` to make it easier to work with the results.
+- The function calls demonstrate filtering by the `age` field equal to `25` and the `name` field not equal to `John`, respectively.
+
+By encapsulating the filtering logic in functions, you can reuse the code for different fields and values as needed. Additionally, converting the query results to a list provides a concrete data structure for further processing.
+
+
 ## Exercises: 
 
 * Task Nr.1 :

@@ -139,7 +139,10 @@ In the above code:
 ## Exercises: 
 
 * Task Nr.1 :
-  Create a class that would implement basic CRUD operations to manage book data in the library.
+  Create the CLI application, which would populate mongo DB database with random data. The input should ask for:
+  - database name
+  - collection name
+
  
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-6) 
 

@@ -139,10 +139,11 @@ In the above code:
 ## Exercises: 
 
 * Task Nr.1 :
-  Create the CLI application, that would populate MongoDB database with random data. The input should ask for:
+  Create the CLI application, that would populate MongoDB database with random data. The input should ask for :
   - database name
   - collection name
-  - field name with types (string, number, date string objects etc.) with range of values (lets say field name = price , then value is number (float, int) which is random number from a(min) to b(max) )
+  - field name with types (string, number, date string objects etc.) with range of values (lets say field name = price , then value is number (float, 
+    int) which is random number from a(min) to b(max) )
   - number o documents to create.
 
 * Task Nr.2: 

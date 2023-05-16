@@ -1,0 +1,43 @@
+## Introduction
+We can query a `MongoDB` database using `PyMongo` with the `find` function to get all the results satisfying the given condition and also using the `find_one` function, which will return only one result satisfying the condition.
+
+The following is the syntax of the find and find_one:
+
+```python
+your_collection.find( {<< query >>} , { << fields>>} )
+```
+
+
+
+
+## Exercises: 
+
+* Task Nr.1 :
+  Create a class that would implement basic CRUD operations to manage book data in the library.
+ 
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-6) 
+
+* Task Nr.2:  
+  Create a command-line task manager application using Python and MongoDB. The application should allow users to perform basic CRUD operations (Create, 
+  Read, Update, Delete) on tasks stored in a MongoDB database. Users should be able to add new tasks, view all tasks, update task status, and delete 
+  tasks.
+ 
+  Requirements:
+
+  - The application should utilize the PyMongo library for interacting with the MongoDB database.
+  - Users should be able to perform the following actions:
+        - Add a new task with a title and description.
+        - View all tasks with their details.
+        - Update the status of a task (e.g., mark as completed or in progress).
+        - Delete a task.
+   - Implement error handling and validation for user inputs.
+   - Use appropriate functions and modular code structure for better code organization.
+   - Include a README file with clear instructions on how to set up and run the application.
+
+ 
+
+## 🌐  Extra reading (or watching 📺 ):
+
+* [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)
+* [Official documentation](https://www.mongodb.com/docs/)
+***

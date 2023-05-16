@@ -139,31 +139,24 @@ In the above code:
 ## Exercises: 
 
 * Task Nr.1 :
-  Create the CLI application, which would populate mongo DB database with random data. The input should ask for:
+  Create the CLI application, that would populate MongoDB database with random data. The input should ask for:
   - database name
   - collection name
+  - field name with types (string, number, date string objects etc.) with range of values (lets say field name = price , then value is number (float, int) which is random number from a(min) to b(max) )
+  - number o documents to create.
 
- 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-6) 
+* Task Nr.2: 
+  Write a function `filter_documents` that takes a `MongoDB` collection, a field name, an equal value, and a not equal value as parameters. The function 
+  should return a list of documents from the collection where the specified field is equal to the equal value and not equal to the not equal value.
 
-* Task Nr.2:  
-  Create a command-line task manager application using Python and MongoDB. The application should allow users to perform basic CRUD operations (Create, 
-  Read, Update, Delete) on tasks stored in a MongoDB database. Users should be able to add new tasks, view all tasks, update task status, and delete 
-  tasks.
- 
-  Requirements:
+  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#mongo-db---lesson-3-quering-part1) 
 
-  - The application should utilize the PyMongo library for interacting with the MongoDB database.
-  - Users should be able to perform the following actions:
-        - Add a new task with a title and description.
-        - View all tasks with their details.
-        - Update the status of a task (e.g., mark as completed or in progress).
-        - Delete a task.
-   - Implement error handling and validation for user inputs.
-   - Use appropriate functions and modular code structure for better code organization.
-   - Include a README file with clear instructions on how to set up and run the application.
-
- 
+* Task Nr.3:  
+  With your own tool, create of database of grocery store. Store consist three different categories of items (lets say electronics, fruits, food etc.).
+  The items as minimum should have these fields: name, price, quantity, year made (YYYY-MM-DD). 
+  Task: 
+   - Get all electronic item monetary value items made 3 years, 2 months and 12 days from today. 
+   - 
 
 ## 🌐  Extra reading (or watching 📺 ):
 

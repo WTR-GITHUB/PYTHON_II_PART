@@ -7,9 +7,7 @@ The following is the syntax of the find and find_one:
 your_collection.find( {<< query >>} , { << fields>>} )
 ```
 
-## Filter
-
-### Filter based on fields
+## Filter based on fields & conditions
 
 For instance, you have hundreds of fields and you want to see only a few of them. You can do that by just putting all the required field names with the value `1`. For example:
 
@@ -23,14 +21,30 @@ On the other hand, if you want to discard a few fields only from the complete do
 your_shop_collection.find_one( {}, {"num_orders" : 0, "meal_id" : 0})
 ```
 
-### Filter with a condition
-
 Now, in this section, we will provide a condition **in the first braces and fields to discard in the second**. Consequently, it will return the `first document` with `center_id` equal to `55` and `meal_id` equal to `1885` and will also discard the fields `_id` and `week`:
 
 ```python
 your_shop_collection.find_one( {"center_id" : 55, "meal_id" : 1885}, {"_id" : 0, "week" : 0} )
 ```
 
+## Filter based on Comparison Operators
+
+<html><body>
+<!--StartFragment-->
+
+$eq | It will match the values that are equal to a specified value.
+-- | --
+$gt | It will match the values that are greater than a specified value.
+$gte | It will match all the values that are greater than or equal to a specified value.
+$in | It will match any of the values specified in an array.
+$lt | It will match all the values that are less than a specified value.
+$lte | It will match all the values that are less than or equal to a specified value.
+$ne | It will match all the values that are not equal to a specified value.
+$nin | It will match none of the values specified in an array.
+
+<!--EndFragment-->
+</body>
+</html>
 
 ## Exercises: 
 
@@ -62,4 +76,11 @@ your_shop_collection.find_one( {"center_id" : 55, "meal_id" : 1885}, {"_id" : 0,
 
 * [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)
 * [Official documentation](https://www.mongodb.com/docs/)
-***
+***[$eq](https://docs.mongodb.com/manual/reference/operator/query/eq/#op._S_eq) 	It will match the values that are equal to a specified value.
+[$gt](https://docs.mongodb.com/manual/reference/operator/query/gt/#op._S_gt) 	It will match the values that are greater than a specified value.
+[$gte](https://docs.mongodb.com/manual/reference/operator/query/gte/#op._S_gte) 	It will match all the values that are greater than or equal to a specified value.
+[$in](https://docs.mongodb.com/manual/reference/operator/query/in/#op._S_in) 	It will match any of the values specified in an array.
+[$lt](https://docs.mongodb.com/manual/reference/operator/query/lt/#op._S_lt) 	It will match all the values that are less than a specified value.
+[$lte](https://docs.mongodb.com/manual/reference/operator/query/lte/#op._S_lte) 	It will match all the values that are less than or equal to a specified value.
+[$ne](https://docs.mongodb.com/manual/reference/operator/query/ne/#op._S_ne) 	It will match all the values that are not equal to a specified value.
+[$nin](https://docs.mongodb.com/manual/reference/operator/query/nin/#op._S_nin) 	It will match none of the values specified in an array.

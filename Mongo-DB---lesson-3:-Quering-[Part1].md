@@ -158,6 +158,8 @@ In the above code:
   Task: 
    - Get all electronic items monetary value  made 1 years, 2 months and 12 days from today. 
    - Get average price for all items/categories in the store.
+   - Get all items which names starts with letter `a`, and cost is between 10 and 100.
+   - Find all item names (only) for prices > 50 and quantity < 10. 
 
 ## 🌐  Extra reading (or watching 📺 ):
 

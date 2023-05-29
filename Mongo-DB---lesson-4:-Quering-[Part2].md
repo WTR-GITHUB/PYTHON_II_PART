@@ -61,6 +61,46 @@ In the above code:
    respectively.
 
 
+###  $in and $nin
+Here are code examples for filtering MongoDB using `PyMongo` with the `$in` (inclusion) and `$nin` (exclusion) operators:
+
+```python
+from typing import List
+from pymongo import MongoClient
+from pymongo.collection import Collection
+
+# Filtering using $in operator
+def filter_by_in(collection: Collection, field_name: str, values: List[str]) -> List[dict]:
+    query = {field_name: {"$in": values}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "country" field is in a list of countries
+countries = ["USA", "Canada", "UK"]
+filtered_in = filter_by_in(collection, "country", countries)
+print(filtered_in)
+
+
+# Filtering using $nin operator
+def filter_by_not_in(collection: Collection, field_name: str, values: List[str]) -> List[dict]:
+    query = {field_name: {"$nin": values}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "category" field is not in a list of categories
+categories = ["Sports", "Music", "Art"]
+filtered_not_in = filter_by_not_in(collection, "category", categories)
+print(filtered_not_in)
+
+```
+
+In the above code:
+
+- The `filter_by_in` function takes a MongoDB collection, a field name, and a list of values (expected to be strings) as parameters. It creates a query 
+  using the $in operator, executes the query using collection.find(), and returns a list of matching documents.
+- The `filter_by_not`_in function is similar but uses the $nin operator instead.
+- The resulting documents are converted to a list using
+
 
 ## Exercises: 
 

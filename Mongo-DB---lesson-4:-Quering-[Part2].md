@@ -49,6 +49,16 @@ print(filtered_less_than_equal)
 
 ```
 
+In the above code:
+
+ - The `filter_by_greater_than_equal` function takes a MongoDB collection, a field name, and a value (expected to be an integer) as parameters. It 
+   creates 
+   a query using the $gte operator, executes the query using collection.find(), and returns a list of matching documents.
+ - The `filter_by_less_than_equal` function is similar but uses the $lte operator instead.
+ - The resulting documents are converted to a list using `list(result)` to make it easier to work with the results.
+ - The function calls demonstrate filtering by the "age" field greater than or equal to 25 and the "rating" field less than or equal to 4.5, 
+   respectively.
+
 
 
 ## Exercises: 

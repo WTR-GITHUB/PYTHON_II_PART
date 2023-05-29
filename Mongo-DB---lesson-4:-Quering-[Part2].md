@@ -19,7 +19,8 @@ $nin | It will match none of the values specified in an array.
 </html>
 
 
-###  Here are code examples for filtering MongoDB using `PyMongo` with the `$gte` (greater than or equal to) and `$lte` (less than or equal to) operators:
+###  $gte and $lte
+Here are code examples for filtering MongoDB using `PyMongo` with the `$gte` (greater than or equal to) and `$lte` (less than or equal to) operators:
 
 ```python
 from typing import List

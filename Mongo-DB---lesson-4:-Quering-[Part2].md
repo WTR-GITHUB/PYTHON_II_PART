@@ -19,7 +19,36 @@ $nin | It will match none of the values specified in an array.
 </html>
 
 
-### $eq and $ne
+###  Here are code examples for filtering MongoDB using `PyMongo` with the `$gte` (greater than or equal to) and `$lte` (less than or equal to) operators:
+
+```python
+from typing import List
+from pymongo import MongoClient
+from pymongo.collection import Collection
+
+# Filtering using $gte operator
+def filter_by_greater_than_equal(collection: Collection, field_name: str, value: int) -> List[dict]:
+    query = {field_name: {"$gte": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "age" field is greater than or equal to 25
+filtered_greater_than_equal = filter_by_greater_than_equal(collection, "age", 25)
+print(filtered_greater_than_equal)
+
+
+# Filtering using $lte operator
+def filter_by_less_than_equal(collection: Collection, field_name: str, value: int) -> List[dict]:
+    query = {field_name: {"$lte": value}}
+    result = collection.find(query)
+    return list(result)
+
+# Example usage: Filter documents where the "rating" field is less than or equal to 4.5
+filtered_less_than_equal = filter_by_less_than_equal(collection, "rating", 4.5)
+print(filtered_less_than_equal)
+
+```
+
 
 
 ## Exercises: 

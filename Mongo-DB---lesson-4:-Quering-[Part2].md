@@ -105,10 +105,10 @@ In the above code:
 ## Exercises: 
 
 * Task Nr.1 :
-  Create a simple database (type of db, collections, fields - from your mind) with your db tools and incorporate all new querying operators with the 
-  results.
+  Create a simple database (type of db, collections, fields - pick your own) with your db creation tool and incorporate all new querying operators with the results.
 
-* Task Nr.2:  
+* Task Nr.2: 
+  Update previous (task nr.3 from [lesson](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Mongo-DB---lesson-3:-Quering-%5BPart1%5D) )  
  
 ## 🌐  Extra reading (or watching 📺 ):
 

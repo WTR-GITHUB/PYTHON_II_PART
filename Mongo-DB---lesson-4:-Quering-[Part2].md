@@ -113,7 +113,6 @@ In the above code:
   - all items (name and year made) where the quantity is less or equal to 10 and the price is equal or less of 20.00.
   - the average price per unit for those retrieved. 
   - all items where quantity is : 5, 10 , and 15 respectively.
-  -   
  
 ## 🌐  Extra reading (or watching 📺 ):
 

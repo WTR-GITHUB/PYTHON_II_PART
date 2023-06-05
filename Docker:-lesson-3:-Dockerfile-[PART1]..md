@@ -94,6 +94,49 @@ WORKDIR relative/path/to/directory
 # Set the working directory based on an environment variable
 WORKDIR $MY_WORKDIR
 ```
+
+### COPY
+The `COPY` instruction in a `Dockerfile` is used to copy files or directories from the host machine (the build context) into the Docker image being built. It allows you to include files from the build context into the image, making them accessible during runtime.
+
+The COPY instruction has the following syntax:
+
+```docker
+COPY <src> <dest>
+```
+Let's explore its key points:
+
+- <src>: Specifies the source path of the file or directory on the host machine. It can be a relative or absolute path within the build context.
+
+- <dest>: Specifies the destination path inside the Docker image. It can be a directory path or a file path. If the destination path does not exist, Docker will create it.
+
+The `COPY` instruction is often used to add application code, configuration files, or other necessary files to the Docker image. By copying files into the image, you ensure they are available for use when running containers based on that image.
+
+Here are a few examples of `COPY` instructions:
+
+```docker
+# Copy a single file from the build context to the image
+COPY app.py /app/
+
+# Copy a directory from the build context to the image
+COPY src/ /app/src/
+
+# Copy files from the build context to multiple destinations in the image
+COPY file1.txt file2.txt /app/
+```
+The `COPY` instruction can also take advantage of **wildcard patterns** to copy multiple files matching a specific pattern:
+
+```docker
+COPY *.txt /app/
+```
+
+In the above example, all the files with the `.txt` extension in the build context will be copied to the `/app/ directory` inside the Docker image.
+
+It's important to note that the `COPY` instruction **copies files and directories from the build context into the image during the build process**. It does not provide synchronization between the host machine and the running container.
+
+By using the `COPY` instruction effectively, you can ensure that your Docker image contains all the necessary files and dependencies to run your application without relying on external resources.
+
+**Remember to consider the size and contents of the files being copied, as it can impact the resulting image size and build performance.**
+
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)

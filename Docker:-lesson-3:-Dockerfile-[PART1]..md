@@ -171,6 +171,69 @@ RUN make && make install
 RUN export MY_VAR=myvalue
 ```
 
+The `RUN` instruction allows you to customize your `Docker` image by executing **commands within the image's environment during the build process**. Each `RUN` instruction creates a new layer in the image, allowing for incremental builds and caching of intermediate results.
+
+It's important to note that each `RUN` instruction in a Dockerfile is** executed as a separate step** during the image build. **If you need to perform multiple commands that depend on each other, consider combining them using shell operators (&&, ||)** to minimize the number of layers in the resulting image.
+
+Remember to keep the number of `RUN` instructions minimal and consider any cleanup steps required to reduce the image size and remove unnecessary artifacts.
+
+By using the `RUN` instruction effectively, you can automate various tasks and configure the environment within the Docker image to meet the requirements of your application or service.
+
+
+### CMD
+
+The `CMD` instruction in a `Dockerfile` is used to provide the **default command or executable to be executed when a container is started **from the Docker image. It specifies the main process to be run within the container.
+
+The CMD instruction has the following syntax:
+
+```docker
+CMD ["executable", "param1", "param2", ...]
+```
+There are two forms of the `CMD` instruction:
+
+#### Exec form (preferred)
+
+```docker
+CMD ["executable", "param1", "param2", ...]
+```
+
+In the exec form, the command and its arguments are specified as an array of strings. The command is directly executed without being invoked by a shell.
+
+Example:
+
+```docker
+CMD ["python", "app.py"]
+```
+This runs the `python app.py` command as the main process inside the container.
+
+#### Shell form
+
+```docker
+CMD command param1 param2 ...
+```
+In the shell form, the command is specified as a string and is executed within a shell. It can include shell-specific features like variable substitution, piping, and I/O redirection.
+
+Example:
+
+```docker
+CMD python app.py
+```
+This runs the same `python app.py` command within a shell as the main process inside the container.
+
+
+The `CMD` instruction is optional in a `Dockerfile`, but if it is specified, only the **last CMD instruction in the Dockerfile will have an effect. Previous CMD instructions are ignored.**
+
+The `CMD` instruction provides the default behavior for a container. However, you can override the command by passing **arguments to the docker run command at runtime.**
+
+It's important to note that the `CMD` instruction is not executed **during the build process but rather when a container is created from the image**.
+
+Some best practices for using the `CMD` instruction include:
+
+- Using the `exec` form whenever possible for better performance and signal handling.
+- Providing a meaningful default command that allows the container to run as a standalone application.
+- Considering the use of environment variables within the CMD instruction to make the command more flexible.
+
+By utilizing the `CMD` instruction effectively, you can define the main process or command to be executed automatically when running a container based on your Docker image.
 
 
 ## 🌐  Extra reading (or watching 📺 ):

@@ -25,6 +25,18 @@
 `Dockerfile` is a powerful tool that allows you to define the entire configuration of your application in a declarative manner, making it easy to reproduce and distribute your application as a containerized environment.
 
 
+## COMMANDS
+We will discuss few, most used Dockerfile commands: 
+
+### FROM 
+The FROM instruction in a Dockerfile is used to specify the base image upon which your Docker image will be built. It is typically the first instruction in a Dockerfile.
+
+The FROM instruction has the following syntax:
+
+```docker
+FROM <image>[:<tag>] [AS <alias>]
+```
+
 
 ## 🌐  Extra reading (or watching 📺 ):
 

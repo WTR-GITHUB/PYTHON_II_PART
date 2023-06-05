@@ -2,7 +2,7 @@
 
 `Dockerfile` is a text file that contains a set of instructions for building a Docker image. It serves as a blueprint or recipe that `Docker` uses to create containers. With `Dockerfile`, **you can define the environment, dependencies, and configuration of your application**.
 
-Here are some key concepts and features of `Dockerfile`:
+### Main concept and features:
 
 - Base Image: A `Dockerfile` usually starts with a base image, which serves as the starting point for building your application's container. The base 
   image typically contains a minimal operating system or a specific runtime environment.

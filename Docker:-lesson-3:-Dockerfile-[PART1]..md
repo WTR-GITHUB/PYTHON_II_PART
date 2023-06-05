@@ -236,6 +236,49 @@ Some best practices for using the `CMD` instruction include:
 By utilizing the `CMD` instruction effectively, you can define the main process or command to be executed automatically when running a container based on your Docker image.
 
 
+### EXPOSE
+
+The `EXPOSE` instruction in a `Dockerfile` is used to inform Docker that a container created from the image will listen on specific network ports at runtime. It serves as a documentation mechanism to indicate which ports should be published and made available for communication with other containers or the host machine.
+
+The `EXPOSE` instruction has the following syntax:
+
+```docker
+EXPOSE <port> [<port>/<protocol>...]
+```
+
+Let's explore its key points:
+
+- <port>: Specifies the port number that the container listens on for incoming connections. It can be a single port number or a range of ports.
+
+- <protocol> (optional): Specifies the network protocol used for communication on the specified port. It can be one of `tcp`, `udp`, or `sctp`. If no 
+  protocol is specified, `tcp` is assumed by default.
+
+The `EXPOSE` instruction is not responsible for actually publishing the ports to the host machine or exposing them to the outside world. It serves as metadata that can be used by tools or developers to understand which ports are intended to be used by the container.
+
+Here's an example of the EXPOSE instruction in a Dockerfile:
+
+```docker
+# Expose port 8080 for HTTP traffic
+EXPOSE 8080
+```
+In this example, the `Dockerfile` specifies that the container created from the image will listen on port `8080`.
+
+After building an image with the `EXPOSE` instruction, you can use the `-p` flag with the docker run command to map the exposed container port to a port on the host machine:
+
+```shell
+docker run -p <host-port>:<container-port> <image-name>
+```
+For example, if the `Docker` image exposes port `8080` and you want to map it to port `8000` on the host machine, you would run:
+
+```shell
+docker run -p 8000:8080 <image-name>
+```
+This maps the host port `8000` to the container port `8080`, allowing communication with the container's exposed service.
+
+Keep in mind that the `EXPOSE` instruction is primarily a **documentation feature**. **It is not necessary for internal container communication, communication between containers on the same network, or communication with the host machine.**
+
+By using the `EXPOSE` instruction effectively, you can provide visibility and documentation of the network ports your container expects to use, making it easier for others to understand how to interact with your containerized application.
+
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)

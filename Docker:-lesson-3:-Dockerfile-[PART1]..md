@@ -66,6 +66,34 @@ The `FROM` instruction is crucial in determining the starting point of your Dock
 
 Remember to choose a base image that aligns with your application's requirements and dependencies, as it will provide the underlying runtime and libraries needed for your application to run properly.
 
+### WORKDIR
+The `WORKDIR` instruction in a Dockerfile is used to set the working directory for any subsequent instructions in the Dockerfile. It allows you to define the directory from which relative paths are resolved when executing commands during the build process or running the container.
+
+The WORKDIR instruction has the following syntax:
+
+```docker
+WORKDIR <directory>
+```
+
+Let's explore its key points:
+
+ - <directory>: Specifies the directory path to set as the working directory. It can be an absolute path or a relative path to the current working 
+   directory. If the directory does not exist, Docker will create it.
+
+The `WORKDIR` instruction is typically used to provide a consistent and controlled environment for subsequent instructions. By setting the working directory, you can ensure that commands executed within the Dockerfile or in the container will have the correct context and can use relative paths relative to that directory.
+
+Here are a few examples of `WORKDIR` instructions:
+
+```docker
+# Set the working directory to /app
+WORKDIR /app
+
+# Set the working directory to a relative path
+WORKDIR relative/path/to/directory
+
+# Set the working directory based on an environment variable
+WORKDIR $MY_WORKDIR
+```
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)

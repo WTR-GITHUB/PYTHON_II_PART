@@ -29,7 +29,7 @@
 We will discuss few, most used Dockerfile commands: 
 
 ### FROM 
-The FROM instruction in a Dockerfile is used to specify the base image upon which your Docker image will be built. It is typically the first instruction in a Dockerfile.
+The `FROM` instruction in a `Dockerfile` is used to specify the base image upon which your Docker image will be built. It is typically the first instruction in a Dockerfile.
 
 The FROM instruction has the following syntax:
 
@@ -37,6 +37,34 @@ The FROM instruction has the following syntax:
 FROM <image>[:<tag>] [AS <alias>]
 ```
 
+Let's break down each part:
+
+ - <image>: Specifies the base image for your Docker image. It can be an official image from the Docker Hub registry or a custom image you or someone 
+   else has built. Examples include ubuntu, nginx, python, etc.
+
+ - :<tag> (optional): Represents a specific version or tag of the base image. Tags are used to differentiate between different versions of an image. If 
+   no tag is specified, Docker will use the latest tag by default. For example, ubuntu:18.04, nginx:1.19, python:3.9, etc.
+
+ - AS <alias> (optional): Assigns an alias or a name to the current build stage. This is useful when you have multiple build stages in a multi-stage 
+   build scenario. The alias allows you to reference and copy files from that specific build stage later in the Dockerfile.
+
+The `FROM` instruction is required in every `Dockerfile` and sets the foundation for your image. It pulls the specified base image (or uses a locally available one) and starts building subsequent layers on top of it.
+
+Here are a few examples of FROM instructions:
+
+```docker
+# Using an official Python 3.9 image as the base
+FROM python:3.9
+
+# Using a specific version of Ubuntu as the base
+FROM ubuntu:20.04
+
+# Using a custom image with an alias for multi-stage builds
+FROM my-custom-image:latest AS build-stage
+```
+The `FROM` instruction is crucial in determining the starting point of your Docker image and influences the environment and tools available within the subsequent layers of the image.
+
+Remember to choose a base image that aligns with your application's requirements and dependencies, as it will provide the underlying runtime and libraries needed for your application to run properly.
 
 ## 🌐  Extra reading (or watching 📺 ):
 

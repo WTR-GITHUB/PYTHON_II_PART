@@ -137,6 +137,42 @@ By using the `COPY` instruction effectively, you can ensure that your Docker ima
 
 **Remember to consider the size and contents of the files being copied, as it can impact the resulting image size and build performance.**
 
+### RUN
+The `RUN` instruction in a `Dockerfile` is used to execute commands during the image build process. It allows you to run **shell commands, install dependencies, set up your application, and perform other tasks** required to build the desired environment within the Docker image.
+
+The RUN instruction has the following syntax:
+
+```docker
+RUN <command>
+```
+
+Let's explore its key points:
+
+- <command>: Specifies the command(s) to be executed within the shell environment of the image. It can be a single command or multiple commands using 
+  shell operators such as && or ||.
+
+The `RUN` instruction is typically used for tasks such as installing software packages, running system updates, setting up dependencies, compiling code, and performing any necessary configuration steps required for your application to run correctly.
+
+Here are a few examples of RUN instructions:
+
+```docker
+# Install dependencies using apt-get package manager
+RUN apt-get update && apt-get install -y package1 package2
+
+# Download and install a specific version of a software from a URL
+RUN curl -o software.tar.gz https://example.com/software.tar.gz \
+    && tar -xzf software.tar.gz \
+    && rm software.tar.gz
+
+# Compile and build the application
+RUN make && make install
+
+# Set an environment variable during build
+RUN export MY_VAR=myvalue
+```
+
+
+
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)

@@ -30,7 +30,7 @@ Here's an example of a Python code implementation using `PyMongo`, including han
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
-def query_database():
+def query_database() -> None:
     try:
         # Connect to MongoDB
         client = MongoClient('mongodb://localhost:27017')
@@ -73,6 +73,63 @@ In the above code:
 - If an exception is caught, it prints an error message containing the exception details.
 
 By handling the `PyMongoError` exception, you can provide appropriate error handling and recovery mechanisms in your code when interacting with MongoDB using `PyMongo`.
+
+###  pymongo.errors.CollectionInvalid
+Raised when collection validation fails.
+Here's an example of a Python code implementation using PyMongo, including handling the pymongo.errors.CollectionInvalid exception. The code demonstrates how to create a collection in a MongoDB database and handle potential exceptions:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import CollectionInvalid, PyMongoError
+
+def create_collection(database_name: str, collection_name: str) -> bool:
+    try:
+        # Connect to MongoDB
+        client: MongoClient = MongoClient('mongodb://localhost:27017')
+        db = client[database_name]
+        
+        # Create a collection
+        db.create_collection(collection_name)
+        
+        # Close the MongoDB connection
+        client.close()
+        
+        return True
+    
+    except CollectionInvalid as e:
+        print('Collection creation error:', str(e))
+        return False
+    
+    except PyMongoError as e:
+        print('An error occurred:', str(e))
+        return False
+
+# Usage
+database_name = 'mydatabase'
+collection_name = 'mycollection'
+
+if create_collection(database_name, collection_name):
+    print('Collection created successfully.')
+else:
+    print('Failed to create collection.')
+
+```
+In the above code:
+
+- We define the `create_collection` function, which takes the `database_name` and `collection_name` as input parameters and returns a `boolean` 
+  indicating whether the collection creation was successful.
+
+- The function attempts to connect to the MongoDB server and select the specified database.
+
+- It calls the `create_collection` method on the database object to create a new collection with the specified name.
+
+- If the collection creation is successful, the function returns True. Otherwise, it catches the CollectionInvalid exception specifically and prints an 
+  error message. It also catches any other PyMongoError exception and handles it in a similar manner.
+
+- In the usage section, we provide the desired `database_name` and `collection_name` values and call the `create_collection` function. Based on the 
+  return value, we print the appropriate success or failure message.
+
+By handling the `CollectionInvalid` and `PyMongoErro`r exceptions, you can handle potential errors that may occur during collection creation and provide appropriate error messages or take necessary actions based on the returned `boolean` value.
 
 ## Exercises: 
 

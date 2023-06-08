@@ -219,6 +219,7 @@ The rest of the code, including setting the validation `rules` and `error handli
 
 
 * Task Nr.1 :
+
   Instructions:
     - Connect to a MongoDB server running on localhost.
     - Create a new database named 'exercise_db' and a collection named 'exercise_collection'.

@@ -159,6 +159,62 @@ Finally, we retrieve and print all the documents from the collection. At the end
 
 **Make sure** to replace 'mongodb://localhost:27017/' with the appropriate MongoDB connection string for your environment.
 
+### Multilevel document
+Here's an example of setting validation rules for a MongoDB collection with multi-level documents using pymongo, including type returns and following good code practices:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import OperationFailure
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+db = client['mydatabase']
+collection = db['mycollection']
+
+# Define the validation rules as a dictionary
+validation_rules = {
+    'validator': {
+        '$jsonSchema': {
+            'bsonType': 'object',
+            'required': ['name', 'age', 'contact'],
+            'properties': {
+                'name': {'bsonType': 'string'},
+                'age': {'bsonType': 'int', 'minimum': 0},
+                'contact': {
+                    'bsonType': 'object',
+                    'required': ['email', 'phone'],
+                    'properties': {
+                        'email': {'bsonType': 'string'},
+                        'phone': {'bsonType': 'string', 'pattern': '^[0-9]{10}$'}
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Set the validation rules for the collection
+try:
+    collection.command('collMod', collection.name, validator=validation_rules)
+    print("Schema validation enabled.")
+except OperationFailure as e:
+    print(f"Failed to enable schema validation: {e.details['errmsg']}")
+
+# Clean up (optional)
+client.close()
+
+```
+In this example, we connect to the MongoDB server and select a database and collection. The validation rules are defined as a dictionary using the JSON schema syntax.
+
+The properties `key` within the validation rules dictionary is used to define the `validation rules` for each field. For a `multi-level` document, like in this example, you **can nest additional properties dictionaries to define the validation rules** for the nested fields.
+
+In the given example, the validation rules expect that the document has a `name`, `age`, and `contact` field. The contact field is further specified to have an `email` and `phone` field, each with its own validation rules.
+
+The rest of the code, including setting the validation `rules` and `error handling`, follows the same structure as the previous examples.
+
+**Make sure** to replace `mongodb://localhost:27017/` with the appropriate MongoDB connection string for your environment, and adjust the database and collection names as needed.
+
+
 ## Exercises: 
 
 

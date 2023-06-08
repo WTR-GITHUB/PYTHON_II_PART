@@ -22,6 +22,8 @@ These are just a few examples of the exceptions provided by PyMongo. Each except
 
 Lets go deeper with few examples: 
 
+## Pymongo Exceptions
+
 ### PyMongoError Base Exception
 Base class for all PyMongo exceptions.
 Here's an example of a Python code implementation using `PyMongo`, including handling the `PyMongoError` base exception. The code demonstrates how to connect to a MongoDB database, perform a query, and handle potential exceptions:

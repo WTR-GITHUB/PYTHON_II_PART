@@ -219,8 +219,20 @@ The rest of the code, including setting the validation `rules` and `error handli
 
 
 * Task Nr.1 :
-  Using all Exceptions explained above, create a simple application(s) to test (if possible in local environment) all of them. Use Docker Container 
-  for live connection.
+  Instructions:
+    - Connect to a MongoDB server running on localhost.
+    - Create a new database named 'exercise_db' and a collection named 'exercise_collection'.
+    - Define the following JSON schema validation rules for the collection:
+    - The document must be an object.
+    - The 'name' field is required and must be a string.
+    - The 'age' field is required and must be an integer between 18 and 99.
+    - The 'email' field is required and must be a string containing a valid email address.
+    - Insert three documents into the collection, one that satisfies the validation rules and two that violate the validation rules.
+    - Print all the documents in the collection.
+    - Clean up by dropping the collection and closing the MongoDB connection.
+
+ [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-7) 
+
 * Task Nr.2: 
   Update previous (task nr.3 from [lesson](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Mongo-DB---lesson-3:-Quering-%5BPart1%5D) ) with updating code with possible error handling.
 ## 🌐  Extra reading (or watching 📺 ):

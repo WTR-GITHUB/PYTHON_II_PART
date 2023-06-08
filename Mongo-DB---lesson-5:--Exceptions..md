@@ -335,6 +335,77 @@ In the above code:
 
 By handling the ExecutionTimeout and PyMongoError exceptions, you can handle potential errors that may occur during the query execution and provide appropriate error messages or take necessary actions based on the returned result list or an empty list.
 
+### OperationFailure Exception
+Raised when a database operation fails.
+Here's an example of a Python code implementation using PyMongo, including handling the pymongo.errors.OperationFailure exception. The code demonstrates how to perform a MongoDB update operation and handle potential operation failure errors:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import OperationFailure, PyMongoError
+
+def update_document(database_name: str, collection_name: str, filter_query: dict, update_query: dict) -> bool:
+    try:
+        # Connect to MongoDB
+        client: MongoClient = MongoClient('mongodb://localhost:27017')
+        db = client[database_name]
+        collection = db[collection_name]
+        
+        # Perform the update operation
+        result = collection.update_one(filter_query, update_query)
+        
+        # Close the MongoDB connection
+        client.close()
+        
+        if result.modified_count > 0:
+            return True
+        else:
+            return False
+    
+    except OperationFailure as e:
+        print('Operation failure:', str(e))
+        return False
+    
+    except PyMongoError as e:
+        print('An error occurred:', str(e))
+        return False
+
+# Usage
+database_name = 'mydatabase'
+collection_name = 'mycollection'
+filter_query = {'name': 'John'}
+update_query = {'$set': {'age': 30}}
+
+if update_document(database_name, collection_name, filter_query, update_query):
+    print('Document updated successfully.')
+else:
+    print('Failed to update document.')
+
+```
+
+In the above code:
+
+- We define the update_document function, which takes the database_name, collection_name, filter_query, and update_query as input parameters. The 
+  function returns a boolean indicating whether the document update operation was successful.
+
+- The function connects to the MongoDB server using the MongoClient constructor.
+
+- It selects the specified database and collection.
+
+- The function performs the update operation using the update_one method on the collection, applying the provided filter_query and update_query.
+
+- The MongoDB connection is closed.
+
+- If the update operation modifies at least one document (indicated by modified_count), the function returns True. Otherwise, it returns False.
+
+- If an OperationFailure exception occurs, the function prints the operation failure error message and returns False.
+
+- If any other PyMongoError exception occurs, the function prints a general error message and returns False.
+
+- In the usage section, we provide the database name, collection name, filter query, and update query, and call the update_document function. Based on 
+  the return value, we print the appropriate success or failure message.
+
+By handling the OperationFailure and PyMongoError exceptions, you can handle potential errors that may occur during the update operation and provide appropriate error messages or take necessary actions based on the returned boolean value.
+
 ## Exercises: 
 
 

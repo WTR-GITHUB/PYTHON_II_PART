@@ -22,7 +22,7 @@ These are just a few examples of the exceptions provided by PyMongo. Each except
 
 Lets go deeper with few examples: 
 
-### pymongo.errors.PyMongoError
+### PyMongoError Base Exception
 Base class for all PyMongo exceptions.
 Here's an example of a Python code implementation using `PyMongo`, including handling the `PyMongoError` base exception. The code demonstrates how to connect to a MongoDB database, perform a query, and handle potential exceptions:
 
@@ -74,9 +74,9 @@ In the above code:
 
 By handling the `PyMongoError` exception, you can provide appropriate error handling and recovery mechanisms in your code when interacting with MongoDB using `PyMongo`.
 
-###  pymongo.errors.CollectionInvalid
+###  CollectionInvalid Exception
 Raised when collection validation fails.
-Here's an example of a Python code implementation using PyMongo, including handling the pymongo.errors.CollectionInvalid exception. The code demonstrates how to create a collection in a MongoDB database and handle potential exceptions:
+Here's an example of a Python code implementation using PyMongo, including handling the CollectionInvalid exception. The code demonstrates how to create a collection in a MongoDB database and handle potential exceptions:
 
 ```python
 from pymongo import MongoClient
@@ -131,7 +131,210 @@ In the above code:
 
 By handling the `CollectionInvalid` and `PyMongoErro`r exceptions, you can handle potential errors that may occur during collection creation and provide appropriate error messages or take necessary actions based on the returned `boolean` value.
 
+
+### ConfigurationError Exception
+Raised when something is incorrectly configured.
+Here's an example of a Python code implementation using PyMongo, including handling the `pymongo.errors.ConfigurationError` exception. The code demonstrates how to establish a MongoDB connection with a configuration file and handle potential exceptions:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import ConfigurationError, PyMongoError
+
+def connect_to_mongodb(config_file: str) -> MongoClient:
+    try:
+        # Read MongoDB configuration from file
+        # Assuming the configuration file is in JSON format
+        with open(config_file, 'r') as f:
+            config_data = json.load(f)
+        
+        # Extract configuration parameters
+        host = config_data.get('host', 'localhost')
+        port = config_data.get('port', 27017)
+        username = config_data.get('username')
+        password = config_data.get('password')
+        auth_source = config_data.get('auth_source')
+        
+        # Create a MongoDB connection string
+        connection_string = f"mongodb://{username}:{password}@{host}:{port}/{auth_source}"
+        
+        # Connect to MongoDB
+        client = MongoClient(connection_string)
+        
+        return client
+    
+    except ConfigurationError as e:
+        print('Configuration error:', str(e))
+        return None
+    
+    except PyMongoError as e:
+        print('An error occurred:', str(e))
+        return None
+
+# Usage
+config_file = 'mongodb_config.json'
+
+client = connect_to_mongodb(config_file)
+
+if client is not None:
+    # Perform database operations using the client object
+    # ...
+    print('Connected to MongoDB successfully.')
+else:
+    print('Failed to connect to MongoDB.')
+
+```
+In the above code:
+
+ - We define the connect_to_mongodb function, which takes a config_file parameter specifying the path to a JSON configuration file. The function returns 
+   a MongoClient object if the connection is successful, or None if an error occurs.
+
+ - The function reads the MongoDB configuration from the JSON file and extracts the relevant parameters, such as host, port, username, password, and 
+   authentication source.
+
+ - It constructs a MongoDB connection string using the extracted configuration parameters.
+
+ - The function attempts to connect to MongoDB using the MongoClient constructor with the connection string.
+
+ - If the connection is successful, the function returns the MongoClient object. Otherwise, it catches the ConfigurationError and PyMongoError exceptions 
+   separately, prints the appropriate error message, and returns None.
+
+ - In the usage section, we provide the path to the MongoDB configuration file and call the connect_to_mongodb function. Based on the return value, we 
+   print the appropriate success or failure message.
+
+By handling the ConfigurationError and PyMongoError exceptions, you can handle potential errors that may occur during the connection process and provide appropriate error messages or take necessary actions based on the returned MongoClient object or `None` value.
+
+
+### ConnectionFailure Exception 
+Raised when a connection to the database cannot be made or is lost.
+
+Here's an example of a Python code implementation using PyMongo, including handling the pymongo.errors.ConnectionFailure exception. The code demonstrates how to connect to a MongoDB server and handle potential connection failures:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure, PyMongoError
+
+def connect_to_mongodb() -> MongoClient:
+    try:
+        # Connect to MongoDB
+        client: MongoClient = MongoClient('mongodb://localhost:27017')
+        
+        return client
+    
+    except ConnectionFailure as e:
+        print('Connection failure:', str(e))
+        return None
+    
+    except PyMongoError as e:
+        print('An error occurred:', str(e))
+        return None
+
+# Usage
+client = connect_to_mongodb()
+
+if client is not None:
+    # Perform database operations using the client object
+    # ...
+    print('Connected to MongoDB successfully.')
+else:
+    print('Failed to connect to MongoDB.')
+
+```
+
+In the above code:
+
+- We define the connect_to_mongodb function, which attempts to establish a connection to a MongoDB server. The function returns a MongoClient object if 
+  the connection is successful, or None if an error occurs.
+
+ - The function uses the MongoClient constructor to connect to the MongoDB server with the specified connection URL.
+
+ - It wraps the connection attempt in a try-except block to catch any ConnectionFailure or PyMongoError exceptions.
+
+ - If a ConnectionFailure exception occurs, it prints the connection failure message and returns None.
+
+ - If any other PyMongoError exception occurs, it prints the general error message and returns None.
+
+ - In the usage section, we call the connect_to_mongodb function to establish a connection to the MongoDB server. Based on the return value, we print the 
+   appropriate success or failure message.
+
+By handling the ConnectionFailure and PyMongoError exceptions, you can handle potential errors that may occur during the connection process and provide appropriate error messages or take necessary actions based on the returned MongoClient object or None value.
+
+
+### ExecutionTimeout Exception
+
+Raised when a database operation times out, exceeding the $maxTimeMS set in the query or command option.
+Here's an example of a Python code implementation using PyMongo, including handling the pymongo.errors.ExecutionTimeout exception. The code demonstrates how to perform a MongoDB query with a specified timeout and handle potential timeout errors:
+
+```python
+from pymongo import MongoClient
+from pymongo.errors import ExecutionTimeout, PyMongoError
+
+def query_with_timeout(database_name: str, collection_name: str, query: dict, timeout_ms: int) -> list:
+    try:
+        # Connect to MongoDB
+        client: MongoClient = MongoClient('mongodb://localhost:27017')
+        db = client[database_name]
+        collection = db[collection_name]
+        
+        # Set query options with timeout
+        query_options = {'$query': query, '$maxTimeMS': timeout_ms}
+        
+        # Perform the query
+        result = list(collection.find(query_options))
+        
+        # Close the MongoDB connection
+        client.close()
+        
+        return result
+    
+    except ExecutionTimeout as e:
+        print('Query execution timeout:', str(e))
+        return []
+    
+    except PyMongoError as e:
+        print('An error occurred:', str(e))
+        return []
+
+# Usage
+database_name = 'mydatabase'
+collection_name = 'mycollection'
+query = {'name': 'John'}
+timeout_ms = 5000
+
+query_result = query_with_timeout(database_name, collection_name, query, timeout_ms)
+
+if query_result:
+    print('Query result:', query_result)
+else:
+    print('No results or error occurred during the query.')
+
+```
+
+In the above code:
+
+- We define the query_with_timeout function, which takes the database_name, collection_name, query dictionary, and timeout_ms (timeout in milliseconds)  
+  as input parameters. The function returns a list containing the query result or an empty list if an error occurs.
+
+- The function connects to the MongoDB server using the MongoClient constructor.
+
+- It selects the specified database and collection.
+
+- The function sets the query options to include the specified query and a maximum execution time in milliseconds.
+
+- It performs the query using the find method on the collection and converts the cursor result to a list.
+
+- The MongoDB connection is closed.
+
+- If an ExecutionTimeout exception occurs, the function prints the timeout error message and returns an empty list.
+
+- If any other PyMongoError exception occurs, the function prints a general error message and returns an empty list.
+
+- In the usage section, we provide the database name, collection name, query, and timeout value, and call the query_with_timeout function. Based on the 
+  return value, we print the query result or an appropriate message if no results are returned or an error occurred.
+
+By handling the ExecutionTimeout and PyMongoError exceptions, you can handle potential errors that may occur during the query execution and provide appropriate error messages or take necessary actions based on the returned result list or an empty list.
+
 ## Exercises: 
+
 
 * Task Nr.1 :
   Create a simple database (type of db, collections, fields - pick your own) with your db creation tool and incorporate all new querying operators with the results.

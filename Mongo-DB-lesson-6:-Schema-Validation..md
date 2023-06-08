@@ -235,6 +235,23 @@ The rest of the code, including setting the validation `rules` and `error handli
  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-7) 
 
 * Task Nr.2: 
+
+Instructions:
+
+ - Connect to a MongoDB server running on localhost.
+ - Create a new database named 'shopping_db' and a collection named 'shopping_collection'.
+ - Define the following JSON schema validation rules for the collection:
+   - The document must be an object.
+   - The 'name' field is required and must be a string.
+   - The 'age' field is required and must be an integer between 18 and 99.
+   - The 'email' field is required and must be a string containing a valid email address.
+   - The 'address' field is required and must be an object.
+   - The 'address' object must have the 'street', 'city', and 'postal_code' fields, each being a required string.
+ - Insert three documents into the collection, one that satisfies the validation rules and two that violate the validation rules.
+ - Print all the documents in the collection.
+ - Clean up by dropping the collection and closing the MongoDB connection.
+
+* Task Nr.3: 
   Update previous (task nr.3 from [lesson](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Mongo-DB---lesson-3:-Quering-%5BPart1%5D) ) with updating code with possible error handling.
 ## 🌐  Extra reading (or watching 📺 ):
 

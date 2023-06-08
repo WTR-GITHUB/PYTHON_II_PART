@@ -11,7 +11,7 @@ By enforcing schema validation, you can improve the reliability and quality of y
 
 It's worth noting that schema validation is an optional feature in MongoDB, and you can choose whether or not to enable it for your collections. When used appropriately, schema validation can be a powerful tool for maintaining the integrity and consistency of your MongoDB data.
 
-## MongoDB schema validation rules
+## MongoDB Schema Validation Rules
 
 - `Validator`: The validator defines the rules that documents must adhere to. It is specified as a dictionary within the `validation_rules` dictionary.
 

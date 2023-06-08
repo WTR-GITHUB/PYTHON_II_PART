@@ -252,7 +252,7 @@ The rest of the code, including setting the validation `rules` and `error handli
    - Clean up by dropping the collection and closing the MongoDB connection.
 
 * Task Nr.3: 
-  Update previous (task nr.3 from [lesson](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Mongo-DB---lesson-3:-Quering-%5BPart1%5D) ) with updating code with possible error handling.
+  Update previous (task nr.3 from [lesson](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Mongo-DB---lesson-3:-Quering-%5BPart1%5D) ) with schema validation.
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)

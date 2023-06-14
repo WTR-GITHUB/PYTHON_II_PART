@@ -63,7 +63,7 @@ validation_rules = {
 
 # Set the validation rules for the collection
 try:
-    collection.command('collMod', collection.name, validator=validation_rules)
+    db.command('collMod', collection.name, **validation_rules)
     print("Schema validation enabled.")
 except OperationFailure as e:
     print(f"Failed to enable schema validation: {e.details['errmsg']}")
@@ -117,8 +117,8 @@ validation_rules = {
 }
 
 # Create the collection with schema validation
-collection.create_index([('name', 1)], unique=True)  # Optional: Add unique index
-collection.create_index(validation_rules, {'validator': {'$jsonSchema': validation_rules}})
+db.create_index([('name', 1)], unique=True)  # Optional: Add unique index
+db.create_index(validation_rules, {'validator': {'$jsonSchema': validation_rules}})
 
 # Insert a document that satisfies the validation rules
 valid_doc = {
@@ -195,7 +195,7 @@ validation_rules = {
 
 # Set the validation rules for the collection
 try:
-    collection.command('collMod', collection.name, validator=validation_rules)
+    db.command('collMod', collection.name, **validation_rules)
     print("Schema validation enabled.")
 except OperationFailure as e:
     print(f"Failed to enable schema validation: {e.details['errmsg']}")

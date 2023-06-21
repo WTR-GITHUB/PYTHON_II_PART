@@ -100,6 +100,8 @@ The resulting pipeline is passed to the aggregate method, which returns a `Curso
 
 By utilizing operators such as `$and`, `$or`, and `$not`, you can create complex filter conditions to suit your specific requirements when working with PyMongo aggregation pipelines.
 
+##
+
 ## Exercises: 
 
 

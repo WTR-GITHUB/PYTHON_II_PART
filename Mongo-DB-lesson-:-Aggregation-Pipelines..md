@@ -279,6 +279,99 @@ The returned `Cursor` object is iterated to access and print the projected docum
 
 The code retains good practices by using type annotations for variables and function parameters, promoting code clarity and readability.
 
+## Grouping Documents
+There is an example of using PyMongo aggregation pipelines for grouping documents:
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def group_documents(collection: Collection, group_fields: Dict[str, Any]) -> Cursor:
+    pipeline = [
+        {
+            '$group': group_fields
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the group fields
+grouping: Dict[str, Any] = {
+    '_id': '$category',        # Group by the 'category' field
+    'count': {'$sum': 1},      # Calculate the count of documents in each group
+    'average_price': {'$avg': '$price'}  # Calculate the average price in each group
+}
+
+# Call the group_documents function
+result: Cursor = group_documents(collection, grouping)  # Type: Cursor
+
+# Iterate over the cursor and print the grouped documents
+for doc in result:
+    print(doc)
+
+``` 
+
+In this example, we have a `group_documents` function that takes a `Collection` and a `group_fields` dictionary as parameters. The `group_fields` dictionary specifies the fields and aggregation operations to perform for grouping the documents. The `_id` field specifies the grouping criterion, and additional fields can be defined to calculate aggregations within each group.
+
+Inside the function, we construct an `aggregation pipeline` with a single `$group` stage using the provided `group_fields`. The `$group` stage allows us to group documents based on a specific field or expression and perform aggregations within each group.
+
+The pipeline is then passed to the aggregate method, which returns a `Cursor` object. We iterate over the cursor to access and print the grouped documents.
+
+### More complex example
+
+More complex projecting scenario :
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def group_documents(collection: Collection, group_fields: Dict[str, Any]) -> Cursor:
+    pipeline = [
+        {
+            '$group': group_fields
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the group fields
+grouping: Dict[str, Any] = {
+    '_id': {
+        'category': '$category',      # Group by the 'category' field
+        'year': {'$year': '$date'}    # Extract the year from the 'date' field
+    },
+    'count': {'$sum': 1},             # Calculate the count of documents in each group
+    'total_sales': {'$sum': '$sales'} # Calculate the total sales in each group
+}
+
+# Call the group_documents function
+result: Cursor = group_documents(collection, grouping)  # Type: Cursor
+
+# Iterate over the cursor and print the grouped documents
+for doc in result:
+    print(doc)
+```
+
+In this updated example, we have an `extended grouping scenario`. The `group_fields` dictionary includes multiple fields for grouping, including extracting the year from a date field using the `$year` operator.
+
+The `group_documents` function constructs an `aggregation pipeline` with a `$group` stage using the provided `group_fields`. The pipeline specifies the fields and aggregation operations to perform for grouping the documents.
+
+The returned `Cursor` object is iterated to access and print the grouped documents.
+
 ## Exercises: 
 
 

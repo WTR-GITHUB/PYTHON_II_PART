@@ -372,6 +372,67 @@ The `group_documents` function constructs an `aggregation pipeline` with a `$gro
 
 The returned `Cursor` object is iterated to access and print the grouped documents.
 
+
+## Combining pipelines 
+
+Lets see the example that demonstrates the combined use of `filtering`, `sorting`, and `projecting` documents using `PyMongo's` aggregation pipelines:
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def aggregate_documents(collection: Collection, pipeline: Dict[str, Any]) -> Cursor:
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the aggregation pipeline
+pipeline: Dict[str, Any] = [
+    {
+        '$match': {
+            'category': 'electronics',  # Filter documents by the 'category' field
+            'price': {'$gte': 500}      # Filter documents where 'price' is greater than or equal to 500
+        }
+    },
+    {
+        '$sort': {'price': -1}         # Sort documents by 'price' in descending order
+    },
+    {
+        '$project': {
+            '_id': 0,                   # Exclude the '_id' field from the projection
+            'name': 1,                  # Include the 'name' field in the projection
+            'price': 1,                 # Include the 'price' field in the projection
+            'brand': 1                  # Include the 'brand' field in the projection
+        }
+    }
+]
+
+# Call the aggregate_documents function
+result: Cursor = aggregate_documents(collection, pipeline)  # Type: Cursor
+
+# Iterate over the cursor and print the aggregated documents
+for doc in result:
+    print(doc)
+
+```
+
+The `$match` stage filters documents based on the provided conditions, in this case, filtering documents where the `category` field is `electronics` and the `price` field is greater than or equal to `500`.
+
+The `$sort` stage sorts the filtered documents by the `price` field in `descending` order.
+
+The `$project` stage shapes the resulting documents by including or excluding specific fields. In this case, we exclude the `_id` field, and include the `name`, `price`, and `brand` fields.
+
+The aggregation pipeline is then passed to the aggregate_documents function, which executes the aggregation on the collection.
+
+The returned `Cursor` object is iterated to access and print the aggregated documents.
+
+
 ## Exercises: 
 
 

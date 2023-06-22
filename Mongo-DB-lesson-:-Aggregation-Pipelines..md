@@ -100,7 +100,91 @@ The resulting pipeline is passed to the aggregate method, which returns a `Curso
 
 By utilizing operators such as `$and`, `$or`, and `$not`, you can create complex filter conditions to suit your specific requirements when working with PyMongo aggregation pipelines.
 
-##
+## Sorting
+There is an example of using PyMongo aggregation pipelines for sorting documents with `$sort` : 
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def sort_documents(collection: Collection, sort_criteria: Dict[str, int]) -> Cursor:
+    pipeline = [
+        {
+            '$sort': sort_criteria
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the sort criteria
+criteria: Dict[str, int] = {'name': 1}  # Sort by the 'name' field in ascending order (1) or descending order (-1)
+
+# Call the sort_documents function
+result: Cursor = sort_documents(collection, criteria)  # Type: Cursor
+
+# Iterate over the cursor and print the sorted documents
+for doc in result:
+    print(doc)
+
+```
+
+In this example, we have a `sort_documents` function that takes a `Collection` and a `sort_criteria` dictionary as parameters. The `sort_criteria` dictionary specifies the field(s) to sort by and the sorting order. The field names are the `keys`, and the values are either `1` for `ascending` order or `-1` for descending order.
+
+Inside the function, we construct an aggregation pipeline with a single `$sort` stage using the provided `sort_criteria`. The `$sort` stage sorts the documents in the collection based on the specified field(s) and order.
+
+The pipeline is then passed to the `aggregate` method, which returns a `Cursor` object. We iterate over the cursor to access and print the sorted documents.
+
+### More complex sorting
+
+More complex sorting scenario :
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def sort_documents(collection: Collection, sort_criteria: Dict[str, int]) -> Cursor:
+    pipeline = [
+        {
+            '$sort': sort_criteria
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the sort criteria
+criteria: Dict[str, int] = {
+    'category': 1,    # Sort by 'category' field in ascending order
+    'price': -1       # Then sort by 'price' field in descending order
+}
+
+# Call the sort_documents function
+result: Cursor = sort_documents(collection, criteria)  # Type: Cursor
+
+# Iterate over the cursor and print the sorted documents
+for doc in result:
+    print(doc)
+
+``` 
+
+In this updated example, we define a more complex sorting criteria using the `sort_documents` function. The `sort_criteria` dictionary includes multiple fields to sort by, each with a corresponding sorting order.
+
+The criteria dictionary specifies the sorting criteria, where we sort first by the 'category' field in ascending order (`1`), and then by the 'price' field in descending order (`-1`).
+
+Inside the `sort_documents` function, the aggregation pipeline includes a single `$sort` stage with the provided `sort_criteria`.
 
 ## Exercises: 
 

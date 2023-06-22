@@ -186,6 +186,99 @@ The criteria dictionary specifies the sorting criteria, where we sort first by t
 
 Inside the `sort_documents` function, the aggregation pipeline includes a single `$sort` stage with the provided `sort_criteria`.
 
+## Projecting Documents
+Example of using PyMongo aggregation pipelines for projecting documents: 
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def project_documents(collection: Collection, projection_fields: Dict[str, int]) -> Cursor:
+    pipeline = [
+        {
+            '$project': projection_fields
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the projection fields
+projection: Dict[str, int] = {
+    'name': 1,   # Include the 'name' field in the projection (1 indicates inclusion)
+    'age': 1,    # Include the 'age' field in the projection
+    '_id': 0     # Exclude the '_id' field from the projection (0 indicates exclusion)
+}
+
+# Call the project_documents function
+result: Cursor = project_documents(collection, projection)  # Type: Cursor
+
+# Iterate over the cursor and print the projected documents
+for doc in result:
+    print(doc)
+
+```
+In this example, we have a `project_documents` function that takes a `Collection` and a `projection_fields` dictionary as parameters. The `projection_fields` dictionary specifies the fields to include or exclude in the projection. The field names are the keys, and the values are either `1` for inclusion or `0` for exclusion.
+
+Inside the function, we construct an aggregation pipeline with a single `$project` stage using the provided projection_fields. The `$project` stage allows us to shape the documents **by including or excluding specific fields**.
+
+The pipeline is then passed to the aggregate method, which returns a `Cursor` object. We iterate over the cursor to access and print the projected documents.
+
+### More complex example
+
+More complex projecting scenario :
+
+```python
+from pymongo import MongoClient
+from pymongo.collection import Collection
+from pymongo.database import Database
+from pymongo.cursor import Cursor
+from typing import Dict, Any
+
+def project_documents(collection: Collection, projection_fields: Dict[str, int]) -> Cursor:
+    pipeline = [
+        {
+            '$project': projection_fields
+        }
+    ]
+    return collection.aggregate(pipeline)
+
+# Establish a connection to the MongoDB server
+client: MongoClient = MongoClient('mongodb://localhost:27017')
+db: Database = client['your_database']  # Type: Database
+collection: Collection = db['your_collection']  # Type: Collection
+
+# Define the projection fields
+projection: Dict[str, int] = {
+    'name': 1,           # Include the 'name' field in the projection
+    'age': 1,            # Include the 'age' field in the projection
+    'address.city': 1,   # Include the 'city' field inside the 'address' subdocument
+    'scores': 0          # Exclude the 'scores' array field from the projection
+}
+
+# Call the project_documents function
+result: Cursor = project_documents(collection, projection)  # Type: Cursor
+
+# Iterate over the cursor and print the projected documents
+for doc in result:
+    print(doc)
+
+```
+
+In this updated example, we have an extended projection scenario. The projection_fields dictionary includes fields at different levels of nesting. The `address.city` field represents a field inside a subdocument.
+
+The project_documents function constructs an aggregation pipeline with a `$project` stage using the provided `projection_fields`. The pipeline specifies which fields to include or exclude based on the projection dictionary.
+
+The returned `Cursor` object is iterated to access and print the projected documents.
+
+The code retains good practices by using type annotations for variables and function parameters, promoting code clarity and readability.
+
 ## Exercises: 
 
 

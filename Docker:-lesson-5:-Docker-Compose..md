@@ -87,7 +87,28 @@ volumes:
 
 ```
 
+In this example, we define two services: web and mongo. The web service builds an image from the ./app directory (where our Flask application resides). It maps port 5000 of the container to port 5000 of the host machine and specifies a dependency on the mongo service. The mongo service uses the mongo image and creates a volume named mongo-data to persist the MongoDB data.
 
+
+Create a Requirements File. In the project's root directory, create a requirements.txt file with the following content:
+
+```
+Flask==2.0.1
+pymongo==3.12.0
+```
+This file specifies the Python packages required for our Flask application and the MongoDB driver.
+
+Build and Run the Application. Open a terminal, navigate to the project's root directory, and run the following command:
+
+```docker
+docker-compose up --build
+
+```
+Docker Compose will build the images, create the containers, and wire them together based on the defined configuration. It will also download the necessary Docker images if they are not already present.
+
+Once the application is running, you can access it by opening a web browser and navigating to http://localhost:5000. You should see a page displaying the message "Hello from MongoDB!".
+
+The Flask application communicates with the MongoDB database by using the service name mongo as the hostname. This works because Docker Compose creates a default network for the services defined in the docker-compose.yml file, and each service is reachable by its service name as a hostname.
 
 ## 🌐  Extra reading (or watching 📺 ):
 

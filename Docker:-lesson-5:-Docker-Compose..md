@@ -18,7 +18,20 @@ Volumes provide persistent storage for your containers. With Docker Compose, you
 ### Environment variables
 Docker Compose allows you to set environment variables for your services. You can define them directly in the docker-compose.yml file or in a separate .env file. Environment variables are useful for configuring your application or passing sensitive information securely.
 
+## Example 
 
+Now, let's take a look at a simple example to illustrate how `Docker Compose` works. Suppose you have a web application consisting of a frontend and a backend service. Here's what your docker-compose.yml file might look like:
+
+Folder structure: 
+
+```
+project/
+├── app/
+│   └── app.py
+├── docker-compose.yml
+└── requirements.txt
+
+```
 
 ## 🌐  Extra reading (or watching 📺 ):
 

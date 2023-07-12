@@ -33,6 +33,62 @@ project/
 
 ```
 
+Create a Flask Web Application. In the app/ directory, create a file named app.py with the following content:
+
+```python
+from flask import Flask
+from pymongo import MongoClient
+
+app = Flask(__name__)
+
+# Connect to MongoDB
+client = MongoClient("mongodb://mongo:27017/")
+db = client.mydatabase
+collection = db.mycollection
+
+
+@app.route('/')
+def index():
+    # Insert a document into MongoDB
+    collection.insert_one({"message": "Hello from MongoDB!"})
+
+    # Retrieve documents from MongoDB
+    documents = collection.find()
+
+    message = ""
+    for doc in documents:
+        message += doc["message"] + "<br>"
+
+    return f"<h1>{message}</h1>"
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
+```
+
+Create a Docker Compose File. In the project's root directory, create a `docker-compose.yml` file with the following content:
+
+```yaml
+version: "3"
+services:
+  web:
+    build: ./app
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
+
+```
+
+
+
 ## 🌐  Extra reading (or watching 📺 ):
 
 * [Full Docker course - Youtube](https://www.youtube.com/watch?v=pTFZFxd4hOI)

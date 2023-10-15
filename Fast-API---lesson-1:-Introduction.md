@@ -67,6 +67,88 @@ Let see again what we've done so far:
 
 This is a basic setup to get you started with FastAPI. You can build more complex APIs by adding more routes and defining data models for request and response objects. FastAPI's automatic data validation, serialization, and API documentation generation features make it a powerful choice for developing APIs with Python.
 
+## Operations 
+
+`FastAPI` makes it easy to create APIs that support various HTTP methods like `GET`, `PUT`, `POST`, and `DELETE`. In this introduction, we'll explore these HTTP methods and provide examples of how to use them. HTTP Methods in FastAPI:
+
+`FastAPI` leverages Python type hints to define routes and their respective HTTP methods, making it a breeze to work with HTTP verbs. Here's an overview of each of these methods:
+
+- GET - Used for retrieving data from the server.
+- POST - Used for creating new data on the server.
+- PUT - Used for updating existing data on the server.
+- DELETE - Used for deleting data on the server.
+
+Examples of Using HTTP Methods in `FastAPI`:
+
+### GET Method:
+
+The `GET` method is used to **retrieve** data. In FastAPI, you can define a route that handles `GET` requests as follows:
+
+```python
+from fastapi import FastAPI
+app = FastAPI()
+
+# Define a GET route
+@app.get("/items/{item_id}")
+def read_item(item_id: int):
+    return {"item_id": item_id}
+```
+
+In this example, when you make a `GET` request to `/items/{item_id}`, it returns a `JSON` response with the `item_id` parameter.
+
+### POST Method:
+
+The `POST` method is used to **create** new data. Here's an example of handling `POST` requests:
+
+```python
+from fastapi import FastAPI
+app = FastAPI()
+
+# Define a POST route
+@app.post("/items/")
+def create_item(item: dict):
+    # In a real application, you would typically save the item to a database.
+    return item
+```
+
+In this example, when you make a POST request to /items/ with a JSON payload, it returns the same data you sent in the request.
+
+### PUT Method:
+
+The `PUT` method is used to **update** existing data. Here's an example:
+
+```python
+from fastapi import FastAPI
+app = FastAPI()
+
+# Define a PUT route
+@app.put("/items/{item_id}")
+def update_item(item_id: int, updated_item: dict):
+    # In a real application, you would typically update the item with the given item_id in a database.
+    return {"item_id": item_id, "updated_item": updated_item}
+```
+
+When you make a PUT request to `/items/{item_id}` with a `JSON` payload, it updates the item associated with the specified `item_id`.
+
+### DELETE Method:
+
+The DELETE method is used to **delete** data. Here's an example:
+
+```python
+from fastapi import FastAPI, HTTPException
+app = FastAPI()
+
+# Define a DELETE route
+@app.delete("/items/{item_id}")
+def delete_item(item_id: int):
+    # In a real application, you would typically delete the item with the given item_id from a database.
+    return {"message": f"Item {item_id} has been deleted"}
+```
+
+A `DELETE` request to `/items/{item_id}` deletes the item associated with the specified `item_id`.
+
+In these examples, we've shown how to use `FastAPI` to handle common HTTP methods. FastAPI's automatic request and response handling, as well as its built-in data validation and documentation generation, make it a powerful tool for building web APIs that are not only easy to develop but also well-documented and efficient.
+
 ## Exercises: 
 
 * Task Nr.1 :

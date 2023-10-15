@@ -159,6 +159,7 @@ In these examples, we've shown how to use `FastAPI` to handle common HTTP method
   - a : Generate a random word 
   - b: Get current time in different part of the world (you can choose NYC, Paris, Honk Kong etc.)
   - c: create a very secured password (https://www.bu.edu/tech/support/information-security/security-for-everyone/how-to-choose-a-strong-password/)
+  
   For every option there should be a the separate endpoint to serve this data.
 
 

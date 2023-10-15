@@ -5,9 +5,9 @@ At its core, `FastAPI` is designed to help developers create web services quickl
 
 `FastAPI` seamlessly integrates with popular data science and machine learning libraries, making it a favorite among data professionals for building robust and performant data-driven APIs. It also fully supports asynchronous programming, which is particularly valuable for handling concurrent requests and I/O-bound operations.
 
-## Seting up
+## Setting up
  
-### Install FastAPI and Uvicorn:
+### Install `FastAPI` and `Uvicorn`:
 First, make sure you have Python installed. You can install FastAPI and Uvicorn using `pip`:
 
 ```bash
@@ -70,31 +70,14 @@ This is a basic setup to get you started with FastAPI. You can build more comple
 ## Exercises: 
 
 * Task Nr.1 :
-  Create a class that would implement basic CRUD operations to manage book data in the library.
- 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-6) 
+  Create a simple API client which by default greets you and returns current time in `YYYY:MM:DD h:m:s` 
 
 * Task Nr.2:  
-  Create a command-line task manager application using Python and MongoDB. The application should allow users to perform basic CRUD operations (Create, 
-  Read, Update, Delete) on tasks stored in a MongoDB database. Users should be able to add new tasks, view all tasks, update task status, and delete 
-  tasks.
- 
-  Requirements:
-
-  - The application should utilize the PyMongo library for interacting with the MongoDB database.
-  - Users should be able to perform the following actions:
-        - Add a new task with a title and description.
-        - View all tasks with their details.
-        - Update the status of a task (e.g., mark as completed or in progress).
-        - Delete a task.
-   - Implement error handling and validation for user inputs.
-   - Use appropriate functions and modular code structure for better code organization.
-   - Include a README file with clear instructions on how to set up and run the application.
-
+  
  
 
 ## 🌐  Extra reading (or watching 📺 ):
 
-* [Full Mongo course - Youtube](https://www.youtube.com/watch?v=c2M-rlkkT5o)
-* [Official documentation](https://www.mongodb.com/docs/)
+* [Full FastAPI intro course - Youtube](https://www.youtube.com/watch?v=tLKKmouUams)
+* [Official documentation](https://fastapi.tiangolo.com/)
 ***

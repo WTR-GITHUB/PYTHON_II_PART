@@ -104,9 +104,7 @@ To sum up, for static method:
 
 * Task Nr.1:  
 
-  Create a class which takes temperature measurements in `Kelvins` and add static methods to transform those to `Celsius` and `Fahrenheit` units. Use 
-  OOP abstraction. 
-
+  Create a class which takes temperature measurements in `Kelvins` and add static methods to transform those to `Celsius` and `Fahrenheit` units.
 
 * Task Nr.2:
  

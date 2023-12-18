@@ -28,7 +28,7 @@ class Rectangle:
     
     @classmethod
     def from_square(cls, side_length: float) -> 'Rectangle':
-        return cls(side_length, side_length * 2)
+        return cls(side_length, side_length)
 
 rectangle1: Rectangle = Rectangle(3.0, 4.0)
 rectangle2: Rectangle = Rectangle.from_square(2.0)

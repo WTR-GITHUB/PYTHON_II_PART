@@ -155,11 +155,37 @@ print(Student.get_lowest_grade().name)  # Alice
 
     [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
 
-7)  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register 
+4)  Create a simple bank account class, `BankAccount`, with the following specifications:
+    - The `BankAccount` class should have an attribute balance which starts at `0`.
+    - It should have an instance method `deposit` that allows an amount to be added to the balance.
+    - It should have an instance method `withdraw` that allows an amount to be taken from the balance. If the balance is less than the withdrawal amount, 
+      print a message that says "Insufficient funds".
+    - Add a class method `from_balance` that takes a starting balance as an argument and returns a new `BankAccount` instance with that starting balance.
+    - Add a static method transfer that takes two `BankAccount` instances and an amount as arguments. It should withdraw the amount from the first 
+      account and deposit it into the second account.
+
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
+
+5) Create a `SpaceStation` class with the following specifications:
+   - The `SpaceStation` class should have an attribute `astronauts` which is a list of dictionaries. Each dictionary represents an astronaut and has 
+     keys: `name`, `nationality`, and `mission_duration`.
+   - It should have an instance method `add_astronaut` that takes a `name`, `nationality`, and `mission duration`, creates a new astronaut dictionary, 
+     and adds it to the astronauts list.
+   - It should have an instance method `find_astronaut` that takes a `name` and returns the astronaut dictionary with that `name`, or `None` if no such 
+     astronaut is found.
+   - Add a class method `from_astronaut_list` that takes a list of astronauts (each represented as a dictionary) and returns a new `SpaceStation` 
+     instance with those astronauts.
+   - Add a static method `is_long_term_mission` that takes an astronaut dictionary and returns `True` if the astronaut's mission duration is more than 
+     `6` months, and `False` otherwise.
+   - Add an instance method `remove_astronaut` that takes a `name` and removes the astronaut with that name from the astronauts list.
+
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-5) 
+
+6)  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register 
     to the library system, borrow books, and return books. The library system should keep track of the books borrowed by users, and the number of 
     available copies of each book.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-6) 
 
 
 ## 🌐  Extra reading (or watching 📺 ):

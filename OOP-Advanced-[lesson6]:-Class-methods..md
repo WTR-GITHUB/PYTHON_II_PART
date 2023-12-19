@@ -142,30 +142,22 @@ print(Student.get_lowest_grade().name)  # Alice
 
 ## Exercises: 
 
-* Task Nr.1:  
+1)  Create a class method to return the **factorial** of a given number.
 
-  Create a class method to return the **factorial** of a given number.
-
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
 
 
-* Task Nr.2:
- 
-  Create a class method to return the **reversed string** of a given string.
+2)  Create a class method to return the **reversed string** of a given string.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 
-* Task Nr.3:
+3)  Create a class method to return t**he list of prime numbers** up to a given number.
 
-  Create a class method to return t**he list of prime numbers** up to a given number.
+    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
-
-* Task Nr.4: 
-
-  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register to 
-  the library system, borrow books, and return books. The library system should keep track of the books borrowed by users, and the number of available 
-  copies of each book.
+7)  Create a class to represent a library system. The library system should have a collection of books that can be borrowed by users. Users can register 
+    to the library system, borrow books, and return books. The library system should keep track of the books borrowed by users, and the number of 
+    available copies of each book.
 
   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
 

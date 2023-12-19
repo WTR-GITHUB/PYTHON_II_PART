@@ -416,6 +416,87 @@ print(MathOperations.primes(20)) # Output: [2, 3, 5, 7, 11, 13, 17, 19]
 ```
 
 ### Task Nr. 4:
+```python
+from typing import Type
+
+class BankAccount:
+    def __init__(self, balance: float = 0) -> None:
+        self.balance = balance
+
+    def deposit(self, amount: float) -> None:
+        self.balance += amount
+
+    def withdraw(self, amount: float) -> None:
+        if self.balance < amount:
+            print("Insufficient funds")
+        else:
+            self.balance -= amount
+
+    @classmethod
+    def from_balance(cls: Type['BankAccount'], balance: float) -> 'BankAccount':
+        return cls(balance)
+
+    @staticmethod
+    def transfer(from_account: 'BankAccount', to_account: 'BankAccount', amount: float) -> None:
+        if from_account.balance < amount:
+            print("Insufficient funds in the source account")
+        else:
+            from_account.withdraw(amount)
+            to_account.deposit(amount)
+
+# Create a new bank account with a balance of 100
+account1 = BankAccount.from_balance(100)
+
+# Create a new bank account with a balance of 50
+account2 = BankAccount.from_balance(50)
+
+# Transfer 20 from account1 to account2
+BankAccount.transfer(account1, account2, 20)
+
+# Print the balances
+print(account1.balance)  # Should print 80
+print(account2.balance)  # Should print 70
+
+```
+
+### Task Nr. 5:
+```python
+from typing import List, Dict, Optional, Type
+
+class Astronaut:
+    def __init__(self, name: str, nationality: str, mission_duration: int) -> None:
+        self.name = name
+        self.nationality = nationality
+        self.mission_duration = mission_duration
+
+class SpaceStation:
+    def __init__(self, astronauts: List[Astronaut]) -> None:
+        self.astronauts = astronauts
+
+    def add_astronaut(self, name: str, nationality: str, mission_duration: int) -> None:
+        astronaut = Astronaut(name, nationality, mission_duration)
+        self.astronauts.append(astronaut)
+
+    def find_astronaut(self, name: str) -> Optional[Astronaut]:
+        for astronaut in self.astronauts:
+            if astronaut.name == name:
+                return astronaut
+        return None
+
+    @classmethod
+    def from_list(cls: Type['SpaceStation'], astronauts: List[Dict[str, str]]) -> 'SpaceStation':
+        astronaut_objects = [Astronaut(**astronaut) for astronaut in astronauts]
+        return cls(astronaut_objects)
+
+    @staticmethod
+    def is_long_term_mission(astronaut: Astronaut) -> bool:
+        return astronaut.mission_duration > 6
+
+    def remove_astronaut(self, name: str) -> None:
+        self.astronauts = [astronaut for astronaut in self.astronauts if astronaut.name != name]
+```
+
+### Task Nr. 7:
 
 ```python
 from typing import List

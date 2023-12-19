@@ -496,7 +496,7 @@ class SpaceStation:
         self.astronauts = [astronaut for astronaut in self.astronauts if astronaut.name != name]
 ```
 
-### Task Nr. 7:
+### Task Nr. 6:
 
 ```python
 from typing import List

@@ -142,32 +142,51 @@ Atributas `all_students` deklaruojamas kaip klasės lygmens sąrašas, kuriame y
 
 ## Pratimai: 
 
-* Užduotis Nr.1:  
+1) Sukurkite klasės metodą, grąžinantį duoto skaičiaus **faktorių**.
 
-  Sukurkite klasės metodą, grąžinantį duoto skaičiaus **faktorių**.
-
-  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
+   [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-3) 
 
 
-* Užduotis Nr.2:
- 
-  Sukurkite klasės metodą, grąžinantį duotos eilutės **atvirkštinę eilutę**.
+2) Sukurkite klasės metodą, grąžinantį duotos eilutės **atvirkštinę eilutę**.
 
-  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
+   [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-2) 
 
-* Užduotis Nr.3:
+3) Sukurkite klasės metodą, kuris grąžintų** pirminių skaičių sąrašą** iki duoto skaičiaus.
 
-  Sukurkite klasės metodą, kuris grąžintų** pirminių skaičių sąrašą** iki duoto skaičiaus.
+   [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
 
-  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
+4) Sukurkite paprastą banko sąskaitos klasę `BankAccount` su šiomis specifikacijomis:
+    - `BankAccount` klasė turi turėti atributą `balance`, kuris prasideda nuo `0`.
+    - Ji turėtų turėti instance metodą `deposit`, kuris leistų pridėti sumą prie balanso.
+    - Ji turėtų turėti instance metodą `withdraw`, leidžiantį paimti sumą iš likučio. Jei likutis yra mažesnis už išėmimo sumą, 
+      išspausdinkite pranešimą "Insufficient funds" (lėšų nepakanka).
+    - Pridėkite klasės metodą `from_balance`, kuris kaip argumentą priima pradinį likutį ir grąžina naują `BankAccount` instance su šiuo pradiniu 
+      likučiu.
+    - Pridėkite statinį metodą `transfer`, kuris kaip argumentus priima du `BankAccount` instance ir sumą. Jis turėtų paimti sumą iš pirmosios 
+      sąskaitos ir pervesti ją į antrąją sąskaitą.
 
-* Užduotis Nr.4: 
+    [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2)
 
-  Sukurkite klasę, vaizduojančią bibliotekos sistemą. Bibliotekos sistema turi turėti knygų, kurias vartotojai gali pasiskolinti, kolekciją. Vartotojai 
-  gali užsiregistruoti bibliotekos sistemoje, skolintis knygas ir jas grąžinti. Bibliotekos sistema turėtų sekti vartotojų pasiskolintų knygų ir turimų 
-  knygų skaičių kiekvienos knygos egzempliorių.
+5) Sukurkite `SpaceStation` klasę su šiomis specifikacijomis:
+   - `SpaceStation` klasė turi turėti atributą `astronauts`, kuris yra žodynų sąrašas. Kiekvienas žodynas reiškia astronautą ir turi 
+     raktus, kuriuos sudaro šie elementai: `name`, `nationality` ir `mission_duration`.
+   - Ji turėtų turėti instance metodą `add_astronaut`, kuris priima `name`, `nationality` ir `mission_duration` ir sukuria naują astronautų žodyną, 
+     ir įtraukia jį į astronautų sąrašą.
+   - Jis turėtų turėti instance metodą `find_astronaut`, kuris priima `name` ir grąžina astronautų žodyną su šiuo `name` arba 
+     `None`, jei toks astronautas nerastas.
+   - Pridėkite klasės metodą `from_astronaut_list`, kuris priima astronautų sąrašą (kiekvienas iš jų pateikiamas kaip žodynas) ir grąžina naują 
+     `SpaceStation` egzempliorių su tais astronautais.
+   - Pridėti statinį metodą `is_long_term_mission`, kuris priima astronauto žodyną ir grąžina `True`, jei astronauto misijos trukmė yra ilgesnė nei 
+     `6` mėnesių, o kitu atveju - `False`.
+   - Pridėkite instance metodą `remove_astronaut`, kuris priima `name` ir pašalina astronautą su šiuo vardu iš astronautų sąrašo.
 
-  [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
+    [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-5) 
+
+6) Sukurkite klasę, vaizduojančią bibliotekos sistemą. Bibliotekos sistema turi turėti knygų, kurias vartotojai gali pasiskolinti, kolekciją. Vartotojai 
+   gali užsiregistruoti bibliotekos sistemoje, skolintis knygas ir jas grąžinti. Bibliotekos sistema turėtų sekti vartotojų pasiskolintų knygų ir turimų 
+   knygų skaičių kiekvienos knygos egzempliorių.
+
+   [Atsakymas](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-6) 
 
 
 ## 🌐 Papildomas skaitymas (arba žiūrėjimas 📺 ):

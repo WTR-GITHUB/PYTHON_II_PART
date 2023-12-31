@@ -1,101 +1,22 @@
-# `Functional programming`
+## `Introduction`
 
-As on [Wikipedia](https://en.wikipedia.org/wiki/Functional_programming):
+In computer science, functional programming is a **programming paradigm where programs are constructed by applying and composing functions**. It is a declarative programming paradigm in which function definitions are trees of expressions that map values to other values, rather than a sequence of imperative statements which update the running state of the program.
 
-
-'In computer science, functional programming is a programming paradigm where programs are constructed by applying and composing functions. It is a declarative programming paradigm in which function definitions are trees of expressions that map values to other values, rather than a sequence of imperative statements which update the running state of the program.'
-
-
-In this section We will pay more attention on some functions already supplied by python programming language to make our lives a bit easier. The things we are going to cover here are also useful for OOP paradigms as well. 
+In this section We will pay more attention on some functions already supplied by python programming language to make our lives a bit easier. The things we are going to cover here are also useful for **OOP paradigms** as well. 
 
 In Python in general everything is an **`object`**, thus functions do escape this either. Functions can be assigned to have other names etc.
 
-## couple of rules before diving in
+## `Overview`
 
-Functional programming in general does not store any state of the program. Mainly functions cannot know, nor change any globals. 
-Functional programing is done with some rules:
-1. We use pure/ idempotent functions.
-1. We do not access a global state variables, nor we change them
-1. Under no circumstances the results of the function provided same inputs cannot change
+`Functional programming` in general does not store any state of the program. Mainly functions cannot know, nor change any `globals`. 
+`Functional programing` is done with some rules:
+-  We use pure/ idempotent functions.
+-  We do not access a global state variables, nor we change them
+-  Under no circumstances the results of the function provided same inputs cannot change
 
 **NOTE** ❗functional programming functions do not have any side effect. Meaning that we do not store anything in memory when applying them, we simply map input to the output.
 
-## Procedural programming paradigm
-
-1. recipe
-1. specific instructions what to do and how to
-1. thinking about global state, what is happening
-
-```python
-def say_hello() -> None:
-  print("hello")
-
-greet = say_hello
-
-greet() # print 'hello'
-```
-
-So as you can se it behaves in the same fashion as some string or integer or any other object. To go even one step beyond we can do something like this:
-
-```python
-def say_hello() -> None:
-  print("hello")
-
-my_list = [1, say_hello, "something"]
-for item in my_list:
-  print(item)
-
-# 1
-# <function say_hello at 0x00000251F1AAF4C0>
-# somethin
-```
-
-
-We can even take it one step further
-```python
-from collections.abc import Callable
-
-def say_hello() -> None:
-  print("hello")
-
-def another_function(f: Callable) -> None:
-  f()
-
-another_function(say_hello)
-```
-
-Try to stop here and make sure we understand what is going on. Can someone from class explain it to the others?
-
-When you pass a function to another function, the passed-in function sometimes is referred to as a **`callback`** because a call back to the inner function can modify the outer function’s behavior.
-
-
-So it happens so that functions can also be arguments for other functions 🤯 ! ! ! You will learn much more about this in the Decorator subject that are going to cover further in this course. But for now you can see that functions in python is pretty wide topic, there are plenty of possibilities here.
-
-But wait! There's more! as you can pass functions into another functions, functions can also return other functions!
-
-
-```python
-def outer() > :
-    def inner():
-        print("I am function inner()!")
-
-    # Function outer() returns function inner()
-    return inner
-
-
-function = outer()
-print(function)
-# <function outer.<locals>.inner at 0x7f18bc85faf0>
-function()
-# I am function inner()!
-
-outer()()
-# I am function inner()!
-
-```
-
-
-## sorted function
+### sorted function
 
 We have already seen this function in action in the beginning of the course.
 

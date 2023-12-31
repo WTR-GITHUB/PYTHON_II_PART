@@ -203,7 +203,7 @@ print(f"--- {(lambda s: s[::-1])('I am a string')} ---")
    ```
  
 5) Write a Python program to `sort` a `list` of `tuples` using `Lambda`.
-   ```
+   ```python
    Original list of tuples:
    [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
    Sorted the List of Tuples:

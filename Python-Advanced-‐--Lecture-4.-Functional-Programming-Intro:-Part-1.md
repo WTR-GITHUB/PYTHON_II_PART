@@ -16,7 +16,7 @@ In Python in general everything is an **`object`**, thus functions do escape thi
 
 **NOTE** ❗functional programming functions do not have any side effect. Meaning that we do not store anything in memory when applying them, we simply map input to the output.
 
-### sorted function
+### `sorted function`
 
 We have already seen this function in action in the beginning of the course.
 
@@ -26,7 +26,7 @@ sorted(animals)
 # ['dog', 'ferret', 'gecko', 'vole']
 ```
 
-This is already something that we have seen, but sorted function [documentation](https://docs.python.org/3/library/functions.html#sorted) says that there might be another parameter passed into the function - key. _key specifies a function of one argument that is used to extract a comparison key from each element in iterable (for example, key=str.lower). The default value is None (compare the elements directly)._
+This is already something that we have seen, but `sorted` function [documentation](https://docs.python.org/3/library/functions.html#sorted) says that there might be another parameter passed into the function - `key`. _`key` specifies a function of one argument that is used to extract a comparison key from each element in `iterable` (for example, `key=str.lower`). The default value is `None` (compare the elements directly)._
 
 So this key parameter accepts a callable and then tried to sort our data according to it:
 

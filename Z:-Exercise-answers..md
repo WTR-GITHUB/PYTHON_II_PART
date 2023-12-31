@@ -1,3 +1,91 @@
+## Python Advanced ‐ Lecture 4. Functional Programming Intro: Part 1
+### Task Nr.1
+```python
+starts_with = lambda x: True if x.startswith('P') else False
+print(starts_with('Python'))
+```
+### Task Nr.2
+```python
+r = lambda a : a + 15
+print(r(10))
+r = lambda x, y : x * y
+print(r(12, 4))
+```
+
+### Task Nr.3
+```python
+nums1 = [1, 2, 3]
+nums2 = [4, 5, 6]
+print("Original list:")
+print(nums1)
+print(nums2)
+result = map(lambda x, y: x + y, nums1, nums2)
+print("\nResult: after adding two list")
+print(list(result))
+```
+### Task Nr.4
+```python
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print("Original list of integers:")
+print(nums)
+print("\nSquare every number of the said list:")
+square_nums = list(map(lambda x: x ** 2, nums))
+print(square_nums)
+print("\nCube every number of the said list:")
+cube_nums = list(map(lambda x: x ** 3, nums))
+print(cube_nums)
+```
+### Task Nr.5
+```python
+import datetime
+now = datetime.datetime.now()
+print(now)
+year = lambda x: x.year
+month = lambda x: x.month
+day = lambda x: x.day
+t = lambda x: x.time()
+print(year(now))
+print(month(now))
+print(day(now))
+print(t(now))
+```
+### Task Nr.6
+```python
+subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+print("Original list of tuples:")
+print(subject_marks)
+subject_marks.sort(key = lambda x: x[1])
+print("\nSorting the List of Tuples:")
+print(subject_marks)
+```
+### Task Nr.7
+```python
+models = [{'make':'Nokia', 'model':216, 'color':'Black'}, {'make':'Mi Max', 'model':'2', 'color':'Gold'}, {'make':'Samsung', 'model': 7, 'color':'Blue'}]
+print("Original list of dictionaries :")
+print(models)
+sorted_models = sorted(models, key = lambda x: x['color'])
+print("\nSorting the List of dictionaries :")
+print(sorted_models)
+```
+### Task Nr.8
+```python
+def sort_matrix(M):
+    result = sorted(M, key=lambda matrix_row: sum(matrix_row)) 
+    return result
+
+matrix1 = [[1, 2, 3], [2, 4, 5], [1, 1, 1]]
+matrix2 = [[1, 2, 3], [-2, 4, -5], [1, -1, 1]]
+
+print("Original Matrix:")
+print(matrix1)
+print("\nSort the said matrix in ascending order according to the sum of its rows") 
+print(sort_matrix(matrix1))
+print("\nOriginal Matrix:")
+print(matrix2) 
+print("\nSort the said matrix in ascending order according to the sum of its rows") 
+print(sort_matrix(matrix2))
+```
+
 ## OOP Advanced : Inheritance
 ### Task Nr.1
 ```python

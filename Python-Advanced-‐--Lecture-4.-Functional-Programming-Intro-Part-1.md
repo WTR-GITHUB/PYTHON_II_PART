@@ -1,6 +1,3 @@
-https://github.com/DonatasNoreika/python1lygis/wiki/Funkcijos
-
-
 # `Functional programming`
 
 As on [Wikipedia](https://en.wikipedia.org/wiki/Functional_programming):

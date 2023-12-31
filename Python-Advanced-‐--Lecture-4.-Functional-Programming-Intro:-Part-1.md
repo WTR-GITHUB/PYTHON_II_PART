@@ -189,27 +189,26 @@ print(f"--- {(lambda s: s[::-1])('I am a string')} ---")
 
 ## Exercises: 🧠 
 
-**Lambdas section**: 
-1. Write a Python program to find if a given string starts with a given character using Lambda. Sample Output:
-True
-False
-1. Write a Python program to create a lambda function that adds 15 to a given number passed in as an argument, also create a lambda function that multiplies argument x with argument y and print the result.
-1. Write a Python program to add two given lists using map and lambda.
-1. Write a Python program to square and cube every number in a given list of integers using Lambda
-1. Write a Python program to extract year, month, date and time using Lambda. Sample Output:
-2020-01-15 09:03:32.744178
-2020
-1
-15
-09:03:32.744178
-  
-
-**Sorted section**: 
-1. Write a Python program to sort a list of tuples using Lambda.
-Original list of tuples:
-[('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
-Sorting the List of Tuples:
-[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
+1) Write a Python program to find if a given `string` starts with a given character using `Lambda`. Output:`True` or `False`
+2) Write a Python program to create a `lambda` function that adds `15` to a given number passed in as an argument, also create a `lambda` function that 
+   multiplies argument `x` with argument `y` and print the result.
+3) Write a Python program to square and cube every number in a given list of `integers` using `Lambda`.
+4) Write a Python program to extract `year, month, date and time` using `Lambda`. Sample Output:
+   ```python
+   2020-01-15 09:03:32.744178
+   2020
+   1
+   15
+   09:03:32.744178
+   ```
+ 
+5) Write a Python program to `sort` a `list` of `tuples` using `Lambda`.
+   ```
+   Original list of tuples:
+   [('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
+   Sorted the List of Tuples:
+   [('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
+   ```
 1. Write a Python program to sort a list of dictionaries buy color value using Lambda.Original list of dictionaries :
 [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
 Sorting the List of dictionaries :

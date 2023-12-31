@@ -210,18 +210,30 @@ print(f"--- {(lambda s: s[::-1])('I am a string')} ---")
    # Sorted the List of Tuples:
    [('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
    ```
-1. Write a Python program to sort a list of dictionaries buy color value using Lambda.Original list of dictionaries :
-[{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
-Sorting the List of dictionaries :
-[{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}]
-1. Write a Python program to sort a given matrix in ascending order according to the sum of its rows using lambda.Original Matrix:  
-`[[1, 2, 3], [2, 4, 5], [1, 1, 1]]` 
-Sort the said matrix in ascending order according to the sum of its rows  
-`[[1, 1, 1], [1, 2, 3], [2, 4, 5]]`  
-Original Matrix:  
-`[[1, 2, 3], [-2, 4, -5], [1, -1, 1]]`  
-Sort the said matrix in ascending order according to the sum of its rows  
-`[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]`  
+6) Write a Python program to `sort` a `list` of dictionaries buy `color value` using `Lambda`.
+   ```python
+   # Original list of dictionaries :
+   [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 
+   'Blue'}]
+
+   # Sorted the List of dictionaries :
+   [{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}, {'make': 'Mi Max', 'model': '2', 'color': 
+   'Gold'}]
+   ```
+7) Write a Python program to `sort` a given matrix in `ascending` order according to the sum of its rows using `lambda`.
+   ```python
+   # Original Matrix:  
+   `[[1, 2, 3], [2, 4, 5], [1, 1, 1]]`
+ 
+   # Sort the said matrix in ascending order according to the sum of its rows  
+   `[[1, 1, 1], [1, 2, 3], [2, 4, 5]]`
+  
+   # Original Matrix:  
+   `[[1, 2, 3], [-2, 4, -5], [1, -1, 1]]`  
+
+   # Sort the said matrix in ascending order according to the sum of its rows  
+   `[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]`
+   ```  
 
 # 🌐 Extra reading:
 

@@ -2,7 +2,7 @@
 
 ### `Map function`
 
-The first function on the docket is map(), which is a Python built-in function. With map(), you can apply a function to each element in an iterable in turn, and map() will return an iterator that yields the results. This can allow for some very concise code because a map() statement can often take the place of an explicit loop.
+The first function on the docket is `map()`, which is a `Python` built-in function. With `map()`, you can apply a function to each element in an `iterable` in turn, and `map()` will return an `iterator` that `yields` the results. This can allow for some very concise code because a `map()` statement can often take the place of an explicit `loop`.
 
 Syntax:
 
@@ -18,7 +18,7 @@ def reverse(s):
 reverse("I am a string")
 ```
 
-If you have a list of strings, then you can use map() to apply reverse() to each element of the list:
+If you have a `list` of `strings`, then you can use map() to apply reverse() to each element of the list:
 
 
 ```python

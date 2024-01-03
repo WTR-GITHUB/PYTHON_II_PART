@@ -133,7 +133,7 @@ Looks a little bit more compact and is still quite readable right? As any things
 
 
 
-**NOTE** ❗ You can only define fairly rudimentary functions with `lambda`. The return value from a lambda expression can only be one single expression. A lambda expression can’t contain statements like assignment or return, nor can it contain control structures such as `for`, `while`, `if`, `else`, or `def`.
+**NOTE** ❗ You can only define fairly rudimentary functions with `lambda`. The return value from a lambda expression can only be one single expression. A lambda expression can’t contain statements like assignment or return, nor can it contain control structures such as `for`, `while` or `def`.
 
 As we have seen before functions in python can return anything:
 

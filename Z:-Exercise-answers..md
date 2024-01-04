@@ -86,6 +86,31 @@ print("\nSort the said matrix in ascending order according to the sum of its row
 print(sort_matrix(matrix2))
 ```
 
+
+## Python Advanced ‐ Lecture 4. Functional Programming Intro: Part 2
+
+### Task Nr.9
+```python
+reduce(lambda x, y: x * y, [1, 2, 3, 4, 5])
+```
+
+### Task Nr.10
+```python
+def greater(x, y):
+    return x if x > y else y
+
+
+from functools import reduce
+reduce(greater, [23, 49, 6, 32])
+```
+
+### Task Nr.11
+```python
+def f(x:str , y: str) -> str:
+    return x + y
+reduce(f, ["cat", "dog", "hedgehog", "gecko"])
+```
+
 ## OOP Advanced : Inheritance
 ### Task Nr.1
 ```python

@@ -1,8 +1,10 @@
 ## `Introduction`
-In Python, a generator is a type of iterable, like lists or tuples. Unlike lists, they don't allow indexing with arbitrary indices, but they can still be iterated through with for loops. They can be created using functions and the yield keyword.
+In Python, a `generator` is a special type of `iterable` **that produces a sequence of values one at a time**. This is in contrast to a `list`, **which stores all of its values in memory at once**. Generators are more **memory-efficient**, as they only produce the `values` that are **actually needed**. This can be useful for large or infinite sequences of data.
+
+`Generators` are created using a `yield` statement. The yield statement is similar to the `return` statement, but it instead **suspends execution of the function and returns a value**. The next time the function is called, execution resumes from where it left off.
 
 ## `Overview`
-Generators are a type of `iterable`, like lists or tuples. They do not store their contents in memory, but instead generate each value on the fly.
+Generators are a type of `iterable`, like `lists` or `tuples`. They **do not store their contents in memory**, but instead generate each value on the fly.
 
 ```python
 def count_up_to(x):
@@ -20,10 +22,10 @@ for number in count_up_to(5):
 # 5
 ```
 
-In the above example, `count_up_to` is a generator that produces numbers up to a certain number. The `yield` keyword is used to produce a `value` and suspend the generator's execution.
+In the above example, `count_up_to` is a `generator` that produces numbers up to a certain number. The `yield` keyword is used to produce a `value` and suspend the generator's execution.
 
 ## `yield keyword`
-The yield keyword is used in Python to define a generator. It works like a standard return keyword. But it will return a generator.
+The yield keyword is used in Python to define a `generator`. It works like a standard `return` keyword. But it will **return a generator**.
 
 ```python
 def generator():
@@ -38,10 +40,10 @@ for value in generator():
 # 3
 ```
 
-In the above example, generator function generator() returns a generator object. You can iterate over the generator object using the for loop.
+In the above example, generator function `generator()` returns a `generator object`. You can `iterate` over the `generator object` using the for `loop`.
 
 ## `Generator Expressions`
-Just as you can create a list comprehension, you can create generator expressions as well. These are more efficient than list comprehensions and can save memory if the resulting list is going to be large, because they generate each value on the fly rather than storing them in a list.
+Just as you can create a `list comprehension`, you can create `generator expressions` as well. These are more efficient than `list comprehensions` and can save memory if the resulting `list` is going to be **large**, because they generate each value on the fly rather than storing them in a list.
 
 ```python
 numbers = (x for x in range(10))
@@ -60,7 +62,7 @@ for number in numbers:
 # 9
 ```
 
-In the above example, numbers is a generator that generates numbers from 0 to 9. This is more memory-efficient than creating a list of these numbers.
+In the above example, numbers is a `generator` that generates numbers from `0` to `9`. This is more memory-efficient than creating a `list` of these numbers.
 
 ## Exercises: 🧠
 1) Write a Python program to create a generator that generates the squares of numbers up to a given number.

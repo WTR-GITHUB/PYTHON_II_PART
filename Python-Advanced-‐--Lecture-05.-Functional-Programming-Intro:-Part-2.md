@@ -18,7 +18,7 @@ def reverse(s):
 reverse("I am a string")
 ```
 
-If you have a `list` of `strings`, then you can use map() to apply reverse() to each element of the list:
+If you have a `list` of `strings`, then you can use `map()` to apply `reverse()` to each element of the list:
 
 
 ```python
@@ -29,7 +29,7 @@ iterator
 ```
 
 
-**NOTE** ❗ ❗ ❗ But remember, map() doesn’t return a list. It returns an iterator called a map object. To obtain the values from the iterator, you need to either iterate over it or use list():
+**NOTE** ❗ ❗ ❗ But remember, `map()` doesn’t return a list. It returns an `iterator` called a `map object`. To obtain the values from the `iterator`, **you need to either iterate over it** or use `list()`:
 
 ```python
 animals = ["cat", "dog", "hedgehog", "gecko"]
@@ -50,7 +50,7 @@ list(iterator)
 ```
 
 
-Let's take it further once more, we already know that lambdas give us a function, let's try passing it to map function:
+Let's take it further once more, we already know that `lambdas` give us a function, let's try passing it to map function:
 
 ```python
 animals = ["cat", "dog", "hedgehog", "gecko"]
@@ -66,7 +66,7 @@ list(map(lambda s: s[::-1], ["cat", "dog", "hedgehog", "gecko"]))
 # ['tac', 'god', 'gohegdeh', 'okceg']
 ```
 
-If the iterable contains something that is not suitable for a certain operation:
+If the `iterable` contains something that is not suitable for a certain operation:
 
 ```python
 list(map(lambda s: s[::-1], ["cat", "dog", 3.14159, "gecko"]))
@@ -76,16 +76,16 @@ list(map(lambda s: s[::-1], ["cat", "dog", 3.14159, "gecko"]))
 # TypeError: 'float' object is not subscriptable
 ```
 
-In this case, the lambda function expects a string argument, which it tries to slice. The second element in the list, 3.14159, is a float object, which isn’t sliceable. So a TypeError occurs.
+In this case, the lambda function expects a string argument, which it tries to slice. The second element in the list, `3.14159`, is a `float` object, which isn’t sliceable. So a `TypeError` occurs.
 
 
-## Calling map with multiple iterables
+## `Calling map with multiple iterables`
 
 ```python
 map(<f>, <iterable₁>, <iterable₂>, ..., <iterableₙ>)
 ```
 
-The number of <iterablei> arguments specified to map() must match the number of arguments that <f> expects. <f> acts on the first item of each <iterablei>, and that result becomes the first item that the return iterator yields. Then <f> acts on the second item in each <iterablei>, and that becomes the second yielded item, and so on.
+The number of <iterable> arguments specified to `map()` must match the number of arguments that <f> expects. <f> acts on the first item of each <iterable>, and that result becomes the first item that the return iterator `yields`. Then <f> acts on the second item in each <iterable>, and that becomes the second yielded item, and so on.
 
 ```python
 def f(a, b, c):
@@ -100,16 +100,16 @@ Here is more visual representation of how the calculation is being done:
 
 
 
-# filter function
+## `filter function`
 
-filter() allows you to select or filter items from an iterable based on evaluation of the given function. It’s called as follows:
+`filter()` a**llows you to select or filter items** from an `iterable` based on evaluation of the given function. It’s called as follows:
 
 ```python
 filter(<f>, <iterable>)
 ```
 
 
-filter(<f>, <iterable>) applies function <f> to each element of <iterable> and returns an iterator that yields all items for which <f> is truthy. Conversely, it filters out all items for which <f> is falsy.
+`filter(<f>, <iterable>)` applies function <f> to each element of <iterable> and returns an `iterator` that `yields` all items for which <f> is `truthy`. Conversely, it filters out all items for which <f> is `falsy`.
 
 ```python
 def greater_than_100(x):
@@ -119,14 +119,14 @@ list(filter(greater_than_100, [1, 111, 2, 222, 3, 333]))
 # [111, 222, 333]
 ```
 
-As we see that function is the first argument, let's try applying lambdas function here.
+As we see that function is the first argument, let's try applying `lambdas` function here.
 
 
 ```python
 list(filter(lambda x: x > 100, [1, 111, 2, 222, 3, 333]))
 ```
 
-What is more we can even combine there things with range() function - range(n) produces an iterator that yields the integers from 0 to n - 1. The following example uses filter() to select only the even numbers from the list and filter out the odd numbers:
+What is more we can even combine there things with `range()` function - `range(n)` produces an `iterator` that yields the `integers` from `0` to `n - 1`. The following example uses `filter()` to select only the even numbers from the `list` and filter out the `odd` numbers:
 
 
 ```python
@@ -159,26 +159,26 @@ list(filter(lambda s: s.isupper(), animals))
 ```
 
 
-# Reduce function
+## `Reduce function`
 
-reduce() applies a function to the items in an iterable two at a time, progressively combining them to produce a single result.
+`reduce()` applies a function to the items in an `iterable` two at a time, progressively combining them to produce a single result.
 
-To use reduce(), you need to import it from a module called functools. This is possible in several ways, but the following is the most straightforward:
+To use `reduce()`, you need to import it from a module called `functools`. This is possible in several ways, but the following is the most straightforward:
 
 
 ```python
 from functools import reduce
 ```
 
-## Calling reduce with two arugments:
+## `Calling reduce with two arugments`:
 
 ```python
 reduce(<f>, <iterable>)
 ```
 
-reduce(<f>, <iterable>) uses <f>, which must be a function that takes exactly two arguments, to progressively combine the elements in <iterable>. To start, reduce() invokes <f> on the first two elements of <iterable>. That result is then combined with the third element, then that result with the fourth, and so on until the list is exhausted. Then reduce() returns the final result.
+reduce(<f>, <iterable>) uses <f>, which must be a function that takes exactly two arguments, to progressively combine the elements in <iterable>. To start, `reduce()` invokes <f> on the first two elements of <iterable>. That result is then combined with the third element, then that result with the fourth, and so on until the list is exhausted. Then `reduce()` returns the final result.
 
-let's start with some simple examples:
+Let's start with some simple examples:
 
 
 ```python
@@ -199,7 +199,7 @@ reduce is quite disliked function even by the python creator Guido van Rossum:
 
 _So now reduce(). This is actually the one I’ve always hated most, because, apart from a few examples involving + or *, almost every time I see a reduce() call with a non-trivial function argument, I need to grab pen and paper to diagram what’s actually being fed into that function before I understand what the reduce() is supposed to do. So in my mind, the applicability of reduce() is pretty much limited to associative operators, and in all other cases it’s better to write out the accumulation loop explicitly. ([Source](https://www.artima.com/weblogs/viewpost.jsp?thread=98196))_
 
-Even in our example we can see that there are simpler ways of doing our simple example. Can you suggest any of them? Discuss
+Even in our example we can see that there are simpler ways of doing our simple example.
 
 The most simple one would probably be:
 ```python
@@ -234,7 +234,7 @@ factorial(6)
 ```
 
 
-We could also use reduce to get the same result as max() does:
+We could also use `reduce` to get the same result as `max()` does:
 
 ```python
 max([23, 49, 6, 32])
@@ -248,13 +248,13 @@ from functools import reduce
 reduce(greater, [23, 49, 6, 32])
 ```
 
-## Calling reduce() with initial value
+## `Calling reduce() with initial value`
 
 ```python
 reduce(<f>, <iterable>, <init>)
 ```
 
-When present, <init> specifies an initial value for the combination. In the first call to <f>, the arguments are <init> and the first element of <iterable>. That result is then combined with the second element of <iterable>, and so on:
+When present, <init> specifies an `initial value` for the combination. In the first call to <f>, the arguments are <init> and the first element of <iterable>. That result is then combined with the second element of <iterable>, and so on:
 ```python
 def f(x, y):
     return x + y
@@ -270,11 +270,11 @@ The graphical visualization of the actions taken:
 ![IMG](https://github.com/CodeAcademy-Online/python-new-material-level2/blob/master/images/reduce2.webp)
 
 
-As you’ve seen in the above examples, even in cases where you can accomplish a task using reduce(), it’s often possible to find a more straightforward and Pythonic way to accomplish the same task without it. Maybe it’s not so hard to imagine why reduce() was removed from the core language after all.
+As you’ve seen in the above examples, even in cases where you can accomplish a task using `reduce()`, it’s often possible to find a more straightforward and `Pythonic` way to accomplish the same task without it. Maybe it’s not so hard to imagine why `reduce()` was removed from the core language after all.
 
-That said, reduce() is kind of a remarkable function. The description at the beginning of this section states that reduce() combines elements to produce a single result. But that result can be a composite object like a list or a tuple. For that reason, reduce() is a very generalized higher-order function from which many other functions can be implemented.
+That said, `reduce()` is kind of a remarkable function. The description at the beginning of this section states that `reduce()` combines elements to produce a single result. But that result can be a composite object like a `list` or a `tuple`. For that reason, `reduce()` is a very generalized higher-order function from which many other functions can be implemented.
 
-For example, you can implement map() in terms of reduce():
+For example, you can implement `map()` in terms of reduce():
 
 ```python
 numbers = [1, 2, 3, 4, 5]
@@ -294,89 +294,60 @@ def custom_map(function, iterable):
 print(list(custom_map(str, numbers)))
 ```
 
-In fact, any operation on a sequence of objects can be expressed as a reduction.
+In fact, any operation on a sequence of objects can be expressed as a `reduction`.
 
 ## Exercises: 🧠 
 
+1) Write a Python program to triple all numbers of a given list of integers. Use Python map
+2) Write a Python program to square the elements of a list using map() function.
+3) Write a Python program to add three given lists using Python map and lambda
+4) Write a Python program to add two given lists and find the difference between lists. Use map() function.
+5) Write a Python program to convert a given list of integers and a tuple of integers in a list of strings. 
+6) Write a Python program to filter a list of integers using Lambda
+   ```python
+   Original list of integers:  
+   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
 
-**Lambdas section**: 
-1. Write a Python program to find if a given string starts with a given character using Lambda. Sample Output:
-True
-False
-1. Write a Python program to create a lambda function that adds 15 to a given number passed in as an argument, also create a lambda function that multiplies argument x with argument y and print the result.
-1. Write a Python program to add two given lists using map and lambda.
-1. Write a Python program to square and cube every number in a given list of integers using Lambda
-1. Write a Python program to extract year, month, date and time using Lambda. Sample Output:
-2020-01-15 09:03:32.744178
-2020
-1
-15
-09:03:32.744178
-  
+   Even numbers from the said list:  
+   [2, 4, 6, 8, 10]  
 
-**Sorted section**: 
-1. Write a Python program to sort a list of tuples using Lambda.
-Original list of tuples:
-[('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)]
-Sorting the List of Tuples:
-[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
-1. Write a Python program to sort a list of dictionaries buy color value using Lambda.Original list of dictionaries :
-[{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}]
-Sorting the List of dictionaries :
-[{'make': 'Nokia', 'model': 216, 'color': 'Black'}, {'make': 'Samsung', 'model': 7, 'color': 'Blue'}, {'make': 'Mi Max', 'model': '2', 'color': 'Gold'}]
-1. Write a Python program to sort a given matrix in ascending order according to the sum of its rows using lambda.Original Matrix:  
-`[[1, 2, 3], [2, 4, 5], [1, 1, 1]]` 
-Sort the said matrix in ascending order according to the sum of its rows  
-`[[1, 1, 1], [1, 2, 3], [2, 4, 5]]`  
-Original Matrix:  
-`[[1, 2, 3], [-2, 4, -5], [1, -1, 1]]`  
-Sort the said matrix in ascending order according to the sum of its rows  
-`[[-2, 4, -5], [1, -1, 1], [1, 2, 3]]`  
+   Odd numbers from the said list:  
+   [1, 3, 5, 7, 9]
+   ```  
+7) Write a Python program to find numbers divisible by nineteen or thirteen from a list of numbers using Lambda.
+   ```python
+   Orginal list:
+   [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
 
-**Map section**: 
+   Numbers of the above list divisible by nineteen or thirteen:
+   [19, 65, 57, 39, 152, 190]
+   ```   
+8) Write a Python program to count the even, odd numbers in a given array of integers using Lambda. 
+   ```python
+   Original arrays: 
+   [1, 2, 3, 5, 7, 8, 9, 10] 
+ 
+   Number of even numbers in the above array: 3  
+   Number of odd numbers in the above array: 5  
+   ```
 
-1. Write a Python program to triple all numbers of a given list of integers. Use Python map
-1. Write a Python program to square the elements of a list using map() function.
-1. Write a Python program to add three given lists using Python map and lambda
-1. Write a Python program to add two given lists and find the difference between lists. Use map() function.
-1. Write a Python program to convert a given list of integers and a tuple of integers in a list of strings.
+* Use reduce for following tasks
 
-**Filter section**: 
-1. Write a Python program to filter a list of integers using Lambda
-Original list of integers:  
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  
-Even numbers from the said list:  
-[2, 4, 6, 8, 10]  
-Odd numbers from the said list:  
-[1, 3, 5, 7, 9]  
-1. Write a Python program to find numbers divisible by nineteen or thirteen from a list of numbers using Lambda.Orginal list:
-[19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
-Numbers of the above list divisible by nineteen or thirteen:
-[19, 65, 57, 39, 152, 190]
-1. Write a Python program to count the even, odd numbers in a given array of integers using Lambda. Original arrays:  
-[1, 2, 3, 5, 7, 8, 9, 10]  
-Number of even numbers in the above array: 3  
-Number of odd numbers in the above array: 5  
-
-
-
-**Reduce section**: 
-
-1. Write a python program that multiplies all the values in a given list of integers.
-1. Write a python program that finds the maximum value within the given list.
-1. Write a python function that given list of strings concatenates all of them together.
-1. redo all the previous exercises with an initial value given to the reduce function.
+9) Write a python program that multiplies all the values in a given list of integers.
+10) Write a python program that finds the maximum value within the given list.
+11) Write a python function that given list of strings concatenates all of them together.
+12) redo all the previous exercises with an initial value given to the reduce function.
 
 
 # 🌐 Extra reading:
 
 * [Python documentation on functional programming](https://docs.python.org/3/howto/functional.html#:~:text=Functional%20programming%20wants%20to%20avoid,%2C%20transactions%2C%20etc.).)
 
-* [iterators](https://realpython.com/python-for-loop/#iterators)
+* [Iterators](https://realpython.com/python-for-loop/#iterators)
 
-* [real python on functional programming](https://realpython.com/python-functional-programming/#what-is-functional-programming)
+* [Real python on functional programming](https://realpython.com/python-functional-programming/#what-is-functional-programming)
 
-* [youtube video](https://www.youtube.com/watch?v=SvK_GErE2nM)
+* [Youtube video](https://www.youtube.com/watch?v=SvK_GErE2nM)
 
 
 # Solutions

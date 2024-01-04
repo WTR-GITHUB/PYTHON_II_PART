@@ -298,8 +298,8 @@ In fact, any operation on a sequence of objects can be expressed as a `reduction
 
 ## Exercises: 🧠 
 
-1) Write a Python program to triple all numbers of a given list of integers. Use Python map
-2) Write a Python program to square the elements of a list using map() function.
+1) Write a Python program to triple all numbers of a given list of integers. Use Python `map()`.
+2) Write a Python program to square the elements of a list using `map()` function.
 3) Write a Python program to add three given lists using Python map and lambda
 4) Write a Python program to add two given lists and find the difference between lists. Use map() function.
 5) Write a Python program to convert a given list of integers and a tuple of integers in a list of strings. 

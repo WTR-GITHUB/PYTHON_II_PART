@@ -4,7 +4,7 @@ When developing software, testing is an important part of ensuring that your cod
 
 With unittest, you can define a set of test cases, each of which tests a specific feature or behavior of your code. Within each test case, you can define a set of test methods that verify that your code behaves as expected under different conditions.
 
-Using unittest allows you to automate your tests, making it easier to run them repeatedly and catch regressions as soon as they occur. unittest also provides powerful features for handling setup and teardown tasks, running test suites, and reporting test results.
+Using unittest allows you to automate your tests, making it easier to run them repeatedly and catch regressions as soon as they occur. unittest also provides powerful features for handling setup and teardown tasks, running test suites, and reporting test results. Also improve your code quality.
 
 Overall, unittest is a powerful and flexible tool for testing your Python code and ensuring that it works correctly. By investing time in writing tests, you can catch bugs early in the development process, save time on manual testing, and ensure that your code is robust and reliable.
 

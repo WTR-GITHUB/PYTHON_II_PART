@@ -117,11 +117,11 @@ In the above example, numbers is a `generator` that generates numbers from `0` t
 4) Write a Python program to create a `Fibonacci` series generator.
 5) Write a Python program to create a generator from a `list` that yields item from the `list` if it is a `number`.
 6) Create a `list` of `tuples`, each representing a person's information. Each `tuple` contains the following information: (name: str, age: int, city: 
- str, salary: float). Your task is to create Python generators to perform the following tasks:
+   str, salary: float). Your task is to create Python generators to perform the following tasks:
 
- - Filtering Generator: Create a generator function that filters the people who are below a certain age threshold.
- - Mapping Generator: Create a generator function that maps the names of people to uppercase.
- - Aggregation Generator: Create a generator function that calculates the average salary of the selected group.
+   - Filtering Generator: Create a generator function that filters the people who are below a certain age threshold.
+   - Mapping Generator: Create a generator function that maps the names of people to uppercase.
+   - Aggregation Generator: Create a generator function that calculates the average salary of the selected group.
 
 ## 🌐  Extra reading (or watching 📺 ):
 

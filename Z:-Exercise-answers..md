@@ -1,3 +1,45 @@
+## Python Advanced ‐ Lecture 3. Generators, yeld keyword
+### Task Nr.6
+```python
+from typing import List, Tuple, Generator
+
+# Sample data
+people_data: List[Tuple[str, int, str, float]] = [
+    ("Alice", 25, "New York", 60000.0),
+    ("Bob", 30, "San Francisco", 80000.0),
+    ("Charlie", 22, "Los Angeles", 55000.0),
+    # ... add more data ...
+]
+
+# Generator 1: Filtering Generator
+def filter_below_age(data: List[Tuple[str, int, str, float]], age_threshold: int) -> Generator[Tuple[str, int, str, float], None, None]:
+    for person in data:
+        if person[1] < age_threshold:
+            yield person
+
+# Generator 2: Mapping Generator
+def map_to_uppercase(data: Generator[Tuple[str, int, str, float], None, None]) -> Generator[Tuple[str, int, str, float], None, None]:
+    for person in data:
+        yield (person[0].upper(),) + person[1:]
+
+# Generator 3: Aggregation Generator
+def calculate_average_salary(data: Generator[Tuple[str, int, str, float], None, None]) -> float:
+    total_salary = 0
+    count = 0
+    for person in data:
+        total_salary += person[3]
+        count += 1
+    return total_salary / count if count > 0 else 0
+
+# Usage
+age_threshold = 25
+filtered_data = filter_below_age(people_data, age_threshold)
+uppercase_names = map_to_uppercase(filtered_data)
+average_salary = calculate_average_salary(uppercase_names)
+
+print(f"The average salary of people below {age_threshold} with uppercase names is: {average_salary}")
+```
+
 ## Python Advanced ‐ Lecture 4. Functional Programming Intro: Part 1
 ### Task Nr.1
 ```python

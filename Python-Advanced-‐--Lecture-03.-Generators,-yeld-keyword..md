@@ -3,8 +3,42 @@ In Python, a `generator` is a special type of `iterable` **that produces a seque
 
 `Generators` are created using a `yield` statement. The yield statement is similar to the `return` statement, but it instead **suspends execution of the function and returns a value**. The next time the function is called, execution resumes from where it left off.
 
-## `Overview`
+### `Overview`
 Generators are a type of `iterable`, like `lists` or `tuples`. They **do not store their contents in memory**, but instead generate each value on the fly.
+
+Simple generator expression: 
+
+```python
+from typing import Generator
+
+def simple_generator(n: int) -> Generator[int, None, None]:
+    for i in range(n):
+        yield i
+
+# Usage
+for value in simple_generator(5):
+    print(value)
+```
+Infinite Range Generator:
+
+```python
+from typing import Generator
+
+def infinite_range(start: int = 0) -> Generator[int, None, None]:
+    current = start
+    while True:
+        yield current
+        current += 1
+
+# Usage
+counter = 0
+for value in infinite_range(10):
+    print(value)
+    counter += 1
+    if counter == 5:
+        break
+
+```
 
 ```python
 def count_up_to(x):

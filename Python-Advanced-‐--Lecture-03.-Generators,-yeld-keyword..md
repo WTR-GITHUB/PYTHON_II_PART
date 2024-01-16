@@ -43,7 +43,7 @@ for value in infinite_range(10):
 Another example: 
 
 ```python
-def count_up_to(x):
+def count_up_to(x: int) -> Generator[int, None, None]:
     count = 1
     while count <= x:
         yield count
@@ -111,11 +111,15 @@ for number in numbers:
 In the above example, numbers is a `generator` that generates numbers from `0` to `9`. This is more memory-efficient than creating a `list` of these numbers.
 
 ## Exercises: 🧠
-1) Write a Python program to create a generator that generates the squares of numbers up to a given number.
-2) Write a Python program to create a generator that yields "n" random numbers between a low and high number that are inputs.
-3) Write a Python program to create a generator that iterates over a string.
-4) Write a Python program to create a Fibonacci series generator.
-5) Write a Python program to create a generator from a list that yields item from the list if it is a number.
+1) Write a Python program to create a generator that generates the `squares` of numbers up to a given number.
+2) Write a Python program to create a generator that yields "n" random numbers between a `low` and `high` number that are `inputs`.
+3) Write a Python program to create a generator that iterates over a `string`.
+4) Write a Python program to create a `Fibonacci` series generator.
+5) Write a Python program to create a generator from a `list` that yields item from the `list` if it is a `number`.
+6) Create a `list` of `tuples`, each representing a person's information. Each `tuple` contains the following information: (_name: str, age: int, city: _
+ _str, salary: float_).
+
+Your task is to create Python generators to perform the following tasks:
 
 ## 🌐  Extra reading (or watching 📺 ):
 

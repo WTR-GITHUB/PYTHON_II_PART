@@ -40,6 +40,8 @@ for value in infinite_range(10):
 
 ```
 
+Another example: 
+
 ```python
 def count_up_to(x):
     count = 1
@@ -58,8 +60,18 @@ for number in count_up_to(5):
 
 In the above example, `count_up_to` is a `generator` that produces numbers up to a certain number. The `yield` keyword is used to produce a `value` and suspend the generator's execution.
 
-## `yield keyword`
-The yield keyword is used in Python to define a `generator`. It works like a standard `return` keyword. But it will **return a generator**.
+In the `typing` module of Python, the `Generator` type is used to annotate `generator` functions. Here's the definition of `Generator` in the `typing' module:
+
+```python
+typing.Generator[ValueType, SendType, ReturnType]
+```
+
+ - `ValueType`: Type of values yielded by the generator (yield expressions).
+ - `SendType`: Type of values that can be sent into the generator using the `generator.send(value)` method. This is optional and defaults to `None`.
+ - `ReturnType`: Type of the value returned by the generator when it's exhausted (`raises StopIteration`). This is optional and defaults to `None`.
+
+### `yield keyword`
+The `yield` keyword is used in Python to define a `generator`. It works like a standard `return` keyword. But it will **return a generator**.
 
 ```python
 def generator():
@@ -74,9 +86,9 @@ for value in generator():
 # 3
 ```
 
-In the above example, generator function `generator()` returns a `generator object`. You can `iterate` over the `generator object` using the for `loop`.
+In the above example, generator function `generator()` returns a `generator object`. You can `iterate` over the `generator object` using the `for` loop.
 
-## `Generator Expressions`
+### `Generator Expressions`
 Just as you can create a `list comprehension`, you can create `generator expressions` as well. These are more efficient than `list comprehensions` and can save memory if the resulting `list` is going to be **large**, because they generate each value on the fly rather than storing them in a list.
 
 ```python
@@ -105,7 +117,8 @@ In the above example, numbers is a `generator` that generates numbers from `0` t
 4) Write a Python program to create a Fibonacci series generator.
 5) Write a Python program to create a generator from a list that yields item from the list if it is a number.
 
-🌐 Extra reading:
-Python Generators
-Python yield keyword
-[Python Generators](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/_new) vs List Comprehensions
+## 🌐  Extra reading (or watching 📺 ):
+
+* [Real Phyton](https://realpython.com/introduction-to-python-generators/)
+* [Youtube](https://www.youtube.com/watch?v=bD05uGo_sVI&ab_channel=CoreySchafer)
+***

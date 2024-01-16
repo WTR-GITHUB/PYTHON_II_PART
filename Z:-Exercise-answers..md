@@ -8,7 +8,6 @@ people_data: List[Tuple[str, int, str, float]] = [
     ("Alice", 25, "New York", 60000.0),
     ("Bob", 30, "San Francisco", 80000.0),
     ("Charlie", 22, "Los Angeles", 55000.0),
-    # ... add more data ...
 ]
 
 # Generator 1: Filtering Generator

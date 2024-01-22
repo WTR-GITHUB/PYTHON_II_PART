@@ -104,10 +104,38 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
    [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-3) 
 
-* Task Nr.4: 
+4) You are tasked with designing an advanced `Employee Management System` using Python data classes, functional programming operations, and various 
+   methods for analysis and manipulation of employee data.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-4-2) 
+   Employee Class:
 
+   Create a data class named Employee to represent an employee. The class should have attributes for `employee_id`, name, age, salary, and department.
+    - Implement an `__init__` method to initialize the attributes.
+   
+   Department Class:
+   Create a data class named Department to represent a department. The class should have attributes for department_id, name, and employe 
+   (List[Employee]).
+    - Implement an __init__ method to initialize the attributes.
+    - Add a method named average_salary that calculates and returns the average salary of employees in the department.
+     
+   EmployeeManagement Class: 
+   Create a data class named EmployeeManagement to manage multiple departments and employees. The class should have an attribute for departments 
+   (List[Department]).
+   - Implement an __init__ method to initialize the attribute.
+   - Add a method named total_salary that calculates and returns the total salary of all employees in the organization.
+   - Add a method named get_employees_in_age_range that takes a minimum and maximum age and returns a list of employees within that age range.
+   - Add a method named sort_employees_by_salary that returns a sorted list of employees by their salary in descending order.
+   - Add a method named filter_employees_by_department that takes a department name and returns a list of employees in that department.
+   
+   Functional Operations:
+
+   Utilize functional programming operations such as `map`, `filter`, and `sorted` where appropriate in the implementation of the methods.
+   Demonstrate the use of these operations to enhance the readability and efficiency of your code.
+
+   Test Cases:
+
+   Create a sample dataset with multiple employees and departments to thoroughly test your system.
+   Use the implemented methods to perform various analyses, such as calculating average salaries, sorting employees, and filtering employees by criteria.
 
 ## 🌐  Extra reading (or watching 📺 ):
 

@@ -68,28 +68,41 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
 ## Exercises: 
 
-* Task Nr.1:
- 
-  You have been asked to create a simple inventory management system for a small retail store. You need to define a `Product` class using the dataclass 
-  module that represents a product in the store. Each `Product` should have a unique `ID`, a `name`, a `description`, a `price`, and a `quantity in 
-  stock`. You also need to implement a method `calculate_total_cost` that calculates the total cost of a given number of items of the product, taking 
-  into account any discounts that may apply.
+1) You have been asked to create a simple inventory management system for a small retail store. You need to define a `Product` class using the dataclass 
+   module that represents a product in the store. Each `Product` should have a unique `ID`, a `name`, a `description`, a `price`, and a `quantity in 
+   stock`. You also need to implement a method `calculate_total_cost` that calculates the total cost of a given number of items of the product, taking 
+   into account any discounts that may apply.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-4) 
+   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-1-4) 
 
+2) Create a set of data classes to model an online bookstore management system. The classes should include Author, Book, Customer, and Order. Your goal 
+   is to design a system that enables the management of books, authors, customers, and orders in an online bookstore.
 
-* Task Nr.2:
+   Author Class:
+    - Attributes: author_id (int), name (str), birth_year (int), books (List[Book]).
+    - Initialize the attributes in the __init__ method.
 
-  You need to create a program to manage a list of books in a library. Each book has a `title`, an `author`, a `publication year`, and an `ISBN`. You 
-  need to define a `Book` class using the `dataclass` module that contains attributes for these properties. You also need to implement a `Library` class 
-  that manages a list of books. The `Library` class should allow you to `add` and `remove` books from the library, search for books by `title` or 
-  `author`, and display the list of books currently in the library.
+   Book Class:
+    - Attributes: book_id (int), title (str), author (Author), publication_year (int), price (float), quantity_in_stock (int).
+    - Initialize the attributes in the __init__ method.
+    - Add a method sell that reduces the quantity_in_stock when a book is sold.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-3) 
+   Customer Class:
+    - Attributes: customer_id (int), name (str), email (str), orders (List[Order]).
+    - Initialize the attributes in the __init__ method.
+   
+   Order Class:
+    - Attributes: order_id (int), customer (Customer), books (List[Book]), total_price (float), status (str) - either "Pending" or "Shipped".
+    - Initialize the attributes in the __init__ method.
+    - Add a method calculate_total_price that calculates the total price of the order based on the books' prices and quantities.
+    - Add a method ship_order that changes the order status to "Shipped" and updates the stock quantity for each book. 
 
-* Task Nr.3:
+3) You need to create a program to manage a list of books in a library. Each book has a `title`, an `author`, a `publication year`, and an `ISBN`. You 
+   need to define a `Book` class using the `dataclass` module that contains attributes for these properties. You also need to implement a `Library` class 
+   that manages a list of books. The `Library` class should allow you to `add` and `remove` books from the library, search for books by `title` or 
+   `author`, and display the list of books currently in the library.
 
-  [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-3-3) 
+   [Answer](https://github.com/CodeAcademy-Online/python-new-material-level2/wiki/Z:-Exercise-answers.#task-nr-2-3) 
 
 * Task Nr.4: 
 

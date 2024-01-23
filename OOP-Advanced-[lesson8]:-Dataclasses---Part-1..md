@@ -79,23 +79,20 @@ There are many reasons we have an increase in programmer efficiency and code qua
    is to design a system that enables the management of books, authors, customers, and orders in an online bookstore.
 
    Author Class:
-    - Attributes: author_id (int), name (str), birth_year (int), books (List[Book]).
-    - Initialize the attributes in the __init__ method.
+    - Attributes: author_id (int), name (str), birth_year (int)).
 
    Book Class:
     - Attributes: book_id (int), title (str), author (Author), publication_year (int), price (float), quantity_in_stock (int).
-    - Initialize the attributes in the __init__ method.
     - Add a method sell that reduces the quantity_in_stock when a book is sold.
 
    Customer Class:
-    - Attributes: customer_id (int), name (str), email (str), orders (List[Order]).
-    - Initialize the attributes in the __init__ method.
+    - Attributes: customer_id (int), name (str), email (str).
    
    Order Class:
     - Attributes: order_id (int), customer (Customer), books (List[Book]), total_price (float), status (str) - either "Pending" or "Shipped".
-    - Initialize the attributes in the __init__ method.
-    - Add a method calculate_total_price that calculates the total price of the order based on the books' prices and quantities.
-    - Add a method ship_order that changes the order status to "Shipped" and updates the stock quantity for each book. 
+    - Initialize the attributes in the `__init__` method (override).
+    - Add a method `calculate_total_price` that calculates the total price of the order based on the books' prices and quantities.
+    - Add a method `ship_order` that changes the order status to "Shipped" and updates the stock quantity for each book. 
 
 3) You need to create a program to manage a list of books in a library. Each book has a `title`, an `author`, a `publication year`, and an `ISBN`. You 
    need to define a `Book` class using the `dataclass` module that contains attributes for these properties. You also need to implement a `Library` class 
@@ -107,25 +104,22 @@ There are many reasons we have an increase in programmer efficiency and code qua
 4) You are tasked with designing an advanced `Employee Management System` using Python data classes, functional programming operations, and various 
    methods for analysis and manipulation of employee data.
 
-   Employee Class:
+   `Employee Class`:
 
-   Create a data class named Employee to represent an employee. The class should have attributes for `employee_id`, name, age, salary, and department.
-    - Implement an `__init__` method to initialize the attributes.
+   Create a data class named `Employee` to represent an employee. The class should have attributes for `employee_id`, name, age, salary, and department.
    
    Department Class:
    Create a data class named Department to represent a department. The class should have attributes for department_id, name, and employe 
    (List[Employee]).
-    - Implement an __init__ method to initialize the attributes.
-    - Add a method named average_salary that calculates and returns the average salary of employees in the department.
+    - Add a method named `average_salary` that calculates and returns the average salary of employees in the department.
      
    EmployeeManagement Class: 
    Create a data class named EmployeeManagement to manage multiple departments and employees. The class should have an attribute for departments 
    (List[Department]).
-   - Implement an __init__ method to initialize the attribute.
-   - Add a method named total_salary that calculates and returns the total salary of all employees in the organization.
-   - Add a method named get_employees_in_age_range that takes a minimum and maximum age and returns a list of employees within that age range.
-   - Add a method named sort_employees_by_salary that returns a sorted list of employees by their salary in descending order.
-   - Add a method named filter_employees_by_department that takes a department name and returns a list of employees in that department.
+   - Add a method named `total_salary` that calculates and returns the total salary of all employees in the organization.
+   - Add a method named `get_employees_in_age_range` that takes a minimum and maximum age and returns a list of employees within that age range.
+   - Add a method named `sort_employees_by_salary` that returns a sorted list of employees by their salary in descending order.
+   - Add a method named `filter_employees_by_department` that takes a department name and returns a list of employees in that department.
    
    Functional Operations:
 
@@ -134,8 +128,19 @@ There are many reasons we have an increase in programmer efficiency and code qua
 
    Test Cases:
 
-   Create a sample dataset with multiple employees and departments to thoroughly test your system.
-   Use the implemented methods to perform various analyses, such as calculating average salaries, sorting employees, and filtering employees by criteria.
+   Create a sample dataset with multiple `employees` and `departments` to thoroughly test your system.
+   Use the implemented methods to perform various analyses, such as calculating average `salaries`, sorting `employees`, and filtering `employees` by 
+   criteria.
+
+5) Create a flight ticketing mini system: 
+   - The CLI should ask you to choose departure place and destination (minimum 5 cities) (Use dictionary to create a distance between the cities matrix 
+     map ).
+   - Then it should show options for at least 3 flight options with different different aircraft (Airbus A330-300, A340-300,A 340-600, A350- 
+     100, Boeing 747-400, 747-800, 777-300). Every aircraft has different seat configuration (economy, business, first with different seat amount, seat 
+     pitch and average price)
+   - When you select the ticket (the provided option) the final cost should be calculated depending on aircraft type, departure time, and fuel 
+     consumption. (We can agree that flights that are departure earlier, has less seats and older, cost more). Use data classes and simple classes to 
+     achieve the result.  
 
 ## 🌐  Extra reading (or watching 📺 ):
 

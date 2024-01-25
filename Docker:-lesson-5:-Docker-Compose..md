@@ -93,7 +93,7 @@ In this example, we define two services: web and mongo. The web service builds a
 Create a Requirements File. In the project's root directory, create a requirements.txt file with the following content:
 
 ```
-Flask==2.0.1
+Flask==3.0.1
 pymongo==3.12.0
 ```
 This file specifies the Python packages required for our Flask application and the MongoDB driver.

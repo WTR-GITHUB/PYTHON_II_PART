@@ -87,13 +87,13 @@ Norėdamas nustatyti `D` klasės `MRO`, Python atlieka šiuos veiksmus:
 3. Peržiūrima antroji `D` antrinė klasė, t. y. `C`. Jis įtraukia `C` į MRO sąrašą, o tada pakartoja šį procesą su `C` viršklase `A`.
 4. Iš MRO sąrašo pašalinamos visos besidubliuojančios klasės. Šiuo atveju pašalinamas antrasis `A` egzempliorius, nes jis jau buvo įtrauktas į sąrašą.
 
-Gautas `D` klasės MRO yra `[D, B, A, C]`. Tai reiškia, kad kai iškviesime `D` egzemplioriaus metodą foo, jis naudos metodo foo realizaciją, apibrėžtą `B` klasėje.
+Gautas `D` klasės MRO yra `[D, B, C, A]`. Tai reiškia, kad kai iškviesime `D` egzemplioriaus metodą foo, jis naudos metodo foo realizaciją, apibrėžtą `B` klasėje.
 
 Norėdami pamatyti klasės MRO, galite naudoti `__mro__` atributą:
 
 ```python
 print(D.__mro__)  
-# prints (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.A'>, <class '__main__.C'>)
+# prints (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
 
 ```
 

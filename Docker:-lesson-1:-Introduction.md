@@ -35,7 +35,7 @@ docker pull <image_name>
 
 ```
 
-Replace <image_name> with the name of the image you want to download. For example, if you want to download the official `nginx` image, you would type:
+Replace <image_name> with the name of the image you want to download. For example, if you want to download the official `python` image, you would type:
 
 ```
 docker pull python

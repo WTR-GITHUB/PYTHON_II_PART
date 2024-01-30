@@ -33,7 +33,7 @@ class Circle(Shape):
 ```
 In the above example, `Shape` is an `abstract class` that defines an abstract method `area()`. The `Rectangle` and `Circle` classes are subclasses of `Shape` and provide implementations for the `area()` method.
 
-It's important to notice that `ABC` and `abstractmethod` are part of python built-in library `abc`, This library provided python with `abstract base class(ABC)` and decorator (check another lesson, TBA) `abstractmethod` which needs to be imported and used, when implementing `abstract` classes.
+It's important to notice that `ABC` and `abstractmethod` are part of python built-in library `abc`, This library provided python with `abstract base class(ABC)` and decorato `abstractmethod` which needs to be imported and used, when implementing `abstract` classes.
 
 It's also important to mention **that it's not allowed to create instance of an abstract class**, If you try to create an instance of an abstract class, Python **will raise** a `TypeError` exception.
 

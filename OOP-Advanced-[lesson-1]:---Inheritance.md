@@ -87,13 +87,13 @@ To determine the `MRO` for the `D` class, Python follows these steps:
 3. It looks at the second superclass of `D`, which is `C`. It adds `C` to the MRO list, and then repeats this process with `C's` superclass, `A`.
 4. It removes any duplicate classes from the MRO list. In this case, it removes the second instance of `A`, since it has already been added to the list.
 
-The resulting MRO for the `D` class is `[D, B, A, C]`. This means that when we call the foo method on an instance of `D`, it will use the implementation of the foo method that is defined in the `B` class.
+The resulting MRO for the `D` class is `[D, B, C, A]`. This means that when we call the foo method on an instance of `D`, it will use the implementation of the foo method that is defined in the `B` class.
 
 You can use the `__mro__` attribute of a class to see its MRO:
 
 ```python
 print(D.__mro__)  
-# prints (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.A'>, <class '__main__.C'>)
+# prints (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)
 
 ```
 

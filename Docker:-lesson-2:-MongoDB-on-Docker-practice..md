@@ -14,7 +14,7 @@ docker run -d -p 27017:27017 --name test-mongo mongo:latest
 
 This will pull the latest [official image](https://hub.docker.com/_/mongo/) from Docker Hub. Adding the -d flag will ensure that the Docker container runs as a background process, separate from the shell. The -p tag signifies the port that the container port is bound back to 27017. You can connect to MongoDB on localhost:27017.
 
-To change the port number, you can change the -p flag argument to 8000:27017 to use localhost:8000. You can also use the --port flag to mention the post. Using the latest image helps you avoid version bumps. Execute this to run MongoDB on port 8000:
+To change the port number, you can change the -p flag argument to 8000:27017 to use localhost:8000. You can also use the --port flag to mention the port. Using the latest image helps you avoid version bumps. Execute this to run MongoDB on port 8000:
 
 ```
 docker run -d --name test-mongo mongo:latest --port 8000
